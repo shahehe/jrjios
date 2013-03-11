@@ -17,12 +17,14 @@
 		9AFAA7BB16ED77DD00865251 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7BA16ED77DD00865251 /* Default@2x.png */; };
 		9AFAA7BD16ED77DD00865251 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7BC16ED77DD00865251 /* Default-568h@2x.png */; };
 		9AFAA7C016ED77DD00865251 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */; };
-		9AFAA7C316ED77DD00865251 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C216ED77DD00865251 /* FirstViewController.m */; };
 		9AFAA7C516ED77DD00865251 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C416ED77DD00865251 /* first.png */; };
 		9AFAA7C716ED77DD00865251 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C616ED77DD00865251 /* first@2x.png */; };
-		9AFAA7CA16ED77DD00865251 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C916ED77DD00865251 /* SecondViewController.m */; };
 		9AFAA7CC16ED77DD00865251 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CB16ED77DD00865251 /* second.png */; };
 		9AFAA7CE16ED77DD00865251 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CD16ED77DD00865251 /* second@2x.png */; };
+		9AFAA7D616ED7EDF00865251 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D516ED7EDF00865251 /* InfoViewController.m */; };
+		9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D816ED803000865251 /* NewsViewController.m */; };
+		9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DB16ED804600865251 /* SuggestionViewController.m */; };
+		9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DE16ED805300865251 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,14 +42,18 @@
 		9AFAA7BA16ED77DD00865251 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9AFAA7BC16ED77DD00865251 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9AFAA7BF16ED77DD00865251 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9AFAA7C116ED77DD00865251 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		9AFAA7C216ED77DD00865251 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		9AFAA7C416ED77DD00865251 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		9AFAA7C616ED77DD00865251 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		9AFAA7C816ED77DD00865251 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9AFAA7C916ED77DD00865251 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9AFAA7CB16ED77DD00865251 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		9AFAA7CD16ED77DD00865251 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		9AFAA7D416ED7EDF00865251 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		9AFAA7D516ED7EDF00865251 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		9AFAA7D716ED803000865251 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		9AFAA7D816ED803000865251 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		9AFAA7DA16ED804600865251 /* SuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionViewController.h; sourceTree = "<group>"; };
+		9AFAA7DB16ED804600865251 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
+		9AFAA7DD16ED805300865251 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9AFAA7DE16ED805300865251 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,17 +100,15 @@
 		9AFAA7AC16ED77DD00865251 /* financialDistrict */ = {
 			isa = PBXGroup;
 			children = (
-				9AFAA7B516ED77DD00865251 /* AppDelegate.h */,
-				9AFAA7B616ED77DD00865251 /* AppDelegate.m */,
 				9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */,
-				9AFAA7C116ED77DD00865251 /* FirstViewController.h */,
-				9AFAA7C216ED77DD00865251 /* FirstViewController.m */,
-				9AFAA7C416ED77DD00865251 /* first.png */,
-				9AFAA7C616ED77DD00865251 /* first@2x.png */,
-				9AFAA7C816ED77DD00865251 /* SecondViewController.h */,
-				9AFAA7C916ED77DD00865251 /* SecondViewController.m */,
-				9AFAA7CB16ED77DD00865251 /* second.png */,
-				9AFAA7CD16ED77DD00865251 /* second@2x.png */,
+				9AFAA7D416ED7EDF00865251 /* InfoViewController.h */,
+				9AFAA7D516ED7EDF00865251 /* InfoViewController.m */,
+				9AFAA7D716ED803000865251 /* NewsViewController.h */,
+				9AFAA7D816ED803000865251 /* NewsViewController.m */,
+				9AFAA7DA16ED804600865251 /* SuggestionViewController.h */,
+				9AFAA7DB16ED804600865251 /* SuggestionViewController.m */,
+				9AFAA7DD16ED805300865251 /* LoginViewController.h */,
+				9AFAA7DE16ED805300865251 /* LoginViewController.m */,
 				9AFAA7AD16ED77DD00865251 /* Supporting Files */,
 			);
 			path = financialDistrict;
@@ -113,6 +117,12 @@
 		9AFAA7AD16ED77DD00865251 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9AFAA7B516ED77DD00865251 /* AppDelegate.h */,
+				9AFAA7B616ED77DD00865251 /* AppDelegate.m */,
+				9AFAA7C416ED77DD00865251 /* first.png */,
+				9AFAA7C616ED77DD00865251 /* first@2x.png */,
+				9AFAA7CB16ED77DD00865251 /* second.png */,
+				9AFAA7CD16ED77DD00865251 /* second@2x.png */,
 				9AFAA7AE16ED77DD00865251 /* financialDistrict-Info.plist */,
 				9AFAA7AF16ED77DD00865251 /* InfoPlist.strings */,
 				9AFAA7B216ED77DD00865251 /* main.m */,
@@ -196,8 +206,10 @@
 			files = (
 				9AFAA7B316ED77DD00865251 /* main.m in Sources */,
 				9AFAA7B716ED77DD00865251 /* AppDelegate.m in Sources */,
-				9AFAA7C316ED77DD00865251 /* FirstViewController.m in Sources */,
-				9AFAA7CA16ED77DD00865251 /* SecondViewController.m in Sources */,
+				9AFAA7D616ED7EDF00865251 /* InfoViewController.m in Sources */,
+				9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */,
+				9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */,
+				9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SuggestionViewController.h
 //  financialDistrict
 //
 //  Created by USTB on 13-3-11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface SuggestionViewController : UIViewController
 
 @end

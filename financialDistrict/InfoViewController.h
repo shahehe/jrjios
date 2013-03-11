@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  InfoViewController.h
 //  financialDistrict
 //
 //  Created by USTB on 13-3-11.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface InfoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *infoTable;
 
 @end
