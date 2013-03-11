@@ -1,5 +1,5 @@
 //
-//  InfoViewController.h
+//  ProcedureViewController.h
 //  financialDistrict
 //
 //  Created by USTB on 13-3-11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UITableViewController
+@interface ProcedureViewController : UITableViewController
 
 @end

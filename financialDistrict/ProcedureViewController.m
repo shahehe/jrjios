@@ -1,18 +1,18 @@
 //
-//  InfoViewController.m
+//  ProcedureViewController.m
 //  financialDistrict
 //
 //  Created by USTB on 13-3-11.
 //  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
-#import "InfoViewController.h"
+#import "ProcedureViewController.h"
 
-@interface InfoViewController ()
+@interface ProcedureViewController ()
 
 @end
 
-@implementation InfoViewController
+@implementation ProcedureViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
