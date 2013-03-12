@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A08E45E16EEF663000710F5 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E45D16EEF663000710F5 /* test.txt */; };
+		9A08E46216EEFA0F000710F5 /* GongShangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E46116EEFA0F000710F5 /* GongShangViewController.m */; };
+		9A08E46516EEFA3E000710F5 /* TextOfGongShangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */; };
+		9A08E46E16EF0025000710F5 /* gongshang0 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46616EF0025000710F5 /* gongshang0 */; };
+		9A08E46F16EF0025000710F5 /* gongshang1 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46716EF0025000710F5 /* gongshang1 */; };
+		9A08E47016EF0025000710F5 /* gongshang2 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46816EF0025000710F5 /* gongshang2 */; };
+		9A08E47116EF0025000710F5 /* gongshang3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46916EF0025000710F5 /* gongshang3 */; };
+		9A08E47216EF0025000710F5 /* gongshang4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46A16EF0025000710F5 /* gongshang4 */; };
+		9A08E47316EF0025000710F5 /* gongshang5 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46B16EF0025000710F5 /* gongshang5 */; };
+		9A08E47416EF0025000710F5 /* gongshang6 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46C16EF0025000710F5 /* gongshang6 */; };
+		9A08E47516EF0025000710F5 /* gongshang7 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46D16EF0025000710F5 /* gongshang7 */; };
 		9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */; };
 		9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */; };
 		9AD6067C16EDECE700F2CCD8 /* procedure0 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6066F16EDECE700F2CCD8 /* procedure0 */; };
@@ -44,6 +55,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A08E45D16EEF663000710F5 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		9A08E46016EEFA0F000710F5 /* GongShangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GongShangViewController.h; sourceTree = "<group>"; };
+		9A08E46116EEFA0F000710F5 /* GongShangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GongShangViewController.m; sourceTree = "<group>"; };
+		9A08E46316EEFA3E000710F5 /* TextOfGongShangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextOfGongShangViewController.h; sourceTree = "<group>"; };
+		9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextOfGongShangViewController.m; sourceTree = "<group>"; };
+		9A08E46616EF0025000710F5 /* gongshang0 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang0; sourceTree = "<group>"; };
+		9A08E46716EF0025000710F5 /* gongshang1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang1; sourceTree = "<group>"; };
+		9A08E46816EF0025000710F5 /* gongshang2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang2; sourceTree = "<group>"; };
+		9A08E46916EF0025000710F5 /* gongshang3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang3; sourceTree = "<group>"; };
+		9A08E46A16EF0025000710F5 /* gongshang4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang4; sourceTree = "<group>"; };
+		9A08E46B16EF0025000710F5 /* gongshang5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang5; sourceTree = "<group>"; };
+		9A08E46C16EF0025000710F5 /* gongshang6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang6; sourceTree = "<group>"; };
+		9A08E46D16EF0025000710F5 /* gongshang7 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang7; sourceTree = "<group>"; };
 		9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		9AD6065C16EDBF8900F2CCD8 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
@@ -136,12 +160,16 @@
 			isa = PBXGroup;
 			children = (
 				9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */,
+				9A08E46016EEFA0F000710F5 /* GongShangViewController.h */,
+				9A08E46116EEFA0F000710F5 /* GongShangViewController.m */,
+				9A08E46316EEFA3E000710F5 /* TextOfGongShangViewController.h */,
+				9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */,
+				9AD6068A16EDEE3200F2CCD8 /* ProcedureViewController.h */,
+				9AD6068B16EDEE3200F2CCD8 /* ProcedureViewController.m */,
 				9AD6069016EDF5D100F2CCD8 /* TextOfProcedureViewController.h */,
 				9AD6069116EDF5D100F2CCD8 /* TextOfProcedureViewController.m */,
 				9AD6065C16EDBF8900F2CCD8 /* IntroViewController.h */,
 				9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */,
-				9AD6068A16EDEE3200F2CCD8 /* ProcedureViewController.h */,
-				9AD6068B16EDEE3200F2CCD8 /* ProcedureViewController.m */,
 				9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */,
 				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
 				9AFAA7D716ED803000865251 /* NewsViewController.h */,
@@ -158,6 +186,7 @@
 		9AFAA7AD16ED77DD00865251 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A08E45D16EEF663000710F5 /* test.txt */,
 				9AD6066F16EDECE700F2CCD8 /* procedure0 */,
 				9AD6067016EDECE700F2CCD8 /* procedure1 */,
 				9AD6067116EDECE700F2CCD8 /* procedure2 */,
@@ -171,6 +200,14 @@
 				9AD6067916EDECE700F2CCD8 /* procedure10 */,
 				9AD6067A16EDECE700F2CCD8 /* procedure11 */,
 				9AD6067B16EDECE700F2CCD8 /* procedure12 */,
+				9A08E46616EF0025000710F5 /* gongshang0 */,
+				9A08E46716EF0025000710F5 /* gongshang1 */,
+				9A08E46816EF0025000710F5 /* gongshang2 */,
+				9A08E46916EF0025000710F5 /* gongshang3 */,
+				9A08E46A16EF0025000710F5 /* gongshang4 */,
+				9A08E46B16EF0025000710F5 /* gongshang5 */,
+				9A08E46C16EF0025000710F5 /* gongshang6 */,
+				9A08E46D16EF0025000710F5 /* gongshang7 */,
 				9AFAA7B516ED77DD00865251 /* AppDelegate.h */,
 				9AFAA7B616ED77DD00865251 /* AppDelegate.m */,
 				9AFAA7C416ED77DD00865251 /* first.png */,
@@ -261,6 +298,15 @@
 				9AD6068616EDECE700F2CCD8 /* procedure10 in Resources */,
 				9AD6068716EDECE700F2CCD8 /* procedure11 in Resources */,
 				9AD6068816EDECE700F2CCD8 /* procedure12 in Resources */,
+				9A08E45E16EEF663000710F5 /* test.txt in Resources */,
+				9A08E46E16EF0025000710F5 /* gongshang0 in Resources */,
+				9A08E46F16EF0025000710F5 /* gongshang1 in Resources */,
+				9A08E47016EF0025000710F5 /* gongshang2 in Resources */,
+				9A08E47116EF0025000710F5 /* gongshang3 in Resources */,
+				9A08E47216EF0025000710F5 /* gongshang4 in Resources */,
+				9A08E47316EF0025000710F5 /* gongshang5 in Resources */,
+				9A08E47416EF0025000710F5 /* gongshang6 in Resources */,
+				9A08E47516EF0025000710F5 /* gongshang7 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +326,8 @@
 				9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */,
 				9AD6068C16EDEE3200F2CCD8 /* ProcedureViewController.m in Sources */,
 				9AD6069216EDF5D100F2CCD8 /* TextOfProcedureViewController.m in Sources */,
+				9A08E46216EEFA0F000710F5 /* GongShangViewController.m in Sources */,
+				9A08E46516EEFA3E000710F5 /* TextOfGongShangViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

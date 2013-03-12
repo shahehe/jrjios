@@ -1,20 +1,22 @@
 //
-//  IntroViewController.m
+//  TextOfGongShangViewController.m
 //  financialDistrict
 //
-//  Created by USTB on 13-3-11.
+//  Created by USTB on 13-3-12.
 //  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
-#import "IntroViewController.h"
+#import "TextOfGongShangViewController.h"
 
-@interface IntroViewController ()
+@interface TextOfGongShangViewController ()
 
 @end
 
-@implementation IntroViewController
+@implementation TextOfGongShangViewController
 
-@synthesize introText;
+@synthesize fileNumberGS;
+@synthesize titleNameGS;
+@synthesize gongShangText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,18 +31,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    introText.editable = NO;
-    NSString* fileName = @"test";
-    
+    gongShangText.editable = NO;
+    NSString* fileName = [NSString stringWithFormat:@"gongshang%d",fileNumberGS];
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName
-                                                     ofType:@"txt"];
+                                                     ofType:@""];
     NSString* content = [NSString stringWithContentsOfFile:path
-                                                  encoding:NSUTF8StringEncoding
-                                                     error:NULL];
-    
-    
-    introText.text = content;
-    
+                                                  encoding:NSUTF8StringEncoding error:NULL];
+    gongShangText.text = [NSString stringWithFormat:@"%@\n%@",titleNameGS,content];
 }
 
 - (void)didReceiveMemoryWarning

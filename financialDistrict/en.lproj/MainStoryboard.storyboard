@@ -61,7 +61,68 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obV-Wy-6eP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-1353"/>
+            <point key="canvasLocation" x="2208" y="-1631"/>
+        </scene>
+        <!--Gong Shang View Controller-->
+        <scene sceneID="sFK-9p-yLz">
+            <objects>
+                <tableViewController storyboardIdentifier="GongShangVC" id="LnH-KP-80w" customClass="GongShangViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fXy-yD-ISC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GongShangCell" id="l7v-yT-4tu">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LnH-KP-80w" id="t2T-2L-UZZ"/>
+                            <outlet property="delegate" destination="LnH-KP-80w" id="B3A-v0-Enb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EwF-Vz-fRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2213" y="-921"/>
+        </scene>
+        <!--Text Of Gong Shang View Controller-->
+        <scene sceneID="f2Q-XI-joh">
+            <objects>
+                <viewController storyboardIdentifier="TextGSVC" id="Uhb-pe-pFH" customClass="TextOfGongShangViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ar4-Fa-WXB">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="这里是各种工商业务办理条例" translatesAutoresizingMaskIntoConstraints="NO" id="9eI-eA-wBz">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="373" id="yEW-s1-dGC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9eI-eA-wBz" firstAttribute="leading" secondItem="Ar4-Fa-WXB" secondAttribute="leading" type="default" id="QbL-an-Iyf"/>
+                            <constraint firstItem="9eI-eA-wBz" firstAttribute="trailing" secondItem="Ar4-Fa-WXB" secondAttribute="trailing" type="default" id="bPS-lr-WB3"/>
+                            <constraint firstItem="9eI-eA-wBz" firstAttribute="bottom" secondItem="Ar4-Fa-WXB" secondAttribute="bottom" type="default" id="mME-zn-7ro"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gongShangText" destination="9eI-eA-wBz" id="JiV-D0-mBm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSA-ao-JgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2646" y="-921"/>
         </scene>
         <!--Text Of Procedure View Controller-->
         <scene sceneID="Ech-Y5-tyJ">
@@ -74,7 +135,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="这里是各种办事程序条例" translatesAutoresizingMaskIntoConstraints="NO" id="Bp8-3x-CBD">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="gAR-or-2xr"/>
+                                    <constraint firstAttribute="height" constant="373" id="liG-lw-rNN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -93,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukW-Il-M6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="-1353"/>
+            <point key="canvasLocation" x="2646" y="-1631"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="jXM-cK-O4w">
@@ -103,29 +164,29 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahp-ua-PIZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="这里是简介" translatesAutoresizingMaskIntoConstraints="NO" id="Ahp-ua-PIZ">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="508" id="cW5-In-d1h"/>
+                                    <constraint firstAttribute="height" constant="504" id="77y-19-FXb"/>
                                 </constraints>
-                                <string key="text">金融街街道是2004年9月经北京市政府批准由原二龙路街道与丰盛街道合并成立的。
-
-金融街街道位于北京市西城区中部，东至西四南大街、西单北大街；西临西二环路，南以宣武门西大街为界，北至阜成门内大街，总面积3.78平方公里。街道下辖19个社区，辖区内户籍居民40897户，常住人口65800人，外来人口18085人；总从业人员21.7万人。辖区内总部云集，有商务楼宇46座，各类企业总部和地区总部多达153家，金融资产总规模达55.5万亿，占全国的一半以上；控制着全国95%的信贷资金和65%的保险资金；对全市三级税收总量的贡献率多达1/3。是西城区资金、技术、知识密集度最高的地区之一。辖区内中央单位多，优质教育资源丰富：全国政协、教育部、国家民委、国土资源部、新华社等中央单位，中央音乐学院、北师大附属实验中学、北京八中、实验二小等教育机构都坐落于此。辖区内还有京师女子师范学堂旧址等15处文保单位。形成了历史与现代相容、传统与时尚并存的特点。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ahp-ua-PIZ" firstAttribute="top" secondItem="3yT-51-MlI" secondAttribute="top" type="default" id="S8G-vE-oT3"/>
+                            <constraint firstItem="Ahp-ua-PIZ" firstAttribute="top" secondItem="3yT-51-MlI" secondAttribute="top" type="default" id="RCA-IH-12a"/>
                             <constraint firstItem="Ahp-ua-PIZ" firstAttribute="trailing" secondItem="3yT-51-MlI" secondAttribute="trailing" type="default" id="Uaf-Jc-hN9"/>
                             <constraint firstItem="Ahp-ua-PIZ" firstAttribute="leading" secondItem="3yT-51-MlI" secondAttribute="leading" type="default" id="sWy-rC-vXi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="introText" destination="Ahp-ua-PIZ" id="jhf-m2-FXC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPa-xb-ufS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="-2094"/>
+            <point key="canvasLocation" x="2208" y="-2342"/>
         </scene>
         <!--News View Controller - 动态公告-->
         <scene sceneID="13">
@@ -216,6 +277,47 @@
     <resources>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="GongShangViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GongShangViewController.h"/>
+        </class>
+        <class className="InfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+        </class>
+        <class className="IntroViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IntroViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="introText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
+        <class className="ProcedureViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProcedureViewController.h"/>
+        </class>
+        <class className="SuggestionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SuggestionViewController.h"/>
+        </class>
+        <class className="TextOfGongShangViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfGongShangViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gongShangText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="TextOfProcedureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfProcedureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="procedureText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

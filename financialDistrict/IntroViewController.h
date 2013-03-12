@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface IntroViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *introText;
 
 @end

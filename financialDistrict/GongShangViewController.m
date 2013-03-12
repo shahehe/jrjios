@@ -1,23 +1,21 @@
 //
-//  InfoViewController.m
+//  GongShangViewController.m
 //  financialDistrict
 //
-//  Created by USTB on 13-3-11.
+//  Created by USTB on 13-3-12.
 //  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
-#import "InfoViewController.h"
-#import "IntroViewController.h"
-#import "ProcedureViewController.h"
 #import "GongShangViewController.h"
+#import "TextOfGongShangViewController.h"
 
-@interface InfoViewController ()
+@interface GongShangViewController ()
 
 @end
 
-@implementation InfoViewController
+@implementation GongShangViewController
 
-@synthesize infoMenu;
+@synthesize gongshangMenu;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,10 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-     
-    infoMenu = [NSMutableArray arrayWithObjects:@"金融街简介",@"办事程序",@"联系电话",@"宇翔图册",@"工商业务办理", nil];
     
+    gongshangMenu = [NSMutableArray arrayWithObjects:@"个体工商户设立登记",@"个体工商户变更登记",@"个体工商户注销登记",@"食品流通许可设立",@"食品流通许可变更",@"食品流通许可注销",@"如何进行投诉举报",nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,28 +52,23 @@
 
     // Return the number of sections.
     return 1;
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
     // Return the number of rows in the section.
-    return [self.infoMenu count];
+    return [self.gongshangMenu count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    static NSString *CellIdentifier = @"InfoCell";
-
+    static NSString *CellIdentifier = @"GongShangCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = [self.gongshangMenu objectAtIndex:indexPath.row];
     
-
-    cell.textLabel.text = [self.infoMenu objectAtIndex:indexPath.row];
-
     return cell;
 }
 
@@ -124,34 +115,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    TextOfGongShangViewController *textGSVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TextGSVC"];
     
-    NSInteger row = [indexPath row];
-    switch(row){
-        case 0:{
-            IntroViewController *introVC = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroVC"];
-            [self.navigationController pushViewController:introVC animated:YES];
-            break;
-        }
-        case 1:{
-            ProcedureViewController *procedureVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProcedureVC"];
-            [self.navigationController pushViewController:procedureVC animated:YES];
-            break;
-        }
-        case 2:{
-            break;
-        }
-        case 3:{
-            break;
-        }
-        case 4:{
-            GongShangViewController *gongshangVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GongShangVC"];
-            [self.navigationController pushViewController:gongshangVC animated:YES];
-            break;
-        }
-    }
-
+    textGSVC.fileNumberGS = [indexPath row];
+    textGSVC.titleNameGS = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    [self.navigationController pushViewController:textGSVC animated:YES];
     
-
+    
 }
 
 @end

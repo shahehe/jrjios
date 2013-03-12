@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    procedureText.editable = NO;
 
     NSString* fileName = [NSString stringWithFormat:@"%@%d",@"procedure",fileNumber];
     
