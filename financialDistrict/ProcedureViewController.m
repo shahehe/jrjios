@@ -1,21 +1,21 @@
 //
-//  InfoViewController.m
+//  ProcedureViewController.m
 //  financialDistrict
 //
 //  Created by USTB on 13-3-11.
 //  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
-#import "InfoViewController.h"
-#import "IntroViewController.h"
+#import "ProcedureViewController.h"
+#import "TextOfProcedureViewController.h"
 
-@interface InfoViewController ()
+@interface ProcedureViewController ()
 
 @end
 
-@implementation InfoViewController
+@implementation ProcedureViewController
 
-@synthesize infoMenu;
+@synthesize procedureMenu;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,10 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     
-    infoMenu = [NSMutableArray arrayWithObjects:@"金融街简介",@"办事程序",@"联系电话",@"宇翔图册",@"工商业务办理", nil];
     
-    
+    procedureMenu = [NSMutableArray arrayWithObjects:@"办理\"一小\"大病医疗保险",@"人口与计生",@"办理子女关系证明",@"党群事务",@"办理\"一老\"医保依据和流程",@"失业人员档案转移管理",@"社会事务",@"办理职业介绍",@"办理居民低谷电补贴",@"办理失业人员开具证明",@"办理社会化退休人员开具证明",@"办理《就业失业登记证》",nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,17 +56,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.infoMenu count];
+    return [self.procedureMenu count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"InfoCell";
+    static NSString *CellIdentifier = @"ProcedureCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
-    cell.textLabel.text = [self.infoMenu objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.procedureMenu objectAtIndex:indexPath.row];
+
     
     return cell;
 }
@@ -116,34 +115,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    TextOfProcedureViewController *textProcedureVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TextPVC"];
     
-    NSInteger row = [indexPath row];
-    switch(row){
-        case 0:{
-            IntroViewController *introVC = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroVC"];
-            [self.navigationController pushViewController:introVC animated:YES];
-            break;
-        }
-        case 1:{
-            IntroViewController *procedureVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProcedureVC"];
-            [self.navigationController pushViewController:procedureVC animated:YES];
-            break;
-        }
-        case 2:{
-            break;
-        }
-        case 3:{
-            break;
-        }
-        case 4:{
-            break;
-        }
-    }
-
-    
-
-
-
+    textProcedureVC.fileNumber = [indexPath row];
+    textProcedureVC.titleName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    [self.navigationController pushViewController:textProcedureVC animated:YES];
 }
 
 @end

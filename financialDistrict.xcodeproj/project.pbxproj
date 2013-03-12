@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */; };
+		9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */; };
+		9AD6067C16EDECE700F2CCD8 /* procedure0 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6066F16EDECE700F2CCD8 /* procedure0 */; };
+		9AD6067D16EDECE700F2CCD8 /* procedure1 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067016EDECE700F2CCD8 /* procedure1 */; };
+		9AD6067E16EDECE700F2CCD8 /* procedure2 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067116EDECE700F2CCD8 /* procedure2 */; };
+		9AD6067F16EDECE700F2CCD8 /* procedure3 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067216EDECE700F2CCD8 /* procedure3 */; };
+		9AD6068016EDECE700F2CCD8 /* procedure4 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067316EDECE700F2CCD8 /* procedure4 */; };
+		9AD6068116EDECE700F2CCD8 /* procedure5 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067416EDECE700F2CCD8 /* procedure5 */; };
+		9AD6068216EDECE700F2CCD8 /* procedure6 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067516EDECE700F2CCD8 /* procedure6 */; };
+		9AD6068316EDECE700F2CCD8 /* procedure7 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067616EDECE700F2CCD8 /* procedure7 */; };
+		9AD6068416EDECE700F2CCD8 /* procedure8 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067716EDECE700F2CCD8 /* procedure8 */; };
+		9AD6068516EDECE700F2CCD8 /* procedure9 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067816EDECE700F2CCD8 /* procedure9 */; };
+		9AD6068616EDECE700F2CCD8 /* procedure10 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067916EDECE700F2CCD8 /* procedure10 */; };
+		9AD6068716EDECE700F2CCD8 /* procedure11 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067A16EDECE700F2CCD8 /* procedure11 */; };
+		9AD6068816EDECE700F2CCD8 /* procedure12 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067B16EDECE700F2CCD8 /* procedure12 */; };
+		9AD6068C16EDEE3200F2CCD8 /* ProcedureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6068B16EDEE3200F2CCD8 /* ProcedureViewController.m */; };
+		9AD6069216EDF5D100F2CCD8 /* TextOfProcedureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6069116EDF5D100F2CCD8 /* TextOfProcedureViewController.m */; };
 		9AFAA7A716ED77DD00865251 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFAA7A616ED77DD00865251 /* UIKit.framework */; };
 		9AFAA7A916ED77DD00865251 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFAA7A816ED77DD00865251 /* Foundation.framework */; };
 		9AFAA7AB16ED77DD00865251 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFAA7AA16ED77DD00865251 /* CoreGraphics.framework */; };
@@ -21,13 +38,33 @@
 		9AFAA7C716ED77DD00865251 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C616ED77DD00865251 /* first@2x.png */; };
 		9AFAA7CC16ED77DD00865251 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CB16ED77DD00865251 /* second.png */; };
 		9AFAA7CE16ED77DD00865251 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CD16ED77DD00865251 /* second@2x.png */; };
-		9AFAA7D616ED7EDF00865251 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D516ED7EDF00865251 /* InfoViewController.m */; };
 		9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D816ED803000865251 /* NewsViewController.m */; };
 		9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DB16ED804600865251 /* SuggestionViewController.m */; };
 		9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DE16ED805300865251 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		9AD6065C16EDBF8900F2CCD8 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		9AD6066F16EDECE700F2CCD8 /* procedure0 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure0; sourceTree = "<group>"; };
+		9AD6067016EDECE700F2CCD8 /* procedure1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure1; sourceTree = "<group>"; };
+		9AD6067116EDECE700F2CCD8 /* procedure2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure2; sourceTree = "<group>"; };
+		9AD6067216EDECE700F2CCD8 /* procedure3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure3; sourceTree = "<group>"; };
+		9AD6067316EDECE700F2CCD8 /* procedure4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure4; sourceTree = "<group>"; };
+		9AD6067416EDECE700F2CCD8 /* procedure5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure5; sourceTree = "<group>"; };
+		9AD6067516EDECE700F2CCD8 /* procedure6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure6; sourceTree = "<group>"; };
+		9AD6067616EDECE700F2CCD8 /* procedure7 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure7; sourceTree = "<group>"; };
+		9AD6067716EDECE700F2CCD8 /* procedure8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure8; sourceTree = "<group>"; };
+		9AD6067816EDECE700F2CCD8 /* procedure9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure9; sourceTree = "<group>"; };
+		9AD6067916EDECE700F2CCD8 /* procedure10 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure10; sourceTree = "<group>"; };
+		9AD6067A16EDECE700F2CCD8 /* procedure11 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure11; sourceTree = "<group>"; };
+		9AD6067B16EDECE700F2CCD8 /* procedure12 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure12; sourceTree = "<group>"; };
+		9AD6068A16EDEE3200F2CCD8 /* ProcedureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcedureViewController.h; sourceTree = "<group>"; };
+		9AD6068B16EDEE3200F2CCD8 /* ProcedureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcedureViewController.m; sourceTree = "<group>"; };
+		9AD6069016EDF5D100F2CCD8 /* TextOfProcedureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextOfProcedureViewController.h; sourceTree = "<group>"; };
+		9AD6069116EDF5D100F2CCD8 /* TextOfProcedureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextOfProcedureViewController.m; sourceTree = "<group>"; };
 		9AFAA7A216ED77DD00865251 /* financialDistrict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = financialDistrict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFAA7A616ED77DD00865251 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9AFAA7A816ED77DD00865251 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,8 +83,6 @@
 		9AFAA7C616ED77DD00865251 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		9AFAA7CB16ED77DD00865251 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		9AFAA7CD16ED77DD00865251 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		9AFAA7D416ED7EDF00865251 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		9AFAA7D516ED7EDF00865251 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		9AFAA7D716ED803000865251 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		9AFAA7D816ED803000865251 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		9AFAA7DA16ED804600865251 /* SuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionViewController.h; sourceTree = "<group>"; };
@@ -101,8 +136,14 @@
 			isa = PBXGroup;
 			children = (
 				9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */,
-				9AFAA7D416ED7EDF00865251 /* InfoViewController.h */,
-				9AFAA7D516ED7EDF00865251 /* InfoViewController.m */,
+				9AD6069016EDF5D100F2CCD8 /* TextOfProcedureViewController.h */,
+				9AD6069116EDF5D100F2CCD8 /* TextOfProcedureViewController.m */,
+				9AD6065C16EDBF8900F2CCD8 /* IntroViewController.h */,
+				9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */,
+				9AD6068A16EDEE3200F2CCD8 /* ProcedureViewController.h */,
+				9AD6068B16EDEE3200F2CCD8 /* ProcedureViewController.m */,
+				9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */,
+				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
 				9AFAA7D716ED803000865251 /* NewsViewController.h */,
 				9AFAA7D816ED803000865251 /* NewsViewController.m */,
 				9AFAA7DA16ED804600865251 /* SuggestionViewController.h */,
@@ -117,6 +158,19 @@
 		9AFAA7AD16ED77DD00865251 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6066F16EDECE700F2CCD8 /* procedure0 */,
+				9AD6067016EDECE700F2CCD8 /* procedure1 */,
+				9AD6067116EDECE700F2CCD8 /* procedure2 */,
+				9AD6067216EDECE700F2CCD8 /* procedure3 */,
+				9AD6067316EDECE700F2CCD8 /* procedure4 */,
+				9AD6067416EDECE700F2CCD8 /* procedure5 */,
+				9AD6067516EDECE700F2CCD8 /* procedure6 */,
+				9AD6067616EDECE700F2CCD8 /* procedure7 */,
+				9AD6067716EDECE700F2CCD8 /* procedure8 */,
+				9AD6067816EDECE700F2CCD8 /* procedure9 */,
+				9AD6067916EDECE700F2CCD8 /* procedure10 */,
+				9AD6067A16EDECE700F2CCD8 /* procedure11 */,
+				9AD6067B16EDECE700F2CCD8 /* procedure12 */,
 				9AFAA7B516ED77DD00865251 /* AppDelegate.h */,
 				9AFAA7B616ED77DD00865251 /* AppDelegate.m */,
 				9AFAA7C416ED77DD00865251 /* first.png */,
@@ -194,6 +248,19 @@
 				9AFAA7C716ED77DD00865251 /* first@2x.png in Resources */,
 				9AFAA7CC16ED77DD00865251 /* second.png in Resources */,
 				9AFAA7CE16ED77DD00865251 /* second@2x.png in Resources */,
+				9AD6067C16EDECE700F2CCD8 /* procedure0 in Resources */,
+				9AD6067D16EDECE700F2CCD8 /* procedure1 in Resources */,
+				9AD6067E16EDECE700F2CCD8 /* procedure2 in Resources */,
+				9AD6067F16EDECE700F2CCD8 /* procedure3 in Resources */,
+				9AD6068016EDECE700F2CCD8 /* procedure4 in Resources */,
+				9AD6068116EDECE700F2CCD8 /* procedure5 in Resources */,
+				9AD6068216EDECE700F2CCD8 /* procedure6 in Resources */,
+				9AD6068316EDECE700F2CCD8 /* procedure7 in Resources */,
+				9AD6068416EDECE700F2CCD8 /* procedure8 in Resources */,
+				9AD6068516EDECE700F2CCD8 /* procedure9 in Resources */,
+				9AD6068616EDECE700F2CCD8 /* procedure10 in Resources */,
+				9AD6068716EDECE700F2CCD8 /* procedure11 in Resources */,
+				9AD6068816EDECE700F2CCD8 /* procedure12 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,10 +273,13 @@
 			files = (
 				9AFAA7B316ED77DD00865251 /* main.m in Sources */,
 				9AFAA7B716ED77DD00865251 /* AppDelegate.m in Sources */,
-				9AFAA7D616ED7EDF00865251 /* InfoViewController.m in Sources */,
 				9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */,
 				9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */,
 				9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */,
+				9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */,
+				9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */,
+				9AD6068C16EDEE3200F2CCD8 /* ProcedureViewController.m in Sources */,
+				9AD6069216EDF5D100F2CCD8 /* TextOfProcedureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +396,7 @@
 				9AFAA7D316ED77DD00865251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

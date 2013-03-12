@@ -1,5 +1,5 @@
 //
-//  InfoViewController.h
+//  IntroViewController.h
 //  financialDistrict
 //
 //  Created by USTB on 13-3-11.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UITableViewController
-
-@property (nonatomic,strong) NSMutableArray *infoMenu;
+@interface IntroViewController : UIViewController
 
 @end
