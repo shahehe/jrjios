@@ -10,10 +10,13 @@
 
 @interface TextOfProcedureViewController : UIViewController
 
+<<<<<<< HEAD
 @property  int fileNumber;
 @property  (strong,nonatomic) NSString* titleName;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *procedureText;
 
+=======
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 @end

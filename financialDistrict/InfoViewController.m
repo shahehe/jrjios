@@ -15,8 +15,11 @@
 
 @implementation InfoViewController
 
+<<<<<<< HEAD
 @synthesize infoMenu;
 
+=======
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -29,10 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
      
     infoMenu = [NSMutableArray arrayWithObjects:@"金融街简介",@"办事程序",@"联系电话",@"宇翔图册",@"工商业务办理", nil];
     
     
+=======
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,25 +57,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+<<<<<<< HEAD
     // Return the number of sections.
     return 1;
+=======
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+<<<<<<< HEAD
     // Return the number of rows in the section.
     return [self.infoMenu count];
+=======
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
     static NSString *CellIdentifier = @"InfoCell";
+=======
+    static NSString *CellIdentifier = @"Cell";
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
+<<<<<<< HEAD
     cell.textLabel.text = [self.infoMenu objectAtIndex:indexPath.row];
     
+=======
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
     return cell;
 }
 
@@ -116,6 +141,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
     
     NSInteger row = [indexPath row];
     switch(row){
@@ -144,6 +170,15 @@
 
 
 
+=======
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 }
 
 @end

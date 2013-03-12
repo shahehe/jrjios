@@ -14,11 +14,14 @@
 
 @implementation TextOfProcedureViewController
 
+<<<<<<< HEAD
 @synthesize fileNumber;
 @synthesize titleName;
 @synthesize procedureText;
 
 
+=======
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+<<<<<<< HEAD
     NSString* fileName = [NSString stringWithFormat:@"%@%d",@"procedure",fileNumber];
     
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName
@@ -43,6 +47,8 @@
     
     procedureText.text = [NSString stringWithFormat:@"%@\n%@",titleName,content];
   
+=======
+>>>>>>> 674030f6ebc61d1d9f0a371b2e82b54139107eb1
 }
 
 - (void)didReceiveMemoryWarning
