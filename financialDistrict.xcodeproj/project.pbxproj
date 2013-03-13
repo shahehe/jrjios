@@ -52,6 +52,9 @@
 		9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D816ED803000865251 /* NewsViewController.m */; };
 		9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DB16ED804600865251 /* SuggestionViewController.m */; };
 		9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DE16ED805300865251 /* LoginViewController.m */; };
+		9AFC31F816F01B5400DE4174 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AFC31F716F01B5400DE4174 /* strings.json */; };
+		9AFC320216F03C1000DE4174 /* StringsJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC320116F03C1000DE4174 /* StringsJsonParser.m */; };
+		9AFC320D16F0580900DE4174 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC320C16F0580900DE4174 /* PhoneViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +116,11 @@
 		9AFAA7DB16ED804600865251 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		9AFAA7DD16ED805300865251 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9AFAA7DE16ED805300865251 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9AFC31F716F01B5400DE4174 /* strings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings.json; sourceTree = "<group>"; };
+		9AFC320016F03C1000DE4174 /* StringsJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringsJsonParser.h; sourceTree = "<group>"; };
+		9AFC320116F03C1000DE4174 /* StringsJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringsJsonParser.m; sourceTree = "<group>"; };
+		9AFC320B16F0580900DE4174 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
+		9AFC320C16F0580900DE4174 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +169,11 @@
 			children = (
 				9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */,
 				9A08E46016EEFA0F000710F5 /* GongShangViewController.h */,
+				9AFC320016F03C1000DE4174 /* StringsJsonParser.h */,
+				9AFC320116F03C1000DE4174 /* StringsJsonParser.m */,
 				9A08E46116EEFA0F000710F5 /* GongShangViewController.m */,
+				9AFC320B16F0580900DE4174 /* PhoneViewController.h */,
+				9AFC320C16F0580900DE4174 /* PhoneViewController.m */,
 				9A08E46316EEFA3E000710F5 /* TextOfGongShangViewController.h */,
 				9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */,
 				9AD6068A16EDEE3200F2CCD8 /* ProcedureViewController.h */,
@@ -187,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				9A08E45D16EEF663000710F5 /* test.txt */,
+				9AFC31F716F01B5400DE4174 /* strings.json */,
 				9AD6066F16EDECE700F2CCD8 /* procedure0 */,
 				9AD6067016EDECE700F2CCD8 /* procedure1 */,
 				9AD6067116EDECE700F2CCD8 /* procedure2 */,
@@ -307,6 +320,7 @@
 				9A08E47316EF0025000710F5 /* gongshang5 in Resources */,
 				9A08E47416EF0025000710F5 /* gongshang6 in Resources */,
 				9A08E47516EF0025000710F5 /* gongshang7 in Resources */,
+				9AFC31F816F01B5400DE4174 /* strings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +342,8 @@
 				9AD6069216EDF5D100F2CCD8 /* TextOfProcedureViewController.m in Sources */,
 				9A08E46216EEFA0F000710F5 /* GongShangViewController.m in Sources */,
 				9A08E46516EEFA3E000710F5 /* TextOfGongShangViewController.m in Sources */,
+				9AFC320216F03C1000DE4174 /* StringsJsonParser.m in Sources */,
+				9AFC320D16F0580900DE4174 /* PhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

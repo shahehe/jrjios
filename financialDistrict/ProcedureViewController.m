@@ -32,10 +32,6 @@
 {
     [super viewDidLoad];
 
-    
-    procedureMenu = [NSMutableArray arrayWithObjects:@"办理\"一小\"大病医疗保险",@"人口与计生",@"办理子女关系证明",@"党群事务",@"办理\"一老\"医保依据和流程",@"失业人员档案转移管理",@"社会事务",@"办理职业介绍",@"办理居民低谷电补贴",@"办理失业人员开具证明",@"办理社会化退休人员开具证明",@"办理《就业失业登记证》",nil];
-
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

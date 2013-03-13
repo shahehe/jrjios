@@ -10,14 +10,26 @@
 #import "IntroViewController.h"
 #import "ProcedureViewController.h"
 #import "GongShangViewController.h"
+#import "PhoneViewController.h"
+#import "StringsJsonParser.h"
 
 @interface InfoViewController ()
+
+@property (nonatomic,strong) NSMutableArray *procedureArray;
+@property (nonatomic,strong) NSMutableArray *gongshangArray;
+@property (nonatomic,strong) NSMutableArray *phoneNamesArray;
+@property (nonatomic,strong) NSMutableArray *phoneNumbersArray;
 
 @end
 
 @implementation InfoViewController
 
 @synthesize infoMenu;
+@synthesize stringsDictionary;
+@synthesize procedureArray;
+@synthesize gongshangArray;
+@synthesize phoneNamesArray;
+@synthesize phoneNumbersArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,13 +40,35 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-     
+    
     infoMenu = [NSMutableArray arrayWithObjects:@"金融街简介",@"办事程序",@"联系电话",@"宇翔图册",@"工商业务办理", nil];
     
+
+    stringsDictionary = [StringsJsonParser parseStringsJson];
+    NSArray *dicArray = [stringsDictionary objectForKey:@"string-array"];
+    for(NSDictionary* dic in dicArray){
+        if([[dic valueForKey:@"name"] isEqualToString:@"procedure_array"]){
+            procedureArray = [dic valueForKey:@"item"];
+        }
+        else if([[dic valueForKey:@"name"] isEqualToString:@"gongshang_array"]){
+            gongshangArray = [dic valueForKey:@"item"];
+        }
+        else if([[dic valueForKey:@"name"] isEqualToString:@"phone_names"]){
+            phoneNamesArray = [dic valueForKey:@"item"];
+        }
+        else if([[dic valueForKey:@"name"] isEqualToString:@"phone_nums"]){
+            phoneNumbersArray = [dic valueForKey:@"item"];
+        }
+
+    }
+    
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -134,10 +168,15 @@
         }
         case 1:{
             ProcedureViewController *procedureVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProcedureVC"];
+            procedureVC.procedureMenu =procedureArray;
             [self.navigationController pushViewController:procedureVC animated:YES];
             break;
         }
         case 2:{
+            PhoneViewController *phoneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneVC"];
+            phoneVC.contactsMenu =phoneNamesArray;
+            phoneVC.numbersMenu =phoneNumbersArray;
+            [self.navigationController pushViewController:phoneVC animated:YES];
             break;
         }
         case 3:{
@@ -145,6 +184,7 @@
         }
         case 4:{
             GongShangViewController *gongshangVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GongShangVC"];
+            gongshangVC.gongshangMenu =gongshangArray;
             [self.navigationController pushViewController:gongshangVC animated:YES];
             break;
         }

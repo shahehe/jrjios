@@ -10,4 +10,7 @@
 
 @interface PhoneViewController : UITableViewController
 
+@property (nonatomic,strong) NSMutableArray *contactsMenu;
+@property (nonatomic,strong) NSMutableArray *numbersMenu;
+
 @end

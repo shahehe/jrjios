@@ -29,8 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    gongshangMenu = [NSMutableArray arrayWithObjects:@"个体工商户设立登记",@"个体工商户变更登记",@"个体工商户注销登记",@"食品流通许可设立",@"食品流通许可变更",@"食品流通许可注销",@"如何进行投诉举报",nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

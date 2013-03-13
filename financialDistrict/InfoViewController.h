@@ -11,5 +11,7 @@
 @interface InfoViewController : UITableViewController
 @property (nonatomic,strong) NSMutableArray *infoMenu;
 
+@property (nonatomic,strong) NSDictionary *stringsDictionary;
+
 
 @end

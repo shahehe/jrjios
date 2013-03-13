@@ -1,5 +1,5 @@
 //
-//  stringsJsonParser.h
+//  StringsJsonParser.h
 //  financialDistrict
 //
 //  Created by USTB on 13-3-13.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface stringsJsonParser : NSObject
+@interface StringsJsonParser : NSObject
+
++ (NSDictionary *) parseStringsJson;
 
 @end
