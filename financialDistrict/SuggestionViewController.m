@@ -35,4 +35,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)useCamera:(id)sender {
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.allowsEditing = YES;
+        imagePicker.delegate = self;
+        [self presentedViewController:imagePicker animated:YES];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"相机无法使用" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
 @end

@@ -17,6 +17,7 @@
 @synthesize fileNumberGS;
 @synthesize titleNameGS;
 @synthesize gongShangText;
+@synthesize gongShangTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"工商业务办理";
+
 	// Do any additional setup after loading the view.
     gongShangText.editable = NO;
     NSString* fileName = [NSString stringWithFormat:@"gongshang%d",fileNumberGS];
@@ -37,7 +40,8 @@
                                                      ofType:@""];
     NSString* content = [NSString stringWithContentsOfFile:path
                                                   encoding:NSUTF8StringEncoding error:NULL];
-    gongShangText.text = [NSString stringWithFormat:@"%@\n%@",titleNameGS,content];
+    gongShangTitle.text = titleNameGS;
+    gongShangText.text = content;
 }
 
 - (void)didReceiveMemoryWarning

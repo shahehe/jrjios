@@ -14,6 +14,7 @@
 @property  int fileNumber;
 @property  (strong,nonatomic) NSString* titleName;
 
+@property (weak, nonatomic) IBOutlet UILabel *procedureTitle;
 @property (weak, nonatomic) IBOutlet UITextView *procedureText;
 
 

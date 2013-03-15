@@ -31,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"办事程序";
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -73,6 +78,9 @@
     // Configure the cell...
 
     cell.textLabel.text = [self.procedureMenu objectAtIndex:indexPath.row];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"info4"
+                                                          ofType:@"png"];
+    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
 
     return cell;
 }

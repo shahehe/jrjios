@@ -10,6 +10,6 @@
 
 @interface StringsJsonParser : NSObject
 
-+ (NSDictionary *) parseStringsJson;
++ (NSDictionary *) parseStringsJson:(NSString *)jsonfName;
 
 @end

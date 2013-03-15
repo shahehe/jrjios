@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"联系电话";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -67,6 +68,10 @@
     // Configure the cell...
     cell.textLabel.text = [self.contactsMenu objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [self.numbersMenu objectAtIndex:indexPath.row];
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"info2"
+                                                          ofType:@"png"];
+    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
     
  
     return cell;

@@ -13,9 +13,9 @@
 @implementation StringsJsonParser
 
 
-+ (NSDictionary *) parseStringsJson{
++ (NSDictionary *) parseStringsJson: (NSString *)jsonfName{
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"strings"
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:jsonfName
                                                          ofType:@"json"];
     NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath
                                                            encoding:NSUTF8StringEncoding
@@ -34,19 +34,20 @@
         NSLog(@"error2");
     }
     else if(jsonObject != nil && error == nil){
-        //NSLog(@"Successfully deserialized...");
+       //NSLog(@"Successfully deserialized...");
         if([jsonObject isKindOfClass:[NSDictionary class]]){
+            
             NSDictionary *deserializedDictionary = (NSDictionary *)jsonObject;
-            //assign dictionary to property stringsDictionary
+            //NSLog(@"Dersialized JSON Dictionary = %@", deserializedDictionary);
             return deserializedDictionary;
 
         }
         else if([jsonObject isKindOfClass:[NSArray class]]){
-           // NSArray *deserializedArray = (NSArray *)jsonObject;
-           // NSLog(@"Dersialized JSON Array = %@", deserializedArray);
+           //NSArray *deserializedArray = (NSArray *)jsonObject;
+           //NSLog(@"Dersialized JSON Array = %@", deserializedArray);
         }
         else{
-           // NSLog(@"Error occured while deserializing the Json data");
+           //NSLog(@"Error occured while deserializing the Json data");
         }
         
     }

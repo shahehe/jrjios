@@ -13,6 +13,7 @@
 @property int fileNumberGS;
 @property (strong,nonatomic) NSString* titleNameGS;
 
+@property (weak, nonatomic) IBOutlet UILabel *gongShangTitle;
 @property (weak, nonatomic) IBOutlet UITextView *gongShangText;
 
 @end

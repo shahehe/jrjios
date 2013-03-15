@@ -18,7 +18,7 @@
 @synthesize fileNumber;
 @synthesize titleName;
 @synthesize procedureText;
-
+@synthesize procedureTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
+    self.navigationItem.title = @"办事程序";
+    
     procedureText.editable = NO;
 
     NSString* fileName = [NSString stringWithFormat:@"%@%d",@"procedure",fileNumber];
@@ -43,8 +46,8 @@
                                                   encoding:NSUTF8StringEncoding
                                                      error:NULL];
     
-    
-    procedureText.text = [NSString stringWithFormat:@"%@\n%@",titleName,content];
+    procedureTitle.text = titleName;
+    procedureText.text = content;
   
 
 }

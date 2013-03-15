@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"金融街简介";
     introText.editable = NO;
     NSString* fileName = @"test";
     

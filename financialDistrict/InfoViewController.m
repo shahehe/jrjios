@@ -11,6 +11,7 @@
 #import "ProcedureViewController.h"
 #import "GongShangViewController.h"
 #import "PhoneViewController.h"
+#import "YuXiangViewController.h"
 #import "StringsJsonParser.h"
 
 @interface InfoViewController ()
@@ -50,7 +51,7 @@
     infoMenu = [NSMutableArray arrayWithObjects:@"金融街简介",@"办事程序",@"联系电话",@"宇翔图册",@"工商业务办理", nil];
     
 
-    stringsDictionary = [StringsJsonParser parseStringsJson];
+    stringsDictionary = [StringsJsonParser parseStringsJson:@"strings"];
     NSArray *dicArray = [stringsDictionary objectForKey:@"string-array"];
     for(NSDictionary* dic in dicArray){
         if([[dic valueForKey:@"name"] isEqualToString:@"procedure_array"]){
@@ -111,6 +112,9 @@
     
 
     cell.textLabel.text = [self.infoMenu objectAtIndex:indexPath.row];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"info%d",indexPath.row]
+                                                          ofType:@"png"];
+    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
 
     return cell;
 }
@@ -180,6 +184,8 @@
             break;
         }
         case 3:{
+            YuXiangViewController *yxVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YuXiangVC"];
+            [self.navigationController pushViewController:yxVC animated:YES];
             break;
         }
         case 4:{
