@@ -86,6 +86,7 @@
 		9A55FFD716F2D34100E14CE0 /* tab2_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A55FFD316F2D34000E14CE0 /* tab2_black.png */; };
 		9A55FFD816F2D34100E14CE0 /* tab3_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A55FFD416F2D34100E14CE0 /* tab3_black.png */; };
 		9A55FFD916F2D34100E14CE0 /* tab4_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A55FFD516F2D34100E14CE0 /* tab4_black.png */; };
+		9A73A16B16F347A300D1B397 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73A16A16F347A300D1B397 /* SuggestionViewController.m */; };
 		9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */; };
 		9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */; };
 		9AD6067C16EDECE700F2CCD8 /* procedure0 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6066F16EDECE700F2CCD8 /* procedure0 */; };
@@ -118,7 +119,6 @@
 		9AFAA7CC16ED77DD00865251 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CB16ED77DD00865251 /* second.png */; };
 		9AFAA7CE16ED77DD00865251 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CD16ED77DD00865251 /* second@2x.png */; };
 		9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D816ED803000865251 /* NewsViewController.m */; };
-		9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DB16ED804600865251 /* SuggestionViewController.m */; };
 		9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DE16ED805300865251 /* LoginViewController.m */; };
 		9AFC31F816F01B5400DE4174 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AFC31F716F01B5400DE4174 /* strings.json */; };
 		9AFC320216F03C1000DE4174 /* StringsJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC320116F03C1000DE4174 /* StringsJsonParser.m */; };
@@ -210,6 +210,8 @@
 		9A55FFD316F2D34000E14CE0 /* tab2_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab2_black.png; sourceTree = "<group>"; };
 		9A55FFD416F2D34100E14CE0 /* tab3_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3_black.png; sourceTree = "<group>"; };
 		9A55FFD516F2D34100E14CE0 /* tab4_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab4_black.png; sourceTree = "<group>"; };
+		9A73A16916F347A300D1B397 /* SuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionViewController.h; sourceTree = "<group>"; };
+		9A73A16A16F347A300D1B397 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		9AD6065C16EDBF8900F2CCD8 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
@@ -251,8 +253,6 @@
 		9AFAA7CD16ED77DD00865251 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		9AFAA7D716ED803000865251 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		9AFAA7D816ED803000865251 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		9AFAA7DA16ED804600865251 /* SuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionViewController.h; sourceTree = "<group>"; };
-		9AFAA7DB16ED804600865251 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		9AFAA7DD16ED805300865251 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9AFAA7DE16ED805300865251 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9AFC31F716F01B5400DE4174 /* strings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings.json; sourceTree = "<group>"; };
@@ -308,6 +308,8 @@
 			children = (
 				9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */,
 				9A1A8DD016F17D2500C75666 /* YuXiangCell.h */,
+				9A73A16916F347A300D1B397 /* SuggestionViewController.h */,
+				9A73A16A16F347A300D1B397 /* SuggestionViewController.m */,
 				9A1A8DD116F17D2500C75666 /* YuXiangCell.m */,
 				9A1A8DCC16F17C5800C75666 /* YuXiangViewController.h */,
 				9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */,
@@ -331,8 +333,6 @@
 				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
 				9AFAA7D716ED803000865251 /* NewsViewController.h */,
 				9AFAA7D816ED803000865251 /* NewsViewController.m */,
-				9AFAA7DA16ED804600865251 /* SuggestionViewController.h */,
-				9AFAA7DB16ED804600865251 /* SuggestionViewController.m */,
 				9AFAA7DD16ED805300865251 /* LoginViewController.h */,
 				9AFAA7DE16ED805300865251 /* LoginViewController.m */,
 				9AFAA7AD16ED77DD00865251 /* Supporting Files */,
@@ -609,7 +609,6 @@
 				9AFAA7B316ED77DD00865251 /* main.m in Sources */,
 				9AFAA7B716ED77DD00865251 /* AppDelegate.m in Sources */,
 				9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */,
-				9AFAA7DC16ED804600865251 /* SuggestionViewController.m in Sources */,
 				9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */,
 				9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */,
 				9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */,
@@ -622,6 +621,7 @@
 				9A1A8DCE16F17C5800C75666 /* YuXiangViewController.m in Sources */,
 				9A1A8DD216F17D2500C75666 /* YuXiangCell.m in Sources */,
 				9A1A8DFD16F1C61400C75666 /* TextOfYuXiangViewController.m in Sources */,
+				9A73A16B16F347A300D1B397 /* SuggestionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

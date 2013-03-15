@@ -2,7 +2,7 @@
 //  SuggestionViewController.m
 //  financialDistrict
 //
-//  Created by USTB on 13-3-11.
+//  Created by USTB on 13-3-15.
 //  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
@@ -35,15 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (IBAction)useCamera:(id)sender {
-    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        imagePicker.allowsEditing = YES;
+        imagePicker.allowsEditing = NO;
         imagePicker.delegate = self;
-        [self presentedViewController:imagePicker animated:YES];
+        [self presentViewController:imagePicker animated:YES completion:nil];
     }
     else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"相机无法使用" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
