@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> 
+@property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
 
 @end

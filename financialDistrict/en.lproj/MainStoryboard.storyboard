@@ -364,12 +364,12 @@
             </objects>
             <point key="canvasLocation" x="2208" y="-3208"/>
         </scene>
-        <!--Suggestion View Controller - 监督提交-->
+        <!--Suggestion View Controller-->
         <scene sceneID="kzc-G3-P1h">
             <objects>
                 <viewController id="cmu-bl-JvI" customClass="SuggestionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Cy-Vo-pUu">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puy-2x-LcF">
@@ -401,21 +401,69 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="usePhoto:" destination="cmu-bl-JvI" eventType="touchUpInside" id="86l-xE-VTd"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYL-CN-0Ez">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="489-nt-NZQ"/>
+                                    <constraint firstAttribute="width" constant="172" id="5kd-hc-RIx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmP-BX-mfH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="g5R-je-Gj5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Place">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EHR-2m-sve" kind="push" id="c72-yL-9tv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Puy-2x-LcF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4Hi-t7-8Wq"/>
+                            <constraint firstItem="gmP-BX-mfH" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DuQ-TX-AZh"/>
                             <constraint firstAttribute="trailing" secondItem="1mb-aF-7oM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="F4h-6g-FfB"/>
-                            <constraint firstItem="1mb-aF-7oM" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="96" id="Lnr-Fh-CTO"/>
-                            <constraint firstItem="Puy-2x-LcF" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="26" id="sjB-sP-LeO"/>
+                            <constraint firstAttribute="bottom" secondItem="gmP-BX-mfH" secondAttribute="bottom" constant="29" id="IHG-cx-rvJ"/>
+                            <constraint firstItem="VYL-CN-0Ez" firstAttribute="top" secondItem="Puy-2x-LcF" secondAttribute="top" type="default" id="Leh-GJ-0RJ"/>
+                            <constraint firstItem="VYL-CN-0Ez" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="26" id="SxN-Z5-Wnj"/>
+                            <constraint firstItem="VYL-CN-0Ez" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UxH-Uz-egR"/>
+                            <constraint firstItem="1mb-aF-7oM" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="96" id="nwy-pj-isy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="监督提交" image="tab3_black.png" id="pt1-TK-80A"/>
+                    <navigationItem key="navigationItem" id="kra-qh-Idu"/>
+                    <connections>
+                        <outlet property="imageToUpload" destination="VYL-CN-0Ez" id="Q2a-BZ-5DZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lul-kH-9Ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="1459"/>
+            <point key="canvasLocation" x="1761" y="1489"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ib5-qJ-1PN">
+            <objects>
+                <viewController id="EHR-2m-sve" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w75-yn-j9S">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NzA-fD-eaJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-fk-WRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2290" y="1489"/>
         </scene>
         <!--Login View Controller - 个人中心-->
         <scene sceneID="c3K-vb-gDJ">
@@ -430,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwF-qp-QD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="2177"/>
+            <point key="canvasLocation" x="1235" y="2177"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -445,7 +493,7 @@
                     <connections>
                         <segue destination="56e-D5-vx4" kind="relationship" relationship="viewControllers" id="1d6-mQ-wwb"/>
                         <segue destination="9z0-av-Y8h" kind="relationship" relationship="viewControllers" id="iLG-zt-z4g"/>
-                        <segue destination="cmu-bl-JvI" kind="relationship" relationship="viewControllers" id="Qrm-rl-0PJ"/>
+                        <segue destination="I2h-0U-mW7" kind="relationship" relationship="viewControllers" id="Qrm-rl-0PJ"/>
                         <segue destination="msg-E5-7LB" kind="relationship" relationship="viewControllers" id="Cmx-Y8-Ggs"/>
                     </connections>
                 </tabBarController>
@@ -665,6 +713,25 @@
             </objects>
             <point key="canvasLocation" x="1235" y="692"/>
         </scene>
+        <!--Navigation Controller - 监督提交-->
+        <scene sceneID="F0X-b4-ezA">
+            <objects>
+                <navigationController id="I2h-0U-mW7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="监督提交" image="tab3_black.png" id="pt1-TK-80A"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ps-La-Sxm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cmu-bl-JvI" kind="relationship" relationship="rootViewController" id="IGy-Ha-Deu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9A-dW-kYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235" y="1489"/>
+        </scene>
     </scenes>
     <resources>
         <image name="no-image.png" width="120" height="120"/>
@@ -674,6 +741,9 @@
         <image name="tab4_black.png" width="24" height="24"/>
     </resources>
     <classes>
+        <class className="BMKMapView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMKMapView.h"/>
+        </class>
         <class className="GongShangViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GongShangViewController.h"/>
         </class>
@@ -688,6 +758,12 @@
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="BMKMapView"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -720,6 +796,9 @@
         </class>
         <class className="SuggestionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SuggestionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageToUpload" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="TextOfGongShangViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfGongShangViewController.h"/>

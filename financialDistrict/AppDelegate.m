@@ -9,9 +9,16 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize mapManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    mapManager = [[BMKMapManager alloc] init];
+    BOOL ret = [mapManager start:@"CDC57B124063686C456239FF2D8378D0F8DAA474" generalDelegate:nil];
+    if(!ret){
+        NSLog(@"Map manager start failed");
+    }
+    
     // Override point for customization after application launch.
     return YES;
 }
