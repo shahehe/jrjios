@@ -13,8 +13,12 @@
 @end
 
 @implementation SuggestionViewController
-
 @synthesize imageToUpload;
+@synthesize placeInfo;
+@synthesize returnedLatitude;
+@synthesize returnedLongitude;
+@synthesize hasPlaceInfo;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,7 +32,35 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    hasPlaceInfo = FALSE;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    if(!hasPlaceInfo){
+        [placeInfo setAlpha:0.0];
+    }
+    else{
+        placeInfo.text = [NSString stringWithFormat:@"位置%f,%f",returnedLatitude,returnedLongitude];
+        [placeInfo setAlpha:0.0];
+        [UIView animateWithDuration:1.0
+                              delay:0.1
+                            options:UIViewAnimationCurveLinear | UIViewAnimationOptionAllowUserInteraction
+                         animations:^(void){[placeInfo setAlpha:1.0];}
+                         completion:^(BOOL finished){
+                                    if(finished)
+                                    {
+                                        [UIView animateWithDuration:1.5
+                                                              delay:0.8
+                                                            options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
+                                                         animations:^(void){[placeInfo setAlpha:0.0];}
+                                                         completion:^(BOOL finished){}];
+                                    }
+                         }
+         ];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -75,5 +107,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     imageToUpload.image = [info objectForKey:UIImagePickerControllerOriginalImage];
 }
+
+
 
 @end

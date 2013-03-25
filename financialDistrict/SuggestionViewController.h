@@ -11,5 +11,9 @@
 
 @interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> 
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
+@property (weak, nonatomic) IBOutlet UILabel *placeInfo;
+@property double returnedLatitude;
+@property double returnedLongitude;
+@property BOOL hasPlaceInfo;
 
 @end

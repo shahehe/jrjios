@@ -413,7 +413,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmP-BX-mfH">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="g5R-je-Gj5"/>
+                                    <constraint firstAttribute="height" constant="62" id="GWv-MM-gLN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Place">
@@ -427,6 +427,16 @@
                                     <segue destination="EHR-2m-sve" kind="push" id="c72-yL-9tv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="y0H-F0-i4r">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="SEq-vp-Yiv"/>
+                                    <constraint firstAttribute="height" constant="41" id="sFO-Gt-0yI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -434,15 +444,18 @@
                             <constraint firstItem="gmP-BX-mfH" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DuQ-TX-AZh"/>
                             <constraint firstAttribute="trailing" secondItem="1mb-aF-7oM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="F4h-6g-FfB"/>
                             <constraint firstAttribute="bottom" secondItem="gmP-BX-mfH" secondAttribute="bottom" constant="29" id="IHG-cx-rvJ"/>
-                            <constraint firstItem="VYL-CN-0Ez" firstAttribute="top" secondItem="Puy-2x-LcF" secondAttribute="top" type="default" id="Leh-GJ-0RJ"/>
+                            <constraint firstAttribute="bottom" secondItem="y0H-F0-i4r" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Qoo-Dp-86f"/>
                             <constraint firstItem="VYL-CN-0Ez" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="26" id="SxN-Z5-Wnj"/>
+                            <constraint firstItem="Puy-2x-LcF" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="25" id="T4r-ZA-Jvl"/>
                             <constraint firstItem="VYL-CN-0Ez" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UxH-Uz-egR"/>
+                            <constraint firstItem="y0H-F0-i4r" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="72" id="XPX-Cr-ivv"/>
                             <constraint firstItem="1mb-aF-7oM" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="96" id="nwy-pj-isy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kra-qh-Idu"/>
                     <connections>
                         <outlet property="imageToUpload" destination="VYL-CN-0Ez" id="Q2a-BZ-5DZ"/>
+                        <outlet property="placeInfo" destination="y0H-F0-i4r" id="dVO-Cc-oy0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lul-kH-9Ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -456,14 +469,62 @@
                     <view key="view" contentMode="scaleToFill" id="w75-yn-j9S">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjt-WY-3Q9" customClass="BMKMapView">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-ov-WT0">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="cKZ-J0-h06"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="当前位置">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toCurrentLocation:" destination="EHR-2m-sve" eventType="touchUpInside" id="hQA-cR-ngj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kPp-ov-WT0" secondAttribute="bottom" constant="29" id="9dK-bg-U80"/>
+                                    <constraint firstAttribute="trailing" secondItem="kPp-ov-WT0" secondAttribute="trailing" constant="12" id="Ipw-HS-gJd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHd-wh-Ebn">
+                                <color key="backgroundColor" white="0.82661290322580661" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="BrP-sJ-3yJ"/>
+                                    <constraint firstAttribute="height" constant="37" id="Hv3-DW-Hpx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Tjt-WY-3Q9" firstAttribute="top" secondItem="w75-yn-j9S" secondAttribute="top" type="default" id="bZ5-gr-gW9"/>
+                            <constraint firstItem="Tjt-WY-3Q9" firstAttribute="trailing" secondItem="w75-yn-j9S" secondAttribute="trailing" type="default" id="cLu-5Z-thT"/>
+                            <constraint firstItem="Tjt-WY-3Q9" firstAttribute="bottom" secondItem="w75-yn-j9S" secondAttribute="bottom" type="default" id="gTG-sD-Odk"/>
+                            <constraint firstItem="Tjt-WY-3Q9" firstAttribute="leading" secondItem="w75-yn-j9S" secondAttribute="leading" type="default" id="gfa-PW-mRS"/>
+                            <constraint firstAttribute="bottom" secondItem="BHd-wh-Ebn" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="jRm-pM-4Nh"/>
+                            <constraint firstItem="BHd-wh-Ebn" firstAttribute="leading" secondItem="w75-yn-j9S" secondAttribute="leading" constant="12" id="plM-SR-ggB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NzA-fD-eaJ"/>
+                    <connections>
+                        <outlet property="ownMapView" destination="Tjt-WY-3Q9" id="Gie-4I-1fY"/>
+                        <outlet property="placeLabel" destination="BHd-wh-Ebn" id="dow-4M-Gn6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-fk-WRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="1489"/>
+            <point key="canvasLocation" x="2289" y="1489"/>
         </scene>
         <!--Login View Controller - 个人中心-->
         <scene sceneID="c3K-vb-gDJ">
@@ -762,7 +823,9 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="BMKMapView"/>
+                <relationship kind="action" name="toCurrentLocation:"/>
+                <relationship kind="outlet" name="ownMapView" candidateClass="BMKMapView"/>
+                <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -797,7 +860,10 @@
         <class className="SuggestionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SuggestionViewController.h"/>
             <relationships>
+                <relationship kind="action" name="useCamera:"/>
+                <relationship kind="action" name="usePhoto:"/>
                 <relationship kind="outlet" name="imageToUpload" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="placeInfo" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TextOfGongShangViewController" superclassName="UIViewController">
