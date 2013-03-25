@@ -34,6 +34,7 @@
     temporaryBarButtonItem.title = @"返回";
     self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 
+     [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

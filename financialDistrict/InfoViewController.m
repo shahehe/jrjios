@@ -13,6 +13,7 @@
 #import "PhoneViewController.h"
 #import "YuXiangViewController.h"
 #import "StringsJsonParser.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface InfoViewController ()
 
@@ -46,6 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.scrollEnabled = NO; 
 
     
     infoMenu = [NSMutableArray arrayWithObjects:@"金融街简介",@"办事程序",@"联系电话",@"宇翔图册",@"工商业务办理", nil];
@@ -68,8 +70,8 @@
         }
 
     }
-    
 
+    self.view.backgroundColor = [UIColor clearColor];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -90,7 +92,7 @@
 {
 
     // Return the number of sections.
-    return 1;
+    return [self.infoMenu count];
 
 }
 
@@ -98,23 +100,42 @@
 {
 
     // Return the number of rows in the section.
-    return [self.infoMenu count];
+    return 1;
 }
+
+
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if(section == 0){
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
+        [headerView setBackgroundColor:[UIColor clearColor]];
+        return headerView;
+    }
+    else{
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 10)];
+        [headerView setBackgroundColor:[UIColor clearColor]];
+        return headerView;
+    }
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
     static NSString *CellIdentifier = @"InfoCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    InfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
 
-    cell.textLabel.text = [self.infoMenu objectAtIndex:indexPath.row];
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"info%d",indexPath.row]
+    cell.infoText.text = [self.infoMenu objectAtIndex:indexPath.section];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"info%d",indexPath.section]
                                                           ofType:@"png"];
-    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+    cell.infoImage.image = [UIImage imageWithContentsOfFile:imagePath];
+
+    
 
     return cell;
 }
@@ -163,8 +184,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSInteger row = [indexPath row];
-    switch(row){
+    NSInteger section = [indexPath section];
+    switch(section){
         case 0:{
             IntroViewController *introVC = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroVC"];
             [self.navigationController pushViewController:introVC animated:YES];

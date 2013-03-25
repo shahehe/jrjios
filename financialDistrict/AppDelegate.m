@@ -19,6 +19,7 @@
         NSLog(@"Map manager start failed");
     }
     
+    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundrep.png"]];
     // Override point for customization after application launch.
     return YES;
 }

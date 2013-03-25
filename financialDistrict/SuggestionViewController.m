@@ -33,6 +33,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     hasPlaceInfo = FALSE;
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -58,6 +59,8 @@
                          }
          ];
     }
+    
+    
 }
 
 

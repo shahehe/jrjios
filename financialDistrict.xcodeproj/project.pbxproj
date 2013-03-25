@@ -18,6 +18,8 @@
 		9A08E47316EF0025000710F5 /* gongshang5 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46B16EF0025000710F5 /* gongshang5 */; };
 		9A08E47416EF0025000710F5 /* gongshang6 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46C16EF0025000710F5 /* gongshang6 */; };
 		9A08E47516EF0025000710F5 /* gongshang7 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46D16EF0025000710F5 /* gongshang7 */; };
+		9A08E6201700780E000CB7CA /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E61F1700780E000CB7CA /* InfoCell.m */; };
+		9A08E6231700810B000CB7CA /* backgroundrep.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E6221700810B000CB7CA /* backgroundrep.png */; };
 		9A1A8DCE16F17C5800C75666 /* YuXiangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */; };
 		9A1A8DD216F17D2500C75666 /* YuXiangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A8DD116F17D2500C75666 /* YuXiangCell.m */; };
 		9A1A8DD416F1A6A200C75666 /* yuxiang.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A1A8DD316F1A6A200C75666 /* yuxiang.json */; };
@@ -176,6 +178,9 @@
 		9A08E46B16EF0025000710F5 /* gongshang5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang5; sourceTree = "<group>"; };
 		9A08E46C16EF0025000710F5 /* gongshang6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang6; sourceTree = "<group>"; };
 		9A08E46D16EF0025000710F5 /* gongshang7 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang7; sourceTree = "<group>"; };
+		9A08E61E1700780E000CB7CA /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
+		9A08E61F1700780E000CB7CA /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
+		9A08E6221700810B000CB7CA /* backgroundrep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundrep.png; sourceTree = "<group>"; };
 		9A1A8DCC16F17C5800C75666 /* YuXiangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuXiangViewController.h; sourceTree = "<group>"; };
 		9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuXiangViewController.m; sourceTree = "<group>"; };
 		9A1A8DD016F17D2500C75666 /* YuXiangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuXiangCell.h; sourceTree = "<group>"; };
@@ -510,9 +515,9 @@
 				9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */,
 				9A1A8DFB16F1C61300C75666 /* TextOfYuXiangViewController.h */,
 				9A1A8DFC16F1C61300C75666 /* TextOfYuXiangViewController.m */,
+				9AFC320B16F0580900DE4174 /* PhoneViewController.h */,
 				9A08E46016EEFA0F000710F5 /* GongShangViewController.h */,
 				9A08E46116EEFA0F000710F5 /* GongShangViewController.m */,
-				9AFC320B16F0580900DE4174 /* PhoneViewController.h */,
 				9AFC320C16F0580900DE4174 /* PhoneViewController.m */,
 				9A08E46316EEFA3E000710F5 /* TextOfGongShangViewController.h */,
 				9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */,
@@ -752,6 +757,8 @@
 				9AFC320116F03C1000DE4174 /* StringsJsonParser.m */,
 				9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */,
 				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
+				9A08E61E1700780E000CB7CA /* InfoCell.h */,
+				9A08E61F1700780E000CB7CA /* InfoCell.m */,
 				9AFAA7D716ED803000865251 /* NewsViewController.h */,
 				9AFAA7D816ED803000865251 /* NewsViewController.m */,
 				9AFAA7DD16ED805300865251 /* LoginViewController.h */,
@@ -792,6 +799,7 @@
 				9AFAA7B816ED77DD00865251 /* Default.png */,
 				9AFAA7BA16ED77DD00865251 /* Default@2x.png */,
 				9AFAA7BC16ED77DD00865251 /* Default-568h@2x.png */,
+				9A08E6221700810B000CB7CA /* backgroundrep.png */,
 				9ADA629E16FB050600F86B95 /* product_line.png */,
 				9ADA629F16FB050600F86B95 /* no-image.png */,
 			);
@@ -949,6 +957,7 @@
 				9ADA62A016FB050700F86B95 /* product_line.png in Resources */,
 				9ADA62A116FB050700F86B95 /* no-image.png in Resources */,
 				9A56C43E16FC202D00369F9C /* mapapi.bundle in Resources */,
+				9A08E6231700810B000CB7CA /* backgroundrep.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,6 +1009,7 @@
 				9ADA629616FB02E800F86B95 /* ApiService.m in Sources */,
 				9ADA629716FB02EB00F86B95 /* ApiResult.m in Sources */,
 				9AAD482616FC2964005B1EB4 /* MapViewController.mm in Sources */,
+				9A08E6201700780E000CB7CA /* InfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfoCell.h"
 
 @interface InfoViewController : UITableViewController
 

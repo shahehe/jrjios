@@ -8,19 +8,55 @@
         <scene sceneID="LLw-pg-uQh">
             <objects>
                 <tableViewController id="Kn1-Ki-zDl" customClass="InfoViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="EiD-6J-CWN">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EiD-6J-CWN">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="63" id="Enz-s6-HmJ">
-                                <rect key="frame" x="0.0" y="22" width="320" height="63"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="44" id="Enz-s6-HmJ" customClass="InfoCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="62"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROM-9W-yUm">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="37" id="qJE-IT-TiF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZl-IR-Fzi">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="Ty8-Bu-taB"/>
+                                                <constraint firstAttribute="width" constant="26" id="sUg-ok-II2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPF-3y-V9B">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="0Vd-uH-yaa"/>
+                                                <constraint firstAttribute="width" constant="133" id="U78-QD-t9g"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="CZl-IR-Fzi" firstAttribute="centerY" secondItem="Enz-s6-HmJ" secondAttribute="centerY" type="default" id="N3X-Um-INJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="CZl-IR-Fzi" secondAttribute="trailing" constant="20" type="default" id="Tg8-d7-Jc6"/>
+                                    <constraint firstItem="oPF-3y-V9B" firstAttribute="bottom" secondItem="CZl-IR-Fzi" secondAttribute="bottom" type="default" id="X7X-HZ-2ql"/>
+                                    <constraint firstItem="ROM-9W-yUm" firstAttribute="centerY" secondItem="oPF-3y-V9B" secondAttribute="centerY" type="default" id="eBg-mR-7pn"/>
+                                    <constraint firstItem="oPF-3y-V9B" firstAttribute="leading" secondItem="Enz-s6-HmJ" secondAttribute="leading" constant="106" id="s3S-tt-D0d"/>
+                                    <constraint firstItem="ROM-9W-yUm" firstAttribute="top" secondItem="CZl-IR-Fzi" secondAttribute="top" type="default" id="viI-x2-cTN"/>
+                                    <constraint firstItem="ROM-9W-yUm" firstAttribute="leading" secondItem="Enz-s6-HmJ" secondAttribute="leading" constant="54" id="wNW-by-3az"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="infoArrow" destination="CZl-IR-Fzi" id="WPj-aM-GLD"/>
+                                    <outlet property="infoImage" destination="ROM-9W-yUm" id="Asm-r2-on5"/>
+                                    <outlet property="infoText" destination="oPF-3y-V9B" id="bLN-6G-Xrb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -807,6 +843,14 @@
         </class>
         <class className="GongShangViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GongShangViewController.h"/>
+        </class>
+        <class className="InfoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoArrow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoText" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="InfoViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
