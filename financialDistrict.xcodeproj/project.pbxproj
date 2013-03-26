@@ -243,6 +243,10 @@
 		9A1A8E3216F1CBDA00C75666 /* 66.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 66.jpg; sourceTree = "<group>"; };
 		9A1A8E3316F1CBDA00C75666 /* 68.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 68.jpg; sourceTree = "<group>"; };
 		9A1A8E3416F1CBDA00C75666 /* 81.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 81.jpg; sourceTree = "<group>"; };
+		9A436AC31701514500360496 /* ProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
+		9A436AC41701514500360496 /* ProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
+		9A436AC51701514500360496 /* ProductInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductInfoViewController.h; sourceTree = "<group>"; };
+		9A436AC61701514500360496 /* ProductInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductInfoViewController.m; sourceTree = "<group>"; };
 		9A55FFC716F2C98F00E14CE0 /* info0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info0.png; sourceTree = "<group>"; };
 		9A55FFC816F2C98F00E14CE0 /* info1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info1.png; sourceTree = "<group>"; };
 		9A55FFC916F2C98F00E14CE0 /* info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2.png; sourceTree = "<group>"; };
@@ -542,6 +546,10 @@
 				9ADA623816FAFB2E00F86B95 /* ReportListViewController.m */,
 				9ADA623916FAFB2E00F86B95 /* ReportInfoViewController.h */,
 				9ADA623A16FAFB2E00F86B95 /* ReportInfoViewController.m */,
+				9A436AC31701514500360496 /* ProductListViewController.h */,
+				9A436AC41701514500360496 /* ProductListViewController.m */,
+				9A436AC51701514500360496 /* ProductInfoViewController.h */,
+				9A436AC61701514500360496 /* ProductInfoViewController.m */,
 			);
 			name = NewsTab;
 			sourceTree = "<group>";

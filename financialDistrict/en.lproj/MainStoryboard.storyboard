@@ -496,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lul-kH-9Ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="1489"/>
+            <point key="canvasLocation" x="1761" y="2243"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="ib5-qJ-1PN">
@@ -560,7 +560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-fk-WRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="1489"/>
+            <point key="canvasLocation" x="2289" y="2243"/>
         </scene>
         <!--Login View Controller - 个人中心-->
         <scene sceneID="c3K-vb-gDJ">
@@ -575,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwF-qp-QD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="2177"/>
+            <point key="canvasLocation" x="1235" y="3079"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -687,7 +687,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqX-ef-VDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="692"/>
+            <point key="canvasLocation" x="2531" y="682"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="RHv-gN-RBu">
+            <objects>
+                <viewController id="NqQ-fN-dfa" customClass="NewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8gc-ok-Fdz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOj-Yu-gCd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="MFV-ZT-DKm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="周报">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="NYq-2s-O62" kind="push" id="73d-qb-rzG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S9-Rh-A9q">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="工商">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RT2-Dv-JZd" kind="push" id="fJC-aM-cDp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6S9-Rh-A9q" firstAttribute="trailing" secondItem="TOj-Yu-gCd" secondAttribute="trailing" type="default" id="4aw-pa-nh7"/>
+                            <constraint firstItem="TOj-Yu-gCd" firstAttribute="leading" secondItem="8gc-ok-Fdz" secondAttribute="leading" constant="58" id="MzS-ro-Wc3"/>
+                            <constraint firstItem="6S9-Rh-A9q" firstAttribute="leading" secondItem="TOj-Yu-gCd" secondAttribute="leading" type="default" id="N7P-nn-jci"/>
+                            <constraint firstItem="6S9-Rh-A9q" firstAttribute="top" secondItem="8gc-ok-Fdz" secondAttribute="top" constant="154" id="UuX-43-hpQ"/>
+                            <constraint firstItem="TOj-Yu-gCd" firstAttribute="top" secondItem="8gc-ok-Fdz" secondAttribute="top" constant="74" id="hwl-08-qKy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pOS-GS-1MC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIt-NH-ZaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653" y="692"/>
         </scene>
         <!--Report List View Controller-->
         <scene sceneID="Nq1-Si-8Rs">
@@ -761,7 +814,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yB-H3-P9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261" y="692"/>
+            <point key="canvasLocation" x="3041" y="682"/>
         </scene>
         <!--Report Info View Controller-->
         <scene sceneID="p95-fZ-Lme">
@@ -792,7 +845,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rs-i8-D11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2747" y="692"/>
+            <point key="canvasLocation" x="3527" y="682"/>
         </scene>
         <!--Navigation Controller - 动态公告-->
         <scene sceneID="kGq-fP-8Eh">
@@ -803,7 +856,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="NYq-2s-O62" kind="relationship" relationship="rootViewController" id="5at-W3-rne"/>
+                        <segue destination="NqQ-fN-dfa" kind="relationship" relationship="rootViewController" id="Et9-6Y-r0g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91S-9r-982" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -827,11 +880,89 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9A-dW-kYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="1489"/>
+            <point key="canvasLocation" x="1235" y="2243"/>
+        </scene>
+        <!--Product List View Controller - 下架商品-->
+        <scene sceneID="hOf-g0-MQt">
+            <objects>
+                <tableViewController id="RT2-Dv-JZd" customClass="ProductListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7Ub-bF-2sW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1EY-Ja-dcC">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="下架商品" id="iIG-dN-YVq"/>
+                    <connections>
+                        <segue destination="Ns8-OO-Usn" kind="push" identifier="info" id="wXa-7J-H2Q"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLk-jR-FL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2531" y="1461"/>
+        </scene>
+        <!--Product Info View Controller - 下架食品详情-->
+        <scene sceneID="WB9-Pc-VA2">
+            <objects>
+                <viewController id="Ns8-OO-Usn" customClass="ProductInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FRs-Gx-eSL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ii9-Bd-uBo">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="324" id="fWl-tR-bIa"/>
+                                </constraints>
+                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="product_moth_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="4kr-FC-cBY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="oQ7-ZR-gz6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiM-yv-B30">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ii9-Bd-uBo" firstAttribute="top" secondItem="FRs-Gx-eSL" secondAttribute="top" constant="42" id="4Ez-7g-qxU"/>
+                            <constraint firstItem="4kr-FC-cBY" firstAttribute="leading" secondItem="FRs-Gx-eSL" secondAttribute="leading" type="default" id="Acq-U1-RZj"/>
+                            <constraint firstItem="fiM-yv-B30" firstAttribute="leading" secondItem="FRs-Gx-eSL" secondAttribute="leading" type="default" id="Bbw-fn-f71"/>
+                            <constraint firstItem="ii9-Bd-uBo" firstAttribute="leading" secondItem="FRs-Gx-eSL" secondAttribute="leading" type="default" id="N41-p6-jnd"/>
+                            <constraint firstItem="fiM-yv-B30" firstAttribute="trailing" secondItem="FRs-Gx-eSL" secondAttribute="trailing" type="default" id="NAk-T2-B6f"/>
+                            <constraint firstItem="4kr-FC-cBY" firstAttribute="trailing" secondItem="FRs-Gx-eSL" secondAttribute="trailing" type="default" id="PJ3-BD-nN9"/>
+                            <constraint firstItem="4kr-FC-cBY" firstAttribute="top" secondItem="FRs-Gx-eSL" secondAttribute="top" type="default" id="Rrl-Yy-BA4"/>
+                            <constraint firstItem="ii9-Bd-uBo" firstAttribute="trailing" secondItem="FRs-Gx-eSL" secondAttribute="trailing" type="default" id="X1E-BV-wHo"/>
+                            <constraint firstItem="fiM-yv-B30" firstAttribute="top" secondItem="FRs-Gx-eSL" secondAttribute="top" constant="10" id="xBs-Hz-8uO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="下架食品详情" id="sfA-Ed-AMr"/>
+                    <connections>
+                        <outlet property="name" destination="fiM-yv-B30" id="q6w-ti-WE0"/>
+                        <outlet property="webView" destination="ii9-Bd-uBo" id="RYs-Op-KHs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7eS-I6-vIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3041" y="1461"/>
         </scene>
     </scenes>
     <resources>
         <image name="no-image.png" width="120" height="120"/>
+        <image name="product_moth_bg.png" width="16" height="16"/>
         <image name="tab1_black.png" width="24" height="24"/>
         <image name="tab2_black.png" width="24" height="24"/>
         <image name="tab3_black.png" width="24" height="24"/>
@@ -875,11 +1006,24 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
         <class className="PhoneViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneViewController.h"/>
         </class>
         <class className="ProcedureViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProcedureViewController.h"/>
+        </class>
+        <class className="ProductInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ProductListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductListViewController.h"/>
         </class>
         <class className="ReportCategoryCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportCategoryCell.h"/>
