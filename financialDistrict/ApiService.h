@@ -1,6 +1,6 @@
 //
 //  ApiService.h
-//  fdemo
+//  jrj
 //
 //  Created by jrj on 13-3-16.
 //  Copyright (c) 2013年 jrj. All rights reserved.
@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ApiResult.h"
 #import "MKNetworkEngine.h"
+
 
 #if NS_BLOCKS_AVAILABLE
 //typedef void (^SuccessBlock)(BctResultData *data);
@@ -37,6 +38,10 @@ typedef void (^ApiFailureBlock)(int code,NSString *message);
 +(void)setCache:(NSString *)key andData:(id)data;
 
 +(id)getCache:(NSString *)key;
+
++(void)getProductList:(void (^)(ApiResult *result))success andFailure:(void (^)(int code,NSString *message))failure;
+
++(void)checkUpdateForProduct:(void (^)(ApiResult *result))success andFailure:(void (^)(int code,NSString *message))failure;
 
 +(NSString*) md5:(NSString*) str;
 @end

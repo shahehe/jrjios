@@ -42,6 +42,10 @@
                                                   encoding:NSUTF8StringEncoding error:NULL];
     gongShangTitle.text = titleNameGS;
     gongShangText.text = content;
+    
+    self.view.backgroundColor = [UIColor clearColor];
+    self.gongShangText.backgroundColor = [UIColor clearColor];
+    self.gongShangTitle.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning

@@ -44,11 +44,13 @@
     frame.origin.x += 18;
     frame.size.width -= 36;
     self.contentView.frame = frame;
-    self.backgroundView.backgroundColor = [UIColor whiteColor];
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    
-    self.contentView.layer.masksToBounds = YES;
-    self.contentView.layer.cornerRadius = 10;
 
+    
+    NSString *arrowImagePath = [[NSBundle mainBundle] pathForResource:@"arrowButton"
+                                                               ofType:@"png"];
+    self.infoArrow.image = [UIImage imageWithContentsOfFile:arrowImagePath];
+    
+    
+    
 }
 @end

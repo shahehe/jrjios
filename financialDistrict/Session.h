@@ -1,6 +1,6 @@
 //
 //  Session.h
-//  fdemo
+//  jrj
 //
 //  Created by jrj on 13-3-16.
 //  Copyright (c) 2013年 jrj. All rights reserved.
@@ -14,8 +14,6 @@
 +(Session *) sharedInstance;
 
 -(NSMutableArray *)getReportData;
-
--(void)setReportData:(NSMutableArray *)data;
 
 
 

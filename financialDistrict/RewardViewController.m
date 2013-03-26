@@ -1,20 +1,19 @@
 //
-//  IntroViewController.m
+//  RewardViewController.m
 //  financialDistrict
 //
-//  Created by USTB on 13-3-11.
+//  Created by USTB on 13-3-26.
 //  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
-#import "IntroViewController.h"
+#import "RewardViewController.h"
 
-@interface IntroViewController ()
+@interface RewardViewController ()
 
 @end
 
-@implementation IntroViewController
-
-@synthesize introText;
+@implementation RewardViewController
+@synthesize rewardText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,9 +29,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"金融街简介";
-    introText.editable = NO;
-    NSString* fileName = @"test";
+    self.navigationItem.title = @"奖励回馈";
+    rewardText.editable = NO;
+    NSString* fileName = @"reward";
     
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName
                                                      ofType:@"txt"];
@@ -41,12 +40,13 @@
                                                      error:NULL];
     
     
-    introText.text = content;
+    rewardText.text = content;
+    
     self.view.backgroundColor = [UIColor clearColor];
-    self.introText.backgroundColor = [UIColor clearColor];
+    self.rewardText.backgroundColor = [UIColor clearColor];
+
     
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

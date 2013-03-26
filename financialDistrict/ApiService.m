@@ -1,6 +1,6 @@
 //
 //  ApiService.m
-//  fdemo
+//  jrj
 //
 //  Created by jrj on 13-3-16.
 //  Copyright (c) 2013年 jrj. All rights reserved.
@@ -131,6 +131,93 @@ static ApiService *shareInstance = nil;
     }
 }
 
+
++(void)getProductList:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure
+{
+    NSString *url = @"Product.getList";
+    NSString *key = [ApiService md5:url];
+    //先从缓存取数据:
+    id data = [ApiService getCache:key];
+    if(data != nil){
+        ApiResult *result = [[ApiResult alloc] init];
+        result.code = 1;
+        result.data = data;
+        success(result);
+    }else{
+        //重新取得数据
+        MKNetworkEngine* engine = [[ApiService sharedInstance] getMKNetworkEngine];
+        MKNetworkOperation* op = [[ApiService sharedInstance] getMKnetworkOperation:engine andMethod:url andParams:nil];
+        [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+            //保存到缓存
+            id json = [completedOperation responseJSON];
+            [ApiService setCache:key andData:[json objectForKey:@"result"]];
+            
+            ApiResult *result = [[ApiResult alloc] init];
+            result.code = 1;
+            result.data = [json objectForKey:@"result"];
+            success(result);
+        } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+            failure(0,nil);
+        }];
+        [engine enqueueOperation:op];
+    }
+}
++(void)checkUpdateForProduct:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure
+{
+    NSString *url = @"Product.getList";
+    NSString *key = [ApiService md5:url];
+    //获取数据 进行对比
+    MKNetworkEngine* engine = [[ApiService sharedInstance] getMKNetworkEngine];
+    MKNetworkOperation* op = [[ApiService sharedInstance] getMKnetworkOperation:engine andMethod:url andParams:nil];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        //取得缓存数据
+        //先从缓存取数据:
+        id data = [ApiService getCache:key];
+        if(data != nil){
+            id json = [completedOperation responseJSON];
+            //进行对比
+            NSString *old = [ApiService md5:[NSString stringWithFormat:@"%@",[json valueForKey:@"result"]]];
+            NSString *new = [ApiService md5:[NSString stringWithFormat:@"%@",data]];
+            if(![old isEqualToString:new]){
+                //保存到缓存
+                [ApiService setCache:key andData:[json valueForKey:@"result"]];
+                ApiResult *result = [[ApiResult alloc] init];
+                result.code = 1;
+                result.data = [json objectForKey:@"result"];
+                NSLog(@"更新缓存");
+                success(result);
+            }else{
+                failure(1,@"");
+                NSLog(@"不用更新缓存");
+            }
+        }
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        failure(0,nil);
+    }];
+    [engine enqueueOperation:op];
+}
+
+-(MKNetworkOperation *)getMKnetworkOperation:(MKNetworkEngine *)engine andMethod:(NSString *)method andParams:(NSArray *)params
+{
+    if(params == nil) params = [NSArray array];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:0];
+	[dic setObject:method forKey:@"method"];
+	[dic setObject:params forKey:@"params"];
+	[dic setObject:[NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]] forKey:@"id"];
+    [dic setObject:@"2.0" forKey:@"jsonrpc"];
+    
+    MKNetworkOperation *o = [engine operationWithPath:@"jrj/api.php" params:dic httpMethod:@"POST"];
+    [o setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
+    NSLog(@"params:%@",dic);
+    NSLog(@"URL:%@",o.url);
+    return o;
+}
+-(MKNetworkEngine *)getMKNetworkEngine
+{
+    MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:self.host];
+    return engine;
+}
 
 +(ApiResult *)parseResult:(id)data
 {

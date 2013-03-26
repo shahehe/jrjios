@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+NavigationColor.h"
 
 @implementation AppDelegate
 @synthesize mapManager;
@@ -20,6 +21,7 @@
     }
     
     self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundrep.png"]];
+    
     // Override point for customization after application launch.
     return YES;
 }

@@ -7,6 +7,8 @@
 //
 
 #import "NewsViewController.h"
+#import "UIColor+NavigationColor.h"
+
 
 @interface NewsViewController ()
 
@@ -27,6 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.tintColor = [UIColor NaviColor];
+    
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor],[UIFont systemFontOfSize:20.0f],[UIColor colorWithWhite:0.0 alpha:1], nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor,UITextAttributeFont,UITextAttributeTextShadowColor, nil]];
 }
 
 - (void)didReceiveMemoryWarning

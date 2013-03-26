@@ -48,6 +48,10 @@
     
     procedureTitle.text = titleName;
     procedureText.text = content;
+    
+    self.view.backgroundColor = [UIColor clearColor];
+    self.procedureText.backgroundColor = [UIColor clearColor];
+    self.procedureTitle.backgroundColor = [UIColor clearColor];
   
 
 }

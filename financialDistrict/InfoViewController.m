@@ -13,6 +13,7 @@
 #import "PhoneViewController.h"
 #import "YuXiangViewController.h"
 #import "StringsJsonParser.h"
+#import "UIColor+NavigationColor.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface InfoViewController ()
@@ -72,6 +73,17 @@
     }
 
     self.view.backgroundColor = [UIColor clearColor];
+    [self.tableView setSeparatorColor:[UIColor clearColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor NaviColor];
+    [[UIBarButtonItem appearance] setTintColor: [UIColor blackColor]];
+
+    
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor],[UIFont systemFontOfSize:20.0f],[UIColor colorWithWhite:0.0 alpha:1], nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor,UITextAttributeFont,UITextAttributeTextShadowColor, nil]];
+    
+    
+    self.tabBarController.tabBar.tintColor = [UIColor NaviColor];
+    self.tabBarController.tabBar.selectedImageTintColor = [UIColor blackColor];
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -135,7 +147,12 @@
                                                           ofType:@"png"];
     cell.infoImage.image = [UIImage imageWithContentsOfFile:imagePath];
 
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menuButton.png"]];
+   
+    cell.contentView.layer.masksToBounds = YES;
+    cell.contentView.layer.cornerRadius = 10;
     
+
 
     return cell;
 }
