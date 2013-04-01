@@ -20,12 +20,27 @@
         NSLog(@"Map manager start failed");
     }
     
-    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundrep.png"]];
-    
+    [self customApperance];
     // Override point for customization after application launch.
     return YES;
 }
-							
+
+
+
+- (void) customApperance
+{
+    // Set background picture for all view controllers
+    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundrep.png"]];
+    
+    // Set the tab bar appearance
+
+    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg.png"]];
+    
+    
+}
+					
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

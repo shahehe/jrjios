@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> 
+@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
 @property (weak, nonatomic) IBOutlet UILabel *placeInfo;
+@property (weak, nonatomic) IBOutlet UITextField *phoneContact;
+@property (weak, nonatomic) IBOutlet UITextView *problemDescription;
 @property double returnedLatitude;
 @property double returnedLongitude;
 @property BOOL hasPlaceInfo;

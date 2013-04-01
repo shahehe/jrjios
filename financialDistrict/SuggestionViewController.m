@@ -8,10 +8,13 @@
 
 #import "SuggestionViewController.h"
 #import "UIColor+NavigationColor.h"
+#import <QuartzCore/QuartzCore.h>
 
+@interface SuggestionViewController (){
 
-@interface SuggestionViewController ()
+    BOOL firstWriteDescription;
 
+}
 @end
 
 @implementation SuggestionViewController
@@ -20,6 +23,8 @@
 @synthesize returnedLatitude;
 @synthesize returnedLongitude;
 @synthesize hasPlaceInfo;
+@synthesize phoneContact;
+@synthesize problemDescription;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +44,10 @@
     self.navigationController.navigationBar.tintColor = [UIColor NaviColor];
     
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor],[UIFont systemFontOfSize:20.0f],[UIColor colorWithWhite:0.0 alpha:1], nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor,UITextAttributeFont,UITextAttributeTextShadowColor, nil]];
+    [self customText];
+    firstWriteDescription = YES;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -68,7 +77,62 @@
     
 }
 
+- (void)customText{
+    phoneContact.backgroundColor = [UIColor whiteColor];
+    phoneContact.delegate = self;
+    UIView *paddingView           = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
+    phoneContact.leftView             = paddingView;
+    phoneContact.leftViewMode         = UITextFieldViewModeAlways;
+    
+    [[problemDescription layer] setBorderColor:[UIColor clearColor].CGColor];
+    problemDescription.layer.borderWidth = 1.5f;
+    problemDescription.text = @"描述";
+    problemDescription.textColor = [UIColor lightGrayColor];
+    problemDescription.delegate = self;
+       
+}
 
+- (void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    phoneContact.layer.borderWidth = 1.5f;
+    phoneContact.layer.borderColor = [UIColor orangeColor].CGColor;
+}
+
+
+-(void) textFieldDidEndEditing:(UITextField *)textField
+{
+    phoneContact.layer.borderColor = [UIColor clearColor].CGColor; 
+}
+
+
+- (void) textViewDidBeginEditing:(UITextView *)textView
+{
+    [[problemDescription layer] setBorderColor:[UIColor orangeColor].CGColor];
+    problemDescription.textColor = [UIColor blackColor];
+        
+    if(firstWriteDescription){
+            problemDescription.text = @"";
+    }
+}
+
+
+- (void) textViewDidChange:(UITextView *)textView
+{
+    if(problemDescription.text.length == 0){
+        problemDescription.textColor = [UIColor lightGrayColor];
+        problemDescription.text = @"描述";
+        [problemDescription resignFirstResponder];
+        firstWriteDescription = YES;
+    }
+}
+
+- (void) textViewDidEndEditing:(UITextView *)textView
+{
+    [[problemDescription layer] setBorderColor:[UIColor clearColor].CGColor];
+    firstWriteDescription = NO;
+    
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

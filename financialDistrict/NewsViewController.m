@@ -29,6 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
     self.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.tintColor = [UIColor NaviColor];
     
