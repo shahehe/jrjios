@@ -10,6 +10,9 @@
 
 
 @interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
 @property (weak, nonatomic) IBOutlet UILabel *placeInfo;
 @property (weak, nonatomic) IBOutlet UITextField *phoneContact;
@@ -17,5 +20,6 @@
 @property double returnedLatitude;
 @property double returnedLongitude;
 @property BOOL hasPlaceInfo;
+@property BOOL needFeedback;
 
 @end

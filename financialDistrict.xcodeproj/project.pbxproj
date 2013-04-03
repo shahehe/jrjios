@@ -91,6 +91,8 @@
 		9A363C9E1709959400E7EE11 /* ic_procedure_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A363C991709959400E7EE11 /* ic_procedure_up.png */; };
 		9A363C9F1709959400E7EE11 /* info_dis_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A363C9A1709959400E7EE11 /* info_dis_up.png */; };
 		9A363CA01709959400E7EE11 /* street_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A363C9B1709959400E7EE11 /* street_up.png */; };
+		9A3F28D2170C57EE002ABF2C /* checkbox_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */; };
+		9A3F28D5170C5A55002ABF2C /* checkbox_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F28D4170C5A55002ABF2C /* checkbox_white.png */; };
 		9A436ACA17017E0700360496 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436AC917017E0700360496 /* ProductListViewController.m */; };
 		9A436ACD17017E3500360496 /* ProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436ACC17017E3500360496 /* ProductInfoViewController.m */; };
 		9A436AD017017F1700360496 /* ProductListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436ACF17017F1700360496 /* ProductListHeader.m */; };
@@ -284,6 +286,8 @@
 		9A363C991709959400E7EE11 /* ic_procedure_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_procedure_up.png; sourceTree = "<group>"; };
 		9A363C9A1709959400E7EE11 /* info_dis_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_dis_up.png; sourceTree = "<group>"; };
 		9A363C9B1709959400E7EE11 /* street_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = street_up.png; sourceTree = "<group>"; };
+		9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_orange.png; sourceTree = "<group>"; };
+		9A3F28D4170C5A55002ABF2C /* checkbox_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_white.png; sourceTree = "<group>"; };
 		9A436AC817017E0700360496 /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
 		9A436AC917017E0700360496 /* ProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
 		9A436ACB17017E3500360496 /* ProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfoViewController.h; sourceTree = "<group>"; };
@@ -513,6 +517,7 @@
 		9A436AEE1701B43800360496 /* menuButtons */ = {
 			isa = PBXGroup;
 			children = (
+				9A436AE817018E9C00360496 /* arrowButton.png */,
 				9A436B0F1701D81400360496 /* down */,
 				9A436AFE1701D7E100360496 /* UP */,
 			);
@@ -929,7 +934,6 @@
 				9AE70D2817046DF4000B5AF9 /* json */,
 				9AE70CFA17042C0F000B5AF9 /* TabBarAppearance */,
 				9A436AEE1701B43800360496 /* menuButtons */,
-				9A436AE817018E9C00360496 /* arrowButton.png */,
 				9A56C41416FC1E2E00369F9C /* Procedure&GongShang */,
 				9ADA629816FB048400F86B95 /* YuXiang */,
 				9A55FFC716F2C98F00E14CE0 /* info0.png */,
@@ -937,6 +941,8 @@
 				9A55FFC916F2C98F00E14CE0 /* info2.png */,
 				9A55FFCA16F2C98F00E14CE0 /* info3.png */,
 				9A55FFCB16F2C98F00E14CE0 /* info4.png */,
+				9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */,
+				9A3F28D4170C5A55002ABF2C /* checkbox_white.png */,
 				9A08E45D16EEF663000710F5 /* test.txt */,
 				9A436B311701E88600360496 /* reward.txt */,
 				9AFAA7B516ED77DD00865251 /* AppDelegate.h */,
@@ -1136,6 +1142,8 @@
 				9A363C9E1709959400E7EE11 /* ic_procedure_up.png in Resources */,
 				9A363C9F1709959400E7EE11 /* info_dis_up.png in Resources */,
 				9A363CA01709959400E7EE11 /* street_up.png in Resources */,
+				9A3F28D2170C57EE002ABF2C /* checkbox_orange.png in Resources */,
+				9A3F28D5170C5A55002ABF2C /* checkbox_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
