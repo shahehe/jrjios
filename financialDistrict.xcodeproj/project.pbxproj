@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A04149917116232002FC88E /* ProcedureGongShangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04149817116232002FC88E /* ProcedureGongShangCell.m */; };
+		9A04149C171162AE002FC88E /* cellBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04149B171162AE002FC88E /* cellBar.png */; };
+		9A04149F17116AF0002FC88E /* PhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04149E17116AF0002FC88E /* PhoneCell.m */; };
 		9A08E45E16EEF663000710F5 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E45D16EEF663000710F5 /* test.txt */; };
 		9A08E46216EEFA0F000710F5 /* GongShangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E46116EEFA0F000710F5 /* GongShangViewController.m */; };
 		9A08E46516EEFA3E000710F5 /* TextOfGongShangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */; };
@@ -196,6 +199,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A04149717116232002FC88E /* ProcedureGongShangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcedureGongShangCell.h; sourceTree = "<group>"; };
+		9A04149817116232002FC88E /* ProcedureGongShangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcedureGongShangCell.m; sourceTree = "<group>"; };
+		9A04149B171162AE002FC88E /* cellBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellBar.png; sourceTree = "<group>"; };
+		9A04149D17116AF0002FC88E /* PhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneCell.h; sourceTree = "<group>"; };
+		9A04149E17116AF0002FC88E /* PhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneCell.m; sourceTree = "<group>"; };
 		9A08E45D16EEF663000710F5 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		9A08E46016EEFA0F000710F5 /* GongShangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GongShangViewController.h; sourceTree = "<group>"; };
 		9A08E46116EEFA0F000710F5 /* GongShangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GongShangViewController.m; sourceTree = "<group>"; };
@@ -651,14 +659,18 @@
 			children = (
 				9A1A8DD016F17D2500C75666 /* YuXiangCell.h */,
 				9A1A8DD116F17D2500C75666 /* YuXiangCell.m */,
+				9A04149717116232002FC88E /* ProcedureGongShangCell.h */,
+				9A04149817116232002FC88E /* ProcedureGongShangCell.m */,
+				9A04149D17116AF0002FC88E /* PhoneCell.h */,
+				9A04149E17116AF0002FC88E /* PhoneCell.m */,
 				9A1A8DCC16F17C5800C75666 /* YuXiangViewController.h */,
 				9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */,
 				9A1A8DFB16F1C61300C75666 /* TextOfYuXiangViewController.h */,
 				9A1A8DFC16F1C61300C75666 /* TextOfYuXiangViewController.m */,
 				9AFC320B16F0580900DE4174 /* PhoneViewController.h */,
+				9AFC320C16F0580900DE4174 /* PhoneViewController.m */,
 				9A08E46016EEFA0F000710F5 /* GongShangViewController.h */,
 				9A08E46116EEFA0F000710F5 /* GongShangViewController.m */,
-				9AFC320C16F0580900DE4174 /* PhoneViewController.m */,
 				9A08E46316EEFA3E000710F5 /* TextOfGongShangViewController.h */,
 				9A08E46416EEFA3E000710F5 /* TextOfGongShangViewController.m */,
 				9AD6068A16EDEE3200F2CCD8 /* ProcedureViewController.h */,
@@ -941,6 +953,7 @@
 				9A55FFC916F2C98F00E14CE0 /* info2.png */,
 				9A55FFCA16F2C98F00E14CE0 /* info3.png */,
 				9A55FFCB16F2C98F00E14CE0 /* info4.png */,
+				9A04149B171162AE002FC88E /* cellBar.png */,
 				9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */,
 				9A3F28D4170C5A55002ABF2C /* checkbox_white.png */,
 				9A08E45D16EEF663000710F5 /* test.txt */,
@@ -1144,6 +1157,7 @@
 				9A363CA01709959400E7EE11 /* street_up.png in Resources */,
 				9A3F28D2170C57EE002ABF2C /* checkbox_orange.png in Resources */,
 				9A3F28D5170C5A55002ABF2C /* checkbox_white.png in Resources */,
+				9A04149C171162AE002FC88E /* cellBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,6 +1216,8 @@
 				9A436AF91701B90C00360496 /* UIColor+NavigationColor.m in Sources */,
 				9A436AFD1701D2D000360496 /* GovViewController.m in Sources */,
 				9A436B301701E1F300360496 /* RewardViewController.m in Sources */,
+				9A04149917116232002FC88E /* ProcedureGongShangCell.m in Sources */,
+				9A04149F17116AF0002FC88E /* PhoneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

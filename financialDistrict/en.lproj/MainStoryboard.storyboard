@@ -76,19 +76,45 @@
         <scene sceneID="inu-8e-rPe">
             <objects>
                 <tableViewController storyboardIdentifier="ProcedureVC" id="510-TJ-dOL" customClass="ProcedureViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Woo-U9-Csf">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="Woo-U9-Csf">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProcedureCell" id="Dwg-6R-Nlc">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProcedureCell" rowHeight="47" id="Dwg-6R-Nlc" customClass="ProcedureGongShangCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfm-PL-dZf">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="gL4-TM-FRQ"/>
+                                                <constraint firstAttribute="width" constant="35" id="j9z-7m-coO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jx3-eB-sMb">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="211" id="gQW-Sx-mfY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="jx3-eB-sMb" firstAttribute="leading" secondItem="Dwg-6R-Nlc" secondAttribute="leading" constant="79" id="5gI-38-mWY"/>
+                                    <constraint firstItem="Zfm-PL-dZf" firstAttribute="top" secondItem="Dwg-6R-Nlc" secondAttribute="top" constant="5" id="6pB-Rn-8xt"/>
+                                    <constraint firstItem="Zfm-PL-dZf" firstAttribute="leading" secondItem="Dwg-6R-Nlc" secondAttribute="leading" constant="20" type="default" id="WhC-hh-mQ3"/>
+                                    <constraint firstItem="jx3-eB-sMb" firstAttribute="centerY" secondItem="Zfm-PL-dZf" secondAttribute="centerY" type="default" id="Yl8-rQ-sJZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="procedureIcon" destination="Zfm-PL-dZf" id="F8N-p7-OCh"/>
+                                    <outlet property="procedureTitle" destination="jx3-eB-sMb" id="saD-0e-rd1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -245,14 +271,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GongShangCell" id="l7v-yT-4tu">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GongShangCell" rowHeight="47" id="s4K-JB-s1b" customClass="ProcedureGongShangCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSN-0D-CTW">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="1fg-2G-NpT"/>
+                                                <constraint firstAttribute="width" constant="35" id="BDS-56-YHs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wk3-aI-1AX">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="211" id="iOQ-e2-1V0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="bSN-0D-CTW" firstAttribute="top" secondItem="s4K-JB-s1b" secondAttribute="top" constant="5" id="981-RE-fkx"/>
+                                    <constraint firstItem="Wk3-aI-1AX" firstAttribute="leading" secondItem="s4K-JB-s1b" secondAttribute="leading" constant="79" id="suh-AL-yK9"/>
+                                    <constraint firstItem="Wk3-aI-1AX" firstAttribute="centerY" secondItem="bSN-0D-CTW" secondAttribute="centerY" type="default" id="vUy-rs-OdW"/>
+                                    <constraint firstItem="bSN-0D-CTW" firstAttribute="leading" secondItem="s4K-JB-s1b" secondAttribute="leading" constant="20" type="default" id="y2k-lS-aqp"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="procedureIcon" destination="bSN-0D-CTW" id="BaL-iv-L4U"/>
+                                    <outlet property="procedureTitle" destination="Wk3-aI-1AX" id="a1M-fG-7qE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -275,26 +327,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCell" textLabel="4bE-EM-fvC" detailTextLabel="mgR-B4-ovd" style="IBUITableViewCellStyleSubtitle" id="y0x-wz-rnp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhoneCell" id="y0x-wz-rnp" customClass="PhoneCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bE-EM-fvC">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKQ-nh-ShP">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="9aX-Kn-ciW"/>
+                                                <constraint firstAttribute="width" constant="20" id="cJU-js-ON1"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-5u-pGZ">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-B4-ovd">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xms-if-jI4">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="54" id="Hco-Q3-FUL"/>
+                                                <constraint firstAttribute="height" constant="21" id="NGt-0L-jtG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="tKQ-nh-ShP" firstAttribute="top" secondItem="y0x-wz-rnp" secondAttribute="top" constant="13" id="G5j-HN-J82"/>
+                                    <constraint firstItem="xms-if-jI4" firstAttribute="leading" secondItem="y0x-wz-rnp" secondAttribute="leading" constant="15" id="J5L-jG-bee"/>
+                                    <constraint firstAttribute="trailing" secondItem="tKQ-nh-ShP" secondAttribute="trailing" constant="20" type="default" id="SIg-SW-ly1"/>
+                                    <constraint firstItem="xms-if-jI4" firstAttribute="leading" secondItem="d9B-5u-pGZ" secondAttribute="leading" type="default" id="TcZ-ad-jAm"/>
+                                    <constraint firstItem="d9B-5u-pGZ" firstAttribute="top" secondItem="y0x-wz-rnp" secondAttribute="top" constant="2" id="fGh-jp-cUG"/>
+                                    <constraint firstAttribute="bottom" secondItem="xms-if-jI4" secondAttribute="bottom" constant="1" id="hOt-ua-Y61"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="phoneIcon" destination="tKQ-nh-ShP" id="YW0-4Z-iSg"/>
+                                    <outlet property="phoneNumber" destination="xms-if-jI4" id="Ohn-oj-35A"/>
+                                    <outlet property="phoneTitle" destination="d9B-5u-pGZ" id="lfO-Ul-xl9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -612,6 +686,22 @@
                                     <action selector="usePhoto:" destination="cmu-bl-JvI" eventType="touchUpInside" id="86l-xE-VTd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBg-4v-BSs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="nKZ-bp-7ck"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="upload">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadSuggestion:" destination="cmu-bl-JvI" eventType="touchUpInside" id="j64-Yz-ucw"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYL-CN-0Ez">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="5kd-hc-RIx"/>
@@ -661,29 +751,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBg-4v-BSs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-7E-FHN">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="nKZ-bp-7ck"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="upload">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadSuggestion:" destination="cmu-bl-JvI" eventType="touchUpInside" id="j64-Yz-ucw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-7E-FHN">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="gTr-e0-LPP"/>
+                                    <constraint firstAttribute="height" constant="19" id="Upg-7b-EUz"/>
                                     <constraint firstAttribute="width" constant="19" id="otQ-5d-Kcc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal">
+                                <state key="normal" backgroundImage="checkbox_white.png">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -720,11 +794,11 @@
                             <constraint firstItem="NQP-HE-PHR" firstAttribute="trailing" secondItem="uBg-4v-BSs" secondAttribute="trailing" type="default" id="RTH-SR-x79"/>
                             <constraint firstItem="VYL-CN-0Ez" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UxH-Uz-egR"/>
                             <constraint firstItem="rnA-pF-3cA" firstAttribute="centerY" secondItem="2XH-7E-FHN" secondAttribute="centerY" type="default" id="Wz4-g4-TIq"/>
+                            <constraint firstItem="1mb-aF-7oM" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="57" id="YUt-rr-mVg"/>
                             <constraint firstItem="NQP-HE-PHR" firstAttribute="trailing" secondItem="c2n-g0-abN" secondAttribute="trailing" type="default" id="aNi-JM-mbs"/>
                             <constraint firstItem="Puy-2x-LcF" firstAttribute="trailing" secondItem="1mb-aF-7oM" secondAttribute="trailing" type="default" id="cDp-ln-o43"/>
                             <constraint firstItem="NQP-HE-PHR" firstAttribute="leading" secondItem="5Cy-Vo-pUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jj2-vr-mEu"/>
-                            <constraint firstItem="1mb-aF-7oM" firstAttribute="bottom" secondItem="VYL-CN-0Ez" secondAttribute="bottom" type="default" id="lqV-F0-Mmd"/>
-                            <constraint firstItem="Puy-2x-LcF" firstAttribute="top" secondItem="VYL-CN-0Ez" secondAttribute="top" type="default" id="pD8-1L-eUH"/>
+                            <constraint firstItem="Puy-2x-LcF" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="12" id="lha-qo-e9K"/>
                             <constraint firstAttribute="bottom" secondItem="rnA-pF-3cA" secondAttribute="bottom" constant="76" id="s0U-9E-ayT"/>
                             <constraint firstItem="rnA-pF-3cA" firstAttribute="leading" secondItem="2XH-7E-FHN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tMu-ur-EwX"/>
                             <constraint firstItem="c2n-g0-abN" firstAttribute="top" secondItem="5Cy-Vo-pUu" secondAttribute="top" constant="107" id="tfz-tb-sa8"/>
@@ -1222,6 +1296,7 @@
         <image name="book1_down.png" width="686" height="108"/>
         <image name="book1_up.png" width="686" height="108"/>
         <image name="checkbox_orange.png" width="60" height="60"/>
+        <image name="checkbox_white.png" width="60" height="60"/>
         <image name="contact_down.png" width="686" height="109"/>
         <image name="contact_up.png" width="686" height="109"/>
         <image name="ic_procedure_down.png" width="686" height="109"/>

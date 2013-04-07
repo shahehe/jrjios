@@ -9,6 +9,8 @@
 #import "SuggestionViewController.h"
 #import "UIColor+NavigationColor.h"
 #import <QuartzCore/QuartzCore.h>
+#import "StringsJsonParser.h"
+
 
 @interface SuggestionViewController (){
 
@@ -104,8 +106,8 @@
 -(void) textFieldDidEndEditing:(UITextField *)textField
 {
     phoneContact.layer.borderColor = [UIColor clearColor].CGColor;
-    //[self.view endEditing:YES];
 }
+
 
 
 - (void) textViewDidBeginEditing:(UITextView *)textView
@@ -133,8 +135,14 @@
 {
     [[problemDescription layer] setBorderColor:[UIColor clearColor].CGColor];
     firstWriteDescription = NO;
-    
-    //[self.view endEditing:YES];
+
+}
+
+//close the keyboard
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.phoneContact endEditing:YES];
+    [self.problemDescription endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -207,8 +215,8 @@
      */
 	NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
 	// setting up the URL to post to
-	NSString *urlString = @"http://64.150.161.193/jrj_temp/testUpload.php";    ////!!!!!change it
-    NSString *imageName = @"guitar1.jpg";
+	NSString *urlString = @"http://64.150.161.193/jrj/receiveMessage.php";    ////!!!!!change it
+    NSString *imageName = @"timberlake.jpg";
 	
 	// setting up the request object now
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -251,11 +259,30 @@
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"mobile\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat:@"%@",phoneContact.text] dataUsingEncoding:NSUTF8StringEncoding]];
+    //address
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"address\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"%@",problemDescription.text] dataUsingEncoding:NSUTF8StringEncoding]];
+    //create_time
+    NSDate* currentDate = [NSDate date];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"create_time\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"%@",[currentDate description]] dataUsingEncoding:NSUTF8StringEncoding]];
+    //uid
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"uid\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"101"] dataUsingEncoding:NSUTF8StringEncoding]];  
+    //name
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"name\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"Haha"] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
     
     
     /*
-        set pic_s,pic value
-	*/
+        set picture
+     */
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat: @"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@\"\r\n",imageName] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -271,6 +298,30 @@
 	
 	NSLog(@"%@",returnString);
     
+    //parse the return dictionary using JSON parser
+    NSDictionary *outputDic = [[NSDictionary alloc] init];
+    
+    NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                    options:NSJSONReadingAllowFragments
+                                                      error:&error];
+    if(jsonObject != nil && error == nil){
+        if([jsonObject isKindOfClass:[NSDictionary class]]){
+            outputDic = (NSDictionary *)jsonObject;
+        }
+    }
+    
+        
+    if([[outputDic objectForKey:@"code"] integerValue] == 1){
+        NSLog(@"1hahahah");
+    }
+    else {
+        NSLog(@"WTF");
+    }
+    
+    //connect to feedback.php
+
 }
 
 

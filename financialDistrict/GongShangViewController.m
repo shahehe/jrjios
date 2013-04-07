@@ -8,6 +8,7 @@
 
 #import "GongShangViewController.h"
 #import "TextOfGongShangViewController.h"
+#import "ProcedureGongShangCell.h"
 
 @interface GongShangViewController ()
 
@@ -67,13 +68,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"GongShangCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ProcedureGongShangCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [self.gongshangMenu objectAtIndex:indexPath.row];
+    cell.procedureTitle.text = [self.gongshangMenu objectAtIndex:indexPath.row];
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"info4"
                                                           ofType:@"png"];
-    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+    cell.procedureIcon.image = [UIImage imageWithContentsOfFile:imagePath];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellBar.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
     
     return cell;
 }
@@ -123,8 +125,9 @@
 {
     TextOfGongShangViewController *textGSVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TextGSVC"];
     
+    ProcedureGongShangCell *cell = (ProcedureGongShangCell *)[tableView cellForRowAtIndexPath:indexPath];
     textGSVC.fileNumberGS = [indexPath row];
-    textGSVC.titleNameGS = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    textGSVC.titleNameGS = cell.procedureTitle.text;
     [self.navigationController pushViewController:textGSVC animated:YES];
     
     

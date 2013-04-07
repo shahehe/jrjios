@@ -7,6 +7,7 @@
 //
 
 #import "PhoneViewController.h"
+#import "PhoneCell.h"
 
 @interface PhoneViewController ()
 
@@ -64,16 +65,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PhoneCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    PhoneCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     
     // Configure the cell...
-    cell.textLabel.text = [self.contactsMenu objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [self.numbersMenu objectAtIndex:indexPath.row];
+    cell.phoneTitle.text = [self.contactsMenu objectAtIndex:indexPath.row];
+    cell.phoneNumber.text = [self.numbersMenu objectAtIndex:indexPath.row];
     
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"info2"
                                                           ofType:@"png"];
-    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+    cell.phoneIcon.image = [UIImage imageWithContentsOfFile:imagePath];
+    
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellBar.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
     
  
     return cell;
@@ -124,7 +127,9 @@
 {
     //make phone calls using numbers in subtitle
     //HAVEN'T TEST IT --- CANNOT TEST ON SIMULATOR
-    NSString* phoneNum= [tableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
+    PhoneCell *cell = (PhoneCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    NSString* phoneNum= cell.phoneNumber.text;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phoneNum]];
     [[UIApplication  sharedApplication] openURL:url];
 }

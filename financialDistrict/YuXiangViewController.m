@@ -104,6 +104,8 @@
                                                          ofType:@"png"];
     cell.yuXiangImage.image  = [UIImage imageWithContentsOfFile:imagePath];
     
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellBar.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
+    
     
     return cell;
 }

@@ -8,7 +8,7 @@
 
 #import "ProcedureViewController.h"
 #import "TextOfProcedureViewController.h"
-
+#import "ProcedureGongShangCell.h"
 
 @interface ProcedureViewController ()
 
@@ -75,16 +75,18 @@
 
     static NSString *CellIdentifier = @"ProcedureCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ProcedureGongShangCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
 
-    cell.textLabel.text = [self.procedureMenu objectAtIndex:indexPath.row];
+    cell.procedureTitle.text = [self.procedureMenu objectAtIndex:indexPath.row];
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"info4"
                                                           ofType:@"png"];
-    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+    cell.procedureIcon.image= [UIImage imageWithContentsOfFile:imagePath];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellBar.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
 
     return cell;
+
 }
 
 /*
@@ -133,8 +135,9 @@
 
     TextOfProcedureViewController *textProcedureVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TextPVC"];
     
+    ProcedureGongShangCell *cell = (ProcedureGongShangCell *)[tableView cellForRowAtIndexPath:indexPath];
     textProcedureVC.fileNumber = [indexPath row];
-    textProcedureVC.titleName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    textProcedureVC.titleName = cell.procedureTitle.text;
     [self.navigationController pushViewController:textProcedureVC animated:YES];
 
 }
