@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
+@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
 

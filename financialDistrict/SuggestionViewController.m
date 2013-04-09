@@ -15,6 +15,8 @@
 @interface SuggestionViewController (){
 
     BOOL firstWriteDescription;
+    NSMutableData *dataFromRequest2;
+    UIActivityIndicatorView *uploadActivity;
 
 }
 @end
@@ -29,6 +31,7 @@
 @synthesize problemDescription;
 @synthesize feedbackButton;
 @synthesize needFeedback;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +54,10 @@
     [self customText];
     firstWriteDescription = YES;
     
+    
+    uploadActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.view addSubview:uploadActivity];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -68,7 +75,7 @@
                                     if(finished)
                                     {
                                         [UIView animateWithDuration:1.5
-                                                              delay:0.8
+                                                              delay:0.5
                                                             options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                                                          animations:^(void){[placeInfo setAlpha:0.0];}
                                                          completion:^(BOOL finished){}];
@@ -208,6 +215,8 @@
 
 - (IBAction)uploadSuggestion:(id)sender {
     
+
+    [uploadActivity startAnimating];
     /*
 	 turning the image into a NSData object
 	 getting the image back out of the UIImageView
@@ -215,7 +224,7 @@
      */
 	NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
 	// setting up the URL to post to
-	NSString *urlString = @"http://64.150.161.193/jrj/receiveMessage.php";    ////!!!!!change it
+	NSString *urlString = @"http://64.150.161.193/jrj/receiveMessage.php";    
     NSString *imageName = @"timberlake.jpg";
 	
 	// setting up the request object now
@@ -271,11 +280,11 @@
     //uid
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"uid\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat:@"101"] dataUsingEncoding:NSUTF8StringEncoding]];  
+	[body appendData:[[NSString stringWithFormat:@"0"] dataUsingEncoding:NSUTF8StringEncoding]];  
     //name
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"name\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat:@"Haha"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"MyName"] dataUsingEncoding:NSUTF8StringEncoding]];
     
     
     
@@ -284,21 +293,27 @@
         set picture
      */
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat: @"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@\"\r\n",imageName] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat: @"Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n",imageName] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[NSData dataWithData:imageData]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	// setting the body of the post to the reqeust
 	[request setHTTPBody:body];
     
-	
 	// now lets make the connection to the web
 	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
 	NSLog(@"%@",returnString);
     
-    //parse the return dictionary using JSON parser
+    [uploadActivity stopAnimating];
+    
+    
+    /*
+     Picture has been uploaded, and info has been inserted 
+     Now parse the return dictionary using JSON parser
+     send to feedback.php if success
+     */
     NSDictionary *outputDic = [[NSDictionary alloc] init];
     
     NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
@@ -311,18 +326,55 @@
             outputDic = (NSDictionary *)jsonObject;
         }
     }
-    
-        
+           
     if([[outputDic objectForKey:@"code"] integerValue] == 1){
-        NSLog(@"1hahahah");
+         //connect to feedback.php
+  
+        NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] init];
+        NSString *url2 = @"http://64.150.161.193/jrj/feedback.php";
+        
+        [request2 setURL:[NSURL URLWithString:url2]];
+        [request2 setHTTPMethod:@"GET"];
+        
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request2 delegate:self startImmediately:YES];
+        
+        if(!connection) {
+            NSLog(@"connection failed :(");
+        } else {
+            NSLog(@"connection succeeded  :)");
+            
+        }
+        
     }
     else {
-        NSLog(@"WTF");
+        NSLog(@"The return value from receiveMessage is failure");
     }
-    
-    //connect to feedback.php
 
 }
+
+#pragma mark NSURLConnection delegate methods
+
+-(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    dataFromRequest2 = [[NSMutableData alloc] init];
+}
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [dataFromRequest2 appendData:data];
+}
+
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"error");
+}
+
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Done with Feedback!");
+}
+
 
 
 @end

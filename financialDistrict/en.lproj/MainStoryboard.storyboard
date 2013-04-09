@@ -1315,6 +1315,161 @@
         <image name="tab4_black.png" width="24" height="24"/>
         <image name="主菜单d1.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="BMKMapView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMKMapView.h"/>
+        </class>
+        <class className="GongShangViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GongShangViewController.h"/>
+        </class>
+        <class className="GovViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GovViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="button0:"/>
+                <relationship kind="action" name="button1:"/>
+                <relationship kind="action" name="button2:"/>
+                <relationship kind="action" name="button3:"/>
+                <relationship kind="action" name="button4:"/>
+                <relationship kind="action" name="button5:"/>
+            </relationships>
+        </class>
+        <class className="InfoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoArrow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="InfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+        </class>
+        <class className="IntroViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IntroViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="introText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ownMapView" candidateClass="BMKMapView"/>
+                <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
+        <class className="PhoneCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="phoneIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="phoneNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phoneTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PhoneViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneViewController.h"/>
+        </class>
+        <class className="ProcedureGongShangCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProcedureGongShangCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="procedureIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="procedureTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ProcedureViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProcedureViewController.h"/>
+        </class>
+        <class className="ProductInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ProductListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductListViewController.h"/>
+        </class>
+        <class className="ReportCategoryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportCategoryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imgView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ReportCategoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportCategoryViewController.h"/>
+        </class>
+        <class className="ReportInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ReportListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportListViewController.h"/>
+        </class>
+        <class className="RewardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RewardViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="rewardText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="SuggestionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SuggestionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="feedbackNeeded:"/>
+                <relationship kind="action" name="uploadSuggestion:"/>
+                <relationship kind="action" name="useCamera:"/>
+                <relationship kind="action" name="usePhoto:"/>
+                <relationship kind="outlet" name="feedbackButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageToUpload" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="phoneContact" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="placeInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="problemDescription" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="TextOfGongShangViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfGongShangViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gongShangText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="gongShangTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TextOfProcedureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfProcedureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="procedureText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="procedureTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TextOfYuXiangViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfYuXiangViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="yxWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="YuXiangCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YuXiangCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="yXAddressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yXContentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yXTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yuXiangImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="YuXiangViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YuXiangViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
