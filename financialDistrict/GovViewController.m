@@ -82,17 +82,6 @@
     
     
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor],[UIFont systemFontOfSize:20.0f],[UIColor colorWithWhite:0.0 alpha:1], nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor,UITextAttributeFont,UITextAttributeTextShadowColor, nil]];
-    
-/*
-    self.tabBarController.tabBar.tintColor = [UIColor NaviColor];
-    self.tabBarController.tabBar.selectedImageTintColor = [UIColor blackColor];
-
- */
-/*
-    NSString *tab1ImagePath = [[NSBundle mainBundle] pathForResource:@"tab1_black"
-                                                          ofType:@"png"];
-    self.tabBarController.tabBar.backgroundImage = [UIImage imageWithContentsOfFile:tab1ImagePath];
- */   
 
 }
 

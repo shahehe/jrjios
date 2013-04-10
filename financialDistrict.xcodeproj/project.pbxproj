@@ -94,6 +94,8 @@
 		9A363C9E1709959400E7EE11 /* ic_procedure_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A363C991709959400E7EE11 /* ic_procedure_up.png */; };
 		9A363C9F1709959400E7EE11 /* info_dis_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A363C9A1709959400E7EE11 /* info_dis_up.png */; };
 		9A363CA01709959400E7EE11 /* street_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A363C9B1709959400E7EE11 /* street_up.png */; };
+		9A38881B171562630082E6F4 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A388818171562630082E6F4 /* NSString+MD5Addition.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		9A38881C171562630082E6F4 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A38881A171562630082E6F4 /* UIDevice+IdentifierAddition.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		9A3F28D2170C57EE002ABF2C /* checkbox_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */; };
 		9A3F28D5170C5A55002ABF2C /* checkbox_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F28D4170C5A55002ABF2C /* checkbox_white.png */; };
 		9A436ACA17017E0700360496 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436AC917017E0700360496 /* ProductListViewController.m */; };
@@ -294,6 +296,10 @@
 		9A363C991709959400E7EE11 /* ic_procedure_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_procedure_up.png; sourceTree = "<group>"; };
 		9A363C9A1709959400E7EE11 /* info_dis_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_dis_up.png; sourceTree = "<group>"; };
 		9A363C9B1709959400E7EE11 /* street_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = street_up.png; sourceTree = "<group>"; };
+		9A388817171562630082E6F4 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		9A388818171562630082E6F4 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		9A388819171562630082E6F4 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
+		9A38881A171562630082E6F4 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
 		9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_orange.png; sourceTree = "<group>"; };
 		9A3F28D4170C5A55002ABF2C /* checkbox_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_white.png; sourceTree = "<group>"; };
 		9A436AC817017E0700360496 /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
@@ -499,6 +505,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A388815171562550082E6F4 /* DeviceID */ = {
+			isa = PBXGroup;
+			children = (
+				9A388817171562630082E6F4 /* NSString+MD5Addition.h */,
+				9A388818171562630082E6F4 /* NSString+MD5Addition.m */,
+				9A388819171562630082E6F4 /* UIDevice+IdentifierAddition.h */,
+				9A38881A171562630082E6F4 /* UIDevice+IdentifierAddition.m */,
+			);
+			name = DeviceID;
+			sourceTree = "<group>";
+		};
 		9A436AD11701804A00360496 /* Bct */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +725,7 @@
 		9ADA623B16FAFB4100F86B95 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				9A388815171562550082E6F4 /* DeviceID */,
 				9A436AD11701804A00360496 /* Bct */,
 				9A56C41716FC1E7200369F9C /* BMapKit */,
 				9ADA623C16FAFBD900F86B95 /* MBProgressHUD */,
@@ -1218,6 +1236,8 @@
 				9A436B301701E1F300360496 /* RewardViewController.m in Sources */,
 				9A04149917116232002FC88E /* ProcedureGongShangCell.m in Sources */,
 				9A04149F17116AF0002FC88E /* PhoneCell.m in Sources */,
+				9A38881B171562630082E6F4 /* NSString+MD5Addition.m in Sources */,
+				9A38881C171562630082E6F4 /* UIDevice+IdentifierAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
