@@ -10,6 +10,7 @@
 #import "UIColor+NavigationColor.h"
 #import <QuartzCore/QuartzCore.h>
 #import "StringsJsonParser.h"
+#import "ApiService.h"
 
 
 @interface SuggestionViewController (){
@@ -224,7 +225,7 @@
      */
 	NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
 	// setting up the URL to post to
-	NSString *urlString = @"http://64.150.161.193/jrj/receiveMessage.php";    
+    NSString *urlString =[NSString stringWithFormat:@"http://%@/jrj/receiveMessage.php",[ApiService sharedInstance].host];
     NSString *imageName = @"timberlake.jpg";
 	
 	// setting up the request object now
@@ -331,7 +332,7 @@
          //connect to feedback.php
   
         NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] init];
-        NSString *url2 = @"http://64.150.161.193/jrj/feedback.php";
+        NSString *url2 =[NSString stringWithFormat:@"http://%@/jrj/feedback.php",[ApiService sharedInstance].host];
         
         [request2 setURL:[NSURL URLWithString:url2]];
         [request2 setHTTPMethod:@"GET"];

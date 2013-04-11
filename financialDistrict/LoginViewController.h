@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "UIDevice+IdentifierAddition.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface LoginViewController : UIViewController
+
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
+@property (weak, nonatomic) IBOutlet UIView *userNameView;
+@property (weak, nonatomic) IBOutlet UIView *pwView;
 
 @end

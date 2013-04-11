@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UIColor+NavigationColor.h"
+#import "ApiService.h"
 
 @interface LoginViewController ()
 
@@ -16,6 +17,9 @@
 @implementation LoginViewController
 @synthesize userName;
 @synthesize passWord;
+@synthesize userNameView;
+@synthesize pwView;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +34,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    userName.backgroundColor = [UIColor whiteColor];
+    userName.delegate = self;
+    passWord.backgroundColor = [UIColor whiteColor];
+    passWord.delegate = self;
+    [passWord setSecureTextEntry:YES];
+
+    userNameView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    userNameView.layer.borderWidth = 1.0f;
+    pwView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    pwView.layer.borderWidth = 1.0f;
+    
     
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title = @"返回";
@@ -40,6 +55,29 @@
     
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor],[UIFont systemFontOfSize:20.0f],[UIColor colorWithWhite:0.0 alpha:1], nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor,UITextAttributeFont,UITextAttributeTextShadowColor, nil]];
 }
+
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(textField == userName){
+        userNameView.layer.borderColor = [UIColor orangeColor].CGColor;
+    }
+    else if(textField == passWord){
+        pwView.layer.borderColor = [UIColor orangeColor].CGColor;
+    }
+}
+
+
+-(void) textFieldDidEndEditing:(UITextField *)textField
+{
+    if(textField == userName){
+        userNameView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }
+    else if(textField == passWord){
+        pwView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -58,12 +96,12 @@
 - (IBAction)registerUser:(id)sender {
     
     NSMutableURLRequest *registerRequest = [[NSMutableURLRequest alloc] init];
-    NSString *registerUrl = @"http://64.150.161.193/jrj/register.php";
+    NSString *registerUrl =[NSString stringWithFormat:@"http://%@/jrj/register.php",[ApiService sharedInstance].host];
     
     [registerRequest setURL:[NSURL URLWithString:registerUrl]];
     [registerRequest setHTTPMethod:@"POST"];   
     
-    NSString *post = [NSString stringWithFormat:@"name=%@&password=%@&deviceid=%@&email=1@gmail.coms",userName.text,passWord.text, [[UIDevice currentDevice] uniqueDeviceIdentifier]];
+    NSString *post = [NSString stringWithFormat:@"name=%@&password=%@&deviceid=%@",userName.text,passWord.text, @"IOS"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding];
     
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
@@ -83,7 +121,7 @@
     
     
     NSMutableURLRequest *loginRequest = [[NSMutableURLRequest alloc] init];
-    NSString *loginUrl = @"http://64.150.161.193/jrj/login.php";
+    NSString *loginUrl =[NSString stringWithFormat:@"http://%@/jrj/login.php",[ApiService sharedInstance].host];
     
     [loginRequest setURL:[NSURL URLWithString:loginUrl]];
     [loginRequest setHTTPMethod:@"POST"];    
