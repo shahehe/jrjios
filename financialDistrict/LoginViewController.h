@@ -9,12 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "UIDevice+IdentifierAddition.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MBProgressHUD.h"
 
-
-@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@interface LoginViewController : UIViewController <UITextFieldDelegate,MBProgressHUDDelegate>{
+    MBProgressHUD *HUD;
+}
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
 @property (weak, nonatomic) IBOutlet UIView *userNameView;
 @property (weak, nonatomic) IBOutlet UIView *pwView;
+@property NSString * confirmedPW;
+@property BOOL hasConfirmedPW;
+
++(void) showAlert:(NSString *)messageToDisplay;
++ (int) successOrNot:(NSString *)returnString;
 
 @end

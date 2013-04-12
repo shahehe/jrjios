@@ -23,6 +23,7 @@
 		9A08E47516EF0025000710F5 /* gongshang7 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46D16EF0025000710F5 /* gongshang7 */; };
 		9A08E6201700780E000CB7CA /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E61F1700780E000CB7CA /* InfoCell.m */; };
 		9A08E6231700810B000CB7CA /* backgroundrep.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E6221700810B000CB7CA /* backgroundrep.png */; };
+		9A1127EE1718244C0004B1CD /* ReEnterPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1127ED1718244C0004B1CD /* ReEnterPWViewController.m */; };
 		9A1A8DCE16F17C5800C75666 /* YuXiangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */; };
 		9A1A8DD216F17D2500C75666 /* YuXiangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A8DD116F17D2500C75666 /* YuXiangCell.m */; };
 		9A1A8DD416F1A6A200C75666 /* yuxiang.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A1A8DD316F1A6A200C75666 /* yuxiang.json */; };
@@ -197,10 +198,6 @@
 		9AFAA7B116ED77DD00865251 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7AF16ED77DD00865251 /* InfoPlist.strings */; };
 		9AFAA7B316ED77DD00865251 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7B216ED77DD00865251 /* main.m */; };
 		9AFAA7B716ED77DD00865251 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7B616ED77DD00865251 /* AppDelegate.m */; };
-		9AFAA7C516ED77DD00865251 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C416ED77DD00865251 /* first.png */; };
-		9AFAA7C716ED77DD00865251 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7C616ED77DD00865251 /* first@2x.png */; };
-		9AFAA7CC16ED77DD00865251 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CB16ED77DD00865251 /* second.png */; };
-		9AFAA7CE16ED77DD00865251 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAA7CD16ED77DD00865251 /* second@2x.png */; };
 		9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7D816ED803000865251 /* NewsViewController.m */; };
 		9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAA7DE16ED805300865251 /* LoginViewController.m */; };
 		9AFC31F816F01B5400DE4174 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AFC31F716F01B5400DE4174 /* strings.json */; };
@@ -230,6 +227,8 @@
 		9A08E61E1700780E000CB7CA /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
 		9A08E61F1700780E000CB7CA /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
 		9A08E6221700810B000CB7CA /* backgroundrep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundrep.png; sourceTree = "<group>"; };
+		9A1127EC1718244C0004B1CD /* ReEnterPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReEnterPWViewController.h; sourceTree = "<group>"; };
+		9A1127ED1718244C0004B1CD /* ReEnterPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReEnterPWViewController.m; sourceTree = "<group>"; };
 		9A1A8DCC16F17C5800C75666 /* YuXiangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuXiangViewController.h; sourceTree = "<group>"; };
 		9A1A8DCD16F17C5800C75666 /* YuXiangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuXiangViewController.m; sourceTree = "<group>"; };
 		9A1A8DD016F17D2500C75666 /* YuXiangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuXiangCell.h; sourceTree = "<group>"; };
@@ -483,10 +482,6 @@
 		9AFAA7B516ED77DD00865251 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AFAA7B616ED77DD00865251 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9AFAA7BF16ED77DD00865251 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9AFAA7C416ED77DD00865251 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		9AFAA7C616ED77DD00865251 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		9AFAA7CB16ED77DD00865251 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		9AFAA7CD16ED77DD00865251 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		9AFAA7D716ED803000865251 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		9AFAA7D816ED803000865251 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		9AFAA7DD16ED805300865251 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -521,6 +516,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A1127E61717F72E0004B1CD /* trash */ = {
+			isa = PBXGroup;
+			children = (
+				9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */,
+				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
+			);
+			name = trash;
+			sourceTree = "<group>";
+		};
+		9A1127E71717F7510004B1CD /* JsonParser */ = {
+			isa = PBXGroup;
+			children = (
+				9AFC320016F03C1000DE4174 /* StringsJsonParser.h */,
+				9AFC320116F03C1000DE4174 /* StringsJsonParser.m */,
+			);
+			name = JsonParser;
+			sourceTree = "<group>";
+		};
+		9A1127EF171824540004B1CD /* LoginTab */ = {
+			isa = PBXGroup;
+			children = (
+				9A1127EC1718244C0004B1CD /* ReEnterPWViewController.h */,
+				9A1127ED1718244C0004B1CD /* ReEnterPWViewController.m */,
+			);
+			name = LoginTab;
+			sourceTree = "<group>";
+		};
 		9A388815171562550082E6F4 /* DeviceID */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +580,11 @@
 		9A436AEE1701B43800360496 /* menuButtons */ = {
 			isa = PBXGroup;
 			children = (
+				9A55FFC716F2C98F00E14CE0 /* info0.png */,
+				9A55FFC816F2C98F00E14CE0 /* info1.png */,
+				9A55FFC916F2C98F00E14CE0 /* info2.png */,
+				9A55FFCA16F2C98F00E14CE0 /* info3.png */,
+				9A55FFCB16F2C98F00E14CE0 /* info4.png */,
 				9A436AE817018E9C00360496 /* arrowButton.png */,
 				9A436B0F1701D81400360496 /* down */,
 				9A436AFE1701D7E100360496 /* UP */,
@@ -741,6 +768,7 @@
 		9ADA623B16FAFB4100F86B95 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				9A1127E71717F7510004B1CD /* JsonParser */,
 				9A388815171562550082E6F4 /* DeviceID */,
 				9A436AD11701804A00360496 /* Bct */,
 				9A56C41716FC1E7200369F9C /* BMapKit */,
@@ -949,6 +977,7 @@
 		9AFAA7AC16ED77DD00865251 /* financialDistrict */ = {
 			isa = PBXGroup;
 			children = (
+				9A1127EF171824540004B1CD /* LoginTab */,
 				9A436AFA1701B97C00360496 /* UI */,
 				9AAD482316FC28CC005B1EB4 /* SuggestionTab */,
 				9ADA623116FAFAF500F86B95 /* NewsTab */,
@@ -956,10 +985,6 @@
 				9AFAA7BE16ED77DD00865251 /* MainStoryboard.storyboard */,
 				9A73A16916F347A300D1B397 /* SuggestionViewController.h */,
 				9A73A16A16F347A300D1B397 /* SuggestionViewController.m */,
-				9AFC320016F03C1000DE4174 /* StringsJsonParser.h */,
-				9AFC320116F03C1000DE4174 /* StringsJsonParser.m */,
-				9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */,
-				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
 				9A436AFB1701D2CE00360496 /* GovViewController.h */,
 				9A436AFC1701D2CF00360496 /* GovViewController.m */,
 				9A08E61E1700780E000CB7CA /* InfoCell.h */,
@@ -977,16 +1002,12 @@
 		9AFAA7AD16ED77DD00865251 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A1127E61717F72E0004B1CD /* trash */,
 				9AE70D2817046DF4000B5AF9 /* json */,
 				9AE70CFA17042C0F000B5AF9 /* TabBarAppearance */,
 				9A436AEE1701B43800360496 /* menuButtons */,
 				9A56C41416FC1E2E00369F9C /* Procedure&GongShang */,
 				9ADA629816FB048400F86B95 /* YuXiang */,
-				9A55FFC716F2C98F00E14CE0 /* info0.png */,
-				9A55FFC816F2C98F00E14CE0 /* info1.png */,
-				9A55FFC916F2C98F00E14CE0 /* info2.png */,
-				9A55FFCA16F2C98F00E14CE0 /* info3.png */,
-				9A55FFCB16F2C98F00E14CE0 /* info4.png */,
 				9A04149B171162AE002FC88E /* cellBar.png */,
 				9A501EB01716B5A8005AEC51 /* camera.png */,
 				9A501EB11716B5A8005AEC51 /* doc.png */,
@@ -1003,10 +1024,6 @@
 				9AFAA7B516ED77DD00865251 /* AppDelegate.h */,
 				9AFAA7B616ED77DD00865251 /* AppDelegate.m */,
 				9A436AEC1701A09000360496 /* menuButton.png */,
-				9AFAA7C416ED77DD00865251 /* first.png */,
-				9AFAA7C616ED77DD00865251 /* first@2x.png */,
-				9AFAA7CB16ED77DD00865251 /* second.png */,
-				9AFAA7CD16ED77DD00865251 /* second@2x.png */,
 				9AFAA7AE16ED77DD00865251 /* financialDistrict-Info.plist */,
 				9AFAA7AF16ED77DD00865251 /* InfoPlist.strings */,
 				9AFAA7B216ED77DD00865251 /* main.m */,
@@ -1074,10 +1091,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AFAA7B116ED77DD00865251 /* InfoPlist.strings in Resources */,
-				9AFAA7C516ED77DD00865251 /* first.png in Resources */,
-				9AFAA7C716ED77DD00865251 /* first@2x.png in Resources */,
-				9AFAA7CC16ED77DD00865251 /* second.png in Resources */,
-				9AFAA7CE16ED77DD00865251 /* second@2x.png in Resources */,
 				9AD6067C16EDECE700F2CCD8 /* procedure0 in Resources */,
 				9AD6067D16EDECE700F2CCD8 /* procedure1 in Resources */,
 				9AD6067E16EDECE700F2CCD8 /* procedure2 in Resources */,
@@ -1270,6 +1283,7 @@
 				9A04149F17116AF0002FC88E /* PhoneCell.m in Sources */,
 				9A38881B171562630082E6F4 /* NSString+MD5Addition.m in Sources */,
 				9A38881C171562630082E6F4 /* UIDevice+IdentifierAddition.m in Sources */,
+				9A1127EE1718244C0004B1CD /* ReEnterPWViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
