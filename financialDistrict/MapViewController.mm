@@ -31,7 +31,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    ownMapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+    //ownMapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 367)];
+    
     self.view = ownMapView;
     ownMapView.delegate = self;
     [ownMapView setShowsUserLocation:YES];
@@ -44,9 +45,6 @@
     [longPress setMinimumPressDuration:0.8];
     [ownMapView addGestureRecognizer:longPress];
     
-    //add Label and button to display current location
-    //[self.view addSubview:placeLabel];
-    
 }
 
 
@@ -57,7 +55,7 @@
     coor.longitude                  = userLocation.coordinate.longitude;
     [mapView setCenterCoordinate:coor animated:YES];
 	if (userLocation != nil) {
-		NSLog(@"%f %f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
+		//NSLog(@"%f %f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
 	}
     placeLabel.text = [NSString stringWithFormat:@"位置：%f, %f",userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude];
     pointLatitude = userLocation.location.coordinate.latitude;
@@ -69,7 +67,7 @@
 - (void)mapViewDidStopLocatingUser:(BMKMapView *)mapView
 {
     if (mapView.userLocation != nil) {
-		NSLog(@"Stop~~ %f %f", mapView.userLocation.location.coordinate.latitude, mapView.userLocation.location.coordinate.longitude);
+		//NSLog(@"Stop~~ %f %f", mapView.userLocation.location.coordinate.latitude, mapView.userLocation.location.coordinate.longitude);
 	}
     BMKUserLocation *userLocation = mapView.userLocation;
     [mapView addAnnotation:userLocation];
@@ -82,9 +80,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)toCurrentLocation:(id)sender {
-        placeLabel.text = [NSString stringWithFormat:@"位置：%f, %f",ownMapView.userLocation.location.coordinate.latitude, ownMapView.userLocation.location.coordinate.longitude];
-}
 
 - (void) addAnnotationForMap:(UILongPressGestureRecognizer*)press {
     
@@ -124,6 +119,10 @@
 
 //百度地图的annotation泡泡会在移动中突然消失，再移动又回来，sdk的bug
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
+    
+    if ([annotation isKindOfClass:[BMKUserLocation class]]) {
+        return nil;
+    }
    
     static NSString *AnnotationViewID = @"annotatioID";
     BMKPinAnnotationView *newAnnotation =(BMKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
@@ -131,7 +130,6 @@
         newAnnotation = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
     }
     newAnnotation.pinColor = BMKPinAnnotationColorGreen;
-    //newAnnotation.draggable = YES;  //should be NO, if it was draggable, the longtitude and latitude are wrong
     return newAnnotation;
 }
 

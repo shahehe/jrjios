@@ -36,11 +36,26 @@
 
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg.png"]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg2.png"]];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabbar_selection.png"]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor darkGrayColor], UITextAttributeTextColor,
+      [UIFont fontWithName:@"font" size:0.0], UITextAttributeFont,
+      nil]
+                                             forState:UIControlStateNormal];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], UITextAttributeTextColor,
+      [UIFont fontWithName:@"font" size:0.0], UITextAttributeFont,
+      nil]
+                                             forState:UIControlStateSelected];
     
     
 }
-					
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

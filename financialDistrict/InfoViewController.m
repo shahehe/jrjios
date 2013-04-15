@@ -79,10 +79,6 @@
 
     
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor],[UIFont systemFontOfSize:20.0f],[UIColor colorWithWhite:0.0 alpha:1], nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor,UITextAttributeFont,UITextAttributeTextShadowColor, nil]];
-    
-    
-    self.tabBarController.tabBar.tintColor = [UIColor NaviColor];
-    self.tabBarController.tabBar.selectedImageTintColor = [UIColor blackColor];
 
 
     // Uncomment the following line to preserve selection between presentations.

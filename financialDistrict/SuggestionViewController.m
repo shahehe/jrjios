@@ -23,6 +23,7 @@
 @end
 
 @implementation SuggestionViewController
+
 @synthesize imageToUpload;
 @synthesize placeInfo;
 @synthesize returnedLatitude;
@@ -55,9 +56,9 @@
     [self customText];
     firstWriteDescription = YES;
     
-    
-    uploadActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [self.view addSubview:uploadActivity];
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
     
 }
 
@@ -83,6 +84,7 @@
                                     }
                          }
          ];
+        hasPlaceInfo = FALSE;
     }
     
     
@@ -215,18 +217,33 @@
 
 
 - (IBAction)uploadSuggestion:(id)sender {
-    
-
-    [uploadActivity startAnimating];
     /*
 	 turning the image into a NSData object
 	 getting the image back out of the UIImageView
 	 setting the quality to 90
      */
-	NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
+    
+    NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
+    NSData *phoneData = [[NSString stringWithFormat:@"%@",phoneContact.text] dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *problemData = [[NSString stringWithFormat:@"%@",problemDescription.text] dataUsingEncoding:NSUTF8StringEncoding];   
+    NSMutableArray *dataArray = [[NSMutableArray alloc]initWithObjects:imageData,phoneData,problemData, nil];
+    
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"正在上传";
+    [HUD showWhileExecuting:@selector(uploadTask:) onTarget:self withObject:dataArray animated:YES];
+    
+}
+
+
+-(void) uploadTask:(NSMutableArray *) infoArray{
+
+    
 	// setting up the URL to post to
     NSString *urlString =[NSString stringWithFormat:@"http://%@/jrj/receiveMessage.php",[ApiService sharedInstance].host];
-    NSString *imageName = @"timberlake.jpg";
+    NSString *imageName = @"image.jpg";
 	
 	// setting up the request object now
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -238,7 +255,7 @@
 	 we always need a boundary when we post a file
 	 also we need to set the content type
 	 
-	 might change to random boundary 
+	 might change to random boundary
      */
 	NSString *boundary = @"---------------------------147378098314664";
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
@@ -250,8 +267,8 @@
 	NSMutableData *body = [NSMutableData data];
     
     /*
-        set latitude,longitude,feedback,name,mobile,address,create_time value
-    */
+     set latitude,longitude,feedback,name,mobile,address,create_time value
+     */
     
     //latitude
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -268,11 +285,11 @@
     //mobile
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"mobile\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat:@"%@",phoneContact.text] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:infoArray[1]];
     //address
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"address\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat:@"%@",problemDescription.text] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:infoArray[2]];
     //create_time
     NSDate* currentDate = [NSDate date];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -281,22 +298,19 @@
     //uid
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"uid\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat:@"0"] dataUsingEncoding:NSUTF8StringEncoding]];  
+	[body appendData:[[NSString stringWithFormat:@"0"] dataUsingEncoding:NSUTF8StringEncoding]];
     //name
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"name\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat:@"MyName"] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    
-    
-    
     /*
-        set picture
+     set picture
      */
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat: @"Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n",imageName] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:imageData]];
+	[body appendData:infoArray[0]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	// setting the body of the post to the reqeust
 	[request setHTTPBody:body];
@@ -307,11 +321,9 @@
 	
 	NSLog(@"%@",returnString);
     
-    [uploadActivity stopAnimating];
-    
     
     /*
-     Picture has been uploaded, and info has been inserted 
+     Picture has been uploaded, and info has been inserted
      Now parse the return dictionary using JSON parser
      send to feedback.php if success
      */
@@ -327,32 +339,49 @@
             outputDic = (NSDictionary *)jsonObject;
         }
     }
-           
+    
     if([[outputDic objectForKey:@"code"] integerValue] == 1){
-         //connect to feedback.php
-  
-        NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] init];
-        NSString *url2 =[NSString stringWithFormat:@"http://%@/jrj/feedback.php",[ApiService sharedInstance].host];
+        [self showAlert:@"上传成功"];
         
-        [request2 setURL:[NSURL URLWithString:url2]];
-        [request2 setHTTPMethod:@"GET"];
+        //connect to feedback.php
         
-        
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request2 delegate:self startImmediately:YES];
-        
-        if(!connection) {
-            NSLog(@"connection failed :(");
-        } else {
-            NSLog(@"connection succeeded  :)");
-            
-        }
+        [self performSelectorOnMainThread:@selector(connectFeedback) withObject:nil waitUntilDone:YES];
+
         
     }
     else {
         NSLog(@"The return value from receiveMessage is failure");
+        [self showAlert:@"上传不成功"];
     }
 
 }
+
+-(void) connectFeedback{
+    
+    NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] init];
+    NSString *url2 =[NSString stringWithFormat:@"http://%@/jrj/feedback.php",[ApiService sharedInstance].host];
+    
+    [request2 setURL:[NSURL URLWithString:url2]];
+    [request2 setHTTPMethod:@"GET"];
+    
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request2 delegate:self startImmediately:YES];
+    
+    if(!connection) {
+        NSLog(@"connection to feedback failed :(");
+    } else {
+        NSLog(@"connection to feedback is set... :)");
+        
+    }
+}
+
+#pragma mark showAlert
+
+- (void) showAlert:(NSString *)messageToDisplay{
+    UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:nil message:messageToDisplay delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertV performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+}
+
 
 #pragma mark NSURLConnection delegate methods
 
@@ -376,6 +405,12 @@
     NSLog(@"Done with Feedback!");
 }
 
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
 
+- (void)hudWasHidden {
+    // Remove HUD from screen when the HUD was hidded
+    [HUD removeFromSuperview];
+}
 
 @end

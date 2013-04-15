@@ -266,7 +266,7 @@
                                             <rect key="frame" x="280" y="13" width="20" height="17"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d9B-5u-pGZ">
-                                            <rect key="frame" x="15" y="2" width="33" height="21"/>
+                                            <rect key="frame" x="15" y="2" width="244" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -628,30 +628,8 @@
                         <subviews>
                             <view contentMode="scaleAspectFill" id="Tjt-WY-3Q9" customClass="BMKMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kPp-ov-WT0">
-                                        <rect key="frame" x="223" y="312" width="85" height="27"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="当前位置">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toCurrentLocation:" destination="EHR-2m-sve" eventType="touchUpInside" id="hQA-cR-ngj"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BHd-wh-Ebn">
-                                <rect key="frame" x="12" y="310" width="195" height="37"/>
-                                <color key="backgroundColor" white="0.82661290322580661" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -659,7 +637,6 @@
                     <navigationItem key="navigationItem" id="NzA-fD-eaJ"/>
                     <connections>
                         <outlet property="ownMapView" destination="Tjt-WY-3Q9" id="Gie-4I-1fY"/>
-                        <outlet property="placeLabel" destination="BHd-wh-Ebn" id="dow-4M-Gn6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-fk-WRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -785,10 +762,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rp5-aR-Fci">
-                                <rect key="frame" x="100" y="221" width="98" height="33"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <rect key="frame" x="97" y="239" width="107" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="确认" backgroundImage="login_up.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="login_down.png">
@@ -1195,14 +1172,6 @@
         </class>
         <class className="GovViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GovViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="button0:"/>
-                <relationship kind="action" name="button1:"/>
-                <relationship kind="action" name="button2:"/>
-                <relationship kind="action" name="button3:"/>
-                <relationship kind="action" name="button4:"/>
-                <relationship kind="action" name="button5:"/>
-            </relationships>
         </class>
         <class className="InfoCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoCell.h"/>
