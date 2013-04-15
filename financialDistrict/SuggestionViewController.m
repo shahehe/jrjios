@@ -33,7 +33,8 @@
 @synthesize problemDescription;
 @synthesize feedbackButton;
 @synthesize needFeedback;
-
+@synthesize audioRecorder;
+@synthesize recordingButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +60,51 @@
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title = @"返回";
     self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
+    //add a long press gesture recognizer to recording button
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                            action:@selector(recordingTask:)];
+    //the corresponding action is in the addAnnotationForMap function
+    [longPress setMinimumPressDuration:0.05];
+    [recordingButton addGestureRecognizer:longPress];
+    
+    [self initializeAudio];
+    
+}
+
+- (void) initializeAudio{
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = dirPaths[0];
+    
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+    
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    NSDictionary *recordSettings = [NSDictionary
+                                    dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithInt:AVAudioQualityMin],
+                                    AVEncoderAudioQualityKey,
+                                    [NSNumber numberWithInt:16],
+                                    AVEncoderBitRateKey,
+                                    [NSNumber numberWithInt: 2],
+                                    AVNumberOfChannelsKey,
+                                    [NSNumber numberWithFloat:44100.0],
+                                    AVSampleRateKey,
+                                    nil];
+    
+    NSError *error = nil;
+    
+    audioRecorder = [[AVAudioRecorder alloc]
+                      initWithURL:soundFileURL
+                      settings:recordSettings
+                      error:&error];
+    
+    if (error)
+    {
+        NSLog(@"error: %@", [error localizedDescription]);
+    } else {
+        [audioRecorder prepareToRecord];
+    }
     
 }
 
@@ -214,6 +260,21 @@
         }
 
 }
+
+- (void) recordingTask:(UILongPressGestureRecognizer*)press {
+    
+    if (press.state == UIGestureRecognizerStateBegan) {
+        //start recording
+        [audioRecorder record];
+        NSLog(@"begin!!!");
+    }
+    else if (press.state == UIGestureRecognizerStateEnded) {
+        //finish recording
+        [audioRecorder stop];
+        NSLog(@"finish!!!");
+    }
+}
+
 
 
 - (IBAction)uploadSuggestion:(id)sender {

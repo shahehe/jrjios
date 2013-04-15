@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "MBProgressHUD.h"
 
 
-@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate,MBProgressHUDDelegate>{
+@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate,AVAudioRecorderDelegate,MBProgressHUDDelegate>{
     MBProgressHUD *HUD;
 }
 
-
+@property (strong, nonatomic) AVAudioRecorder *audioRecorder;
+@property (weak, nonatomic) IBOutlet UIButton *recordingButton;
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
