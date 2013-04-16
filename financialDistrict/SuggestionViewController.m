@@ -35,6 +35,9 @@
 @synthesize needFeedback;
 @synthesize audioRecorder;
 @synthesize recordingButton;
+@synthesize recordingData;
+@synthesize audioPlayer;
+@synthesize hasVoice;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,10 +68,16 @@
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                             action:@selector(recordingTask:)];
     //the corresponding action is in the addAnnotationForMap function
-    [longPress setMinimumPressDuration:0.05];
+    [longPress setMinimumPressDuration:0.01];
     [recordingButton addGestureRecognizer:longPress];
     
     [self initializeAudio];
+    hasVoice = NO;
+    
+    [recordingButton setTitle:@"按住录音" forState:UIControlStateNormal];
+    [recordingButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [recordingButton setTitle:@"松开结束" forState:UIControlStateSelected];
+    [recordingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     
 }
 
@@ -80,17 +89,20 @@
     
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
-    NSDictionary *recordSettings = [NSDictionary
-                                    dictionaryWithObjectsAndKeys:
-                                    [NSNumber numberWithInt:AVAudioQualityMin],
-                                    AVEncoderAudioQualityKey,
-                                    [NSNumber numberWithInt:16],
-                                    AVEncoderBitRateKey,
-                                    [NSNumber numberWithInt: 2],
-                                    AVNumberOfChannelsKey,
-                                    [NSNumber numberWithFloat:44100.0],
-                                    AVSampleRateKey,
-                                    nil];
+    NSDictionary *recordSettings = [[NSMutableDictionary alloc] initWithCapacity:0];
+
+    
+    [recordSettings setValue :[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];//格式
+    [recordSettings setValue:[NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey]; //采样8000次
+    [recordSettings setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];//声道
+    [recordSettings setValue :[NSNumber numberWithInt:8] forKey:AVLinearPCMBitDepthKey];//位深度
+    [recordSettings setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
+    [recordSettings setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
+    //Encoder
+    [recordSettings setValue :[NSNumber numberWithInt:12000] forKey:AVEncoderBitRateKey];//采样率
+    [recordSettings setValue :[NSNumber numberWithInt:8] forKey:AVEncoderBitDepthHintKey];//位深度
+    [recordSettings setValue :[NSNumber numberWithInt:8] forKey:AVEncoderBitRatePerChannelKey];//声道采样率
+    [recordSettings setValue :[NSNumber numberWithInt:AVAudioQualityMin] forKey:AVEncoderAudioQualityKey];//编码质量
     
     NSError *error = nil;
     
@@ -98,6 +110,7 @@
                       initWithURL:soundFileURL
                       settings:recordSettings
                       error:&error];
+    audioRecorder.delegate = self;
     
     if (error)
     {
@@ -265,11 +278,23 @@
     
     if (press.state == UIGestureRecognizerStateBegan) {
         //start recording
+        [recordingButton setTitle:@"松开结束" forState:UIControlStateNormal];
+        [recordingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [recordingButton setTitle:@"松开结束" forState:UIControlStateSelected];
+        [recordingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        [recordingButton setBackgroundImage:[UIImage imageNamed:@"login_down.png"] forState:UIControlStateNormal];
+                [recordingButton setBackgroundImage:[UIImage imageNamed:@"login_down.png"] forState:UIControlStateSelected];
         [audioRecorder record];
         NSLog(@"begin!!!");
     }
     else if (press.state == UIGestureRecognizerStateEnded) {
         //finish recording
+        [recordingButton setTitle:@"按住录音" forState:UIControlStateNormal];
+        [recordingButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [recordingButton setTitle:@"按住录音" forState:UIControlStateSelected];
+        [recordingButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        [recordingButton setBackgroundImage:[UIImage imageNamed:@"login_up.png"] forState:UIControlStateNormal];
+        [recordingButton setBackgroundImage:[UIImage imageNamed:@"login_up.png"] forState:UIControlStateSelected];
         [audioRecorder stop];
         NSLog(@"finish!!!");
     }
@@ -287,7 +312,7 @@
     NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
     NSData *phoneData = [[NSString stringWithFormat:@"%@",phoneContact.text] dataUsingEncoding:NSUTF8StringEncoding];
     NSData *problemData = [[NSString stringWithFormat:@"%@",problemDescription.text] dataUsingEncoding:NSUTF8StringEncoding];   
-    NSMutableArray *dataArray = [[NSMutableArray alloc]initWithObjects:imageData,phoneData,problemData, nil];
+    NSMutableArray *dataArray = [[NSMutableArray alloc]initWithObjects:imageData,phoneData,problemData,recordingData,nil];
     
     
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -304,7 +329,8 @@
     
 	// setting up the URL to post to
     NSString *urlString =[NSString stringWithFormat:@"http://%@/jrj/receiveMessage.php",[ApiService sharedInstance].host];
-    NSString *imageName = @"image.jpg";
+    NSString *imageName = @"problemImage.jpg";
+    NSString *voiceName = @"problemVoice.amr";
 	
 	// setting up the request object now
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -364,6 +390,10 @@
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"name\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat:@"MyName"] dataUsingEncoding:NSUTF8StringEncoding]];
+    //hasVoice
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"hasvoice\"\n\n " dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"%d",hasVoice] dataUsingEncoding:NSUTF8StringEncoding]];
     
     /*
      set picture
@@ -373,6 +403,15 @@
 	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:infoArray[0]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    /*
+     set voice
+     */
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat: @"Content-Disposition: form-data; name=\"voice\"; filename=\"%@\"\r\n",voiceName] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:infoArray[3]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
 	// setting the body of the post to the reqeust
 	[request setHTTPBody:body];
     
@@ -472,6 +511,48 @@
 - (void)hudWasHidden {
     // Remove HUD from screen when the HUD was hidded
     [HUD removeFromSuperview];
+}
+
+
+#pragma mark AVAudioPlayerDelegate methods
+-(void)audioPlayerDidFinishPlaying:
+(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+
+}
+
+-(void)audioPlayerDecodeErrorDidOccur:
+(AVAudioPlayer *)player
+                                error:(NSError *)error
+{
+    NSLog(@"Decode Error occurred");
+}
+
+#pragma mark AVAudioRecorderDelegate methods
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
+{
+    NSLog(@"Finished Recording...");
+    recordingData = [NSData dataWithContentsOfURL:recorder.url];
+    hasVoice = YES;
+    
+    //Testing!!!!Using a player to see if the recorder is okay... turns out yes.. delete these lines
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc]
+                    initWithContentsOfURL:audioRecorder.url
+                    error:&error];
+    
+    audioPlayer.delegate = self;
+    
+    if (error)
+        NSLog(@"Error: %@",
+              [error localizedDescription]);
+    else
+        [audioPlayer play];
+}
+
+- (void) audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
+{
+    NSLog(@"Audio Recorder Encode Error Occured");
 }
 
 @end

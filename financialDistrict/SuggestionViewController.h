@@ -11,11 +11,12 @@
 #import "MBProgressHUD.h"
 
 
-@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate,AVAudioRecorderDelegate,MBProgressHUDDelegate>{
+@interface SuggestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate,AVAudioRecorderDelegate,AVAudioPlayerDelegate,MBProgressHUDDelegate>{
     MBProgressHUD *HUD;
 }
 
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
+@property (strong, nonatomic) AVAudioPlayer  *audioPlayer;
 @property (weak, nonatomic) IBOutlet UIButton *recordingButton;
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
 
@@ -25,7 +26,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *problemDescription;
 @property double returnedLatitude;
 @property double returnedLongitude;
+@property NSData *recordingData;
 @property BOOL hasPlaceInfo;
 @property BOOL needFeedback;
+@property BOOL hasVoice;
 
 @end

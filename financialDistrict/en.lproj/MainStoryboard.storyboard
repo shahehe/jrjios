@@ -98,7 +98,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obV-Wy-6eP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-2491"/>
+            <point key="canvasLocation" x="2194" y="-3387"/>
         </scene>
         <!--Gov View Controller - 金融街无线交互服务平台-->
         <scene sceneID="u60-VZ-Nwi">
@@ -244,7 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EwF-Vz-fRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-1781"/>
+            <point key="canvasLocation" x="2194" y="-2677"/>
         </scene>
         <!--Phone View Controller-->
         <scene sceneID="kDU-t0-gSU">
@@ -295,7 +295,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmr-KE-eoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-1193"/>
+            <point key="canvasLocation" x="2194" y="-2089"/>
         </scene>
         <!--Yu Xiang View Controller-->
         <scene sceneID="ePY-Gx-bsP">
@@ -353,7 +353,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtT-yV-Qlt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210" y="-608"/>
+            <point key="canvasLocation" x="2196" y="-1504"/>
         </scene>
         <!--Reward View Controller-->
         <scene sceneID="81R-o0-fLN">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ex4-ve-3ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="-1"/>
+            <point key="canvasLocation" x="2198" y="-897"/>
         </scene>
         <!--Text Of Yu Xiang View Controller-->
         <scene sceneID="wKc-eh-t05">
@@ -401,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asZ-ug-4ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2622" y="-608"/>
+            <point key="canvasLocation" x="2608" y="-1504"/>
         </scene>
         <!--Text Of Gong Shang View Controller-->
         <scene sceneID="f2Q-XI-joh">
@@ -433,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSA-ao-JgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="-1781"/>
+            <point key="canvasLocation" x="2614" y="-2677"/>
         </scene>
         <!--Text Of Procedure View Controller-->
         <scene sceneID="Ech-Y5-tyJ">
@@ -465,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukW-Il-M6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2622" y="-2491"/>
+            <point key="canvasLocation" x="2608" y="-3387"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="jXM-cK-O4w">
@@ -491,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPa-xb-ufS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-3208"/>
+            <point key="canvasLocation" x="2194" y="-4104"/>
         </scene>
         <!--Suggestion View Controller - 金融街无线交互服务平台-->
         <scene sceneID="kzc-G3-P1h">
@@ -502,7 +502,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Puy-2x-LcF">
-                                <rect key="frame" x="20" y="44" width="56" height="37"/>
+                                <rect key="frame" x="20" y="50" width="56" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="camera.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -516,7 +516,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1mb-aF-7oM">
-                                <rect key="frame" x="79" y="44" width="56" height="37"/>
+                                <rect key="frame" x="79" y="50" width="56" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="doc.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,7 +542,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no-image.png" id="VYL-CN-0Ez">
-                                <rect key="frame" x="179" y="9" width="121" height="81"/>
+                                <rect key="frame" x="155" y="9" width="145" height="85"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gmP-BX-mfH">
                                 <rect key="frame" x="20" y="318" width="127" height="32"/>
@@ -564,13 +564,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="2" id="NQP-HE-PHR">
-                                <rect key="frame" x="20" y="136" width="280" height="91"/>
+                                <rect key="frame" x="20" y="140" width="280" height="85"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="联系电话" minimumFontSize="17" id="c2n-g0-abN">
-                                <rect key="frame" x="20" y="98" width="280" height="30"/>
+                                <rect key="frame" x="20" y="102" width="280" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -597,22 +597,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="添加图片" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nXy-dt-F7v">
-                                <rect key="frame" x="20" y="15" width="77" height="21"/>
+                                <rect key="frame" x="20" y="21" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="YHe-oX-Oky">
-                                <rect key="frame" x="20" y="235" width="280" height="39"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="添加声音描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4NB-wW-mXP">
+                                <rect key="frame" x="20" y="234" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YHe-oX-Oky">
+                                <rect key="frame" x="155" y="233" width="145" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="录音">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" backgroundImage="login_up.png">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="selected" backgroundImage="login_up.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="login_up.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
@@ -631,6 +639,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lul-kH-9Ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1761" y="2243"/>
+        </scene>
+        <!--Service View Controller - 社区综合服务网-->
+        <scene sceneID="9cZ-FV-ZDw">
+            <objects>
+                <viewController id="wJn-pg-eFT" customClass="ServiceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pwc-Dx-o64">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="Ams-9i-SiL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="社区综合服务网" id="aGT-qE-fb3"/>
+                    <connections>
+                        <outlet property="serviceWebView" destination="Ams-9i-SiL" id="4j5-ec-gVq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="var-Tk-gqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2546" y="1609"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="ib5-qJ-1PN">
@@ -895,7 +928,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqX-ef-VDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2531" y="682"/>
+            <point key="canvasLocation" x="2531" y="-212"/>
         </scene>
         <!--News View Controller - 金融街无线交互服务平台-->
         <scene sceneID="RHv-gN-RBu">
@@ -906,13 +939,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TOj-Yu-gCd">
-                                <rect key="frame" x="30" y="58" width="260" height="50"/>
+                                <rect key="frame" x="30" y="30" width="260" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="Button2-1.png">
+                                <state key="normal" backgroundImage="动态公告-1.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" backgroundImage="Button2-1d.png">
+                                <state key="highlighted" backgroundImage="动态公告-1-2.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -920,17 +953,47 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FSZ-ZU-h8l">
-                                <rect key="frame" x="30" y="143" width="260" height="50"/>
+                                <rect key="frame" x="30" y="90" width="260" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="Button2-2.png">
+                                <state key="normal" backgroundImage="动态公告-2-1.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" backgroundImage="Button2-2d.png">
+                                <state key="highlighted" backgroundImage="动态公告-2-2.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="RT2-Dv-JZd" kind="push" id="btL-DX-h7d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LwC-xb-kYG">
+                                <rect key="frame" x="30" y="150" width="260" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="动态公告-3-1.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="动态公告-3-2.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ygn-lL-p9U" kind="push" id="vMs-GK-yXN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2KW-EX-JLf">
+                                <rect key="frame" x="30" y="210" width="260" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="动态公告-4-1.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="动态公告-4-2.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wJn-pg-eFT" kind="push" id="zhX-fM-vbc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -997,7 +1060,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yB-H3-P9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="682"/>
+            <point key="canvasLocation" x="3027" y="-212"/>
         </scene>
         <!--Report Info View Controller-->
         <scene sceneID="p95-fZ-Lme">
@@ -1023,7 +1086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rs-i8-D11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3527" y="682"/>
+            <point key="canvasLocation" x="3513" y="-212"/>
         </scene>
         <!--Navigation Controller - 动态公告-->
         <scene sceneID="kGq-fP-8Eh">
@@ -1087,7 +1150,32 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLk-jR-FL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2531" y="1461"/>
+            <point key="canvasLocation" x="2541" y="395"/>
+        </scene>
+        <!--Shang Quan View Controller - 金融街社区商圈网-->
+        <scene sceneID="oAS-iK-tWX">
+            <objects>
+                <viewController id="ygn-lL-p9U" customClass="ShangQuanViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SVZ-Jk-nfy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="ES7-xM-UlO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="金融街社区商圈网" id="mRX-aK-T6D"/>
+                    <connections>
+                        <outlet property="sqWebView" destination="ES7-xM-UlO" id="uui-dh-Ooa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lU9-KJ-gGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2546" y="1001"/>
         </scene>
         <!--Product Info View Controller - 下架食品详情-->
         <scene sceneID="WB9-Pc-VA2">
@@ -1121,7 +1209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eS-I6-vIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="1461"/>
+            <point key="canvasLocation" x="3037" y="395"/>
         </scene>
         <!--Navigation Controller - 个人中心-->
         <scene sceneID="QhB-0o-jOh">
@@ -1144,10 +1232,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button2-1.png" width="622" height="135"/>
-        <image name="Button2-1d.png" width="620" height="137"/>
-        <image name="Button2-2.png" width="622" height="127"/>
-        <image name="Button2-2d.png" width="620" height="141"/>
         <image name="award_down.png" width="686" height="122"/>
         <image name="award_up.png" width="686" height="122"/>
         <image name="book1_down.png" width="686" height="108"/>
@@ -1176,165 +1260,15 @@
         <image name="tab2_black.png" width="24" height="24"/>
         <image name="tab3_black.png" width="24" height="24"/>
         <image name="tab4_black.png" width="24" height="24"/>
+        <image name="动态公告-1-2.png" width="609" height="118"/>
+        <image name="动态公告-1.png" width="609" height="118"/>
+        <image name="动态公告-2-1.png" width="611" height="118"/>
+        <image name="动态公告-2-2.png" width="611" height="118"/>
+        <image name="动态公告-3-1.png" width="611" height="120"/>
+        <image name="动态公告-3-2.png" width="611" height="120"/>
+        <image name="动态公告-4-1.png" width="608" height="120"/>
+        <image name="动态公告-4-2.png" width="608" height="120"/>
     </resources>
-    <classes>
-        <class className="BMKMapView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMKMapView.h"/>
-        </class>
-        <class className="GongShangViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GongShangViewController.h"/>
-        </class>
-        <class className="GovViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GovViewController.h"/>
-        </class>
-        <class className="InfoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="infoArrow" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="infoImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="infoText" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
-        </class>
-        <class className="IntroViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IntroViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="introText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="passWord" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pwView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ownMapView" candidateClass="BMKMapView"/>
-                <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NewsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
-        </class>
-        <class className="PhoneCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="phoneIcon" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="phoneNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phoneTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PhoneViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneViewController.h"/>
-        </class>
-        <class className="ProcedureGongShangCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProcedureGongShangCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="procedureIcon" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="procedureTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ProcedureViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProcedureViewController.h"/>
-        </class>
-        <class className="ProductInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ProductListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductListViewController.h"/>
-        </class>
-        <class className="ReEnterPWViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReEnterPWViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="rePWView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="rePassWord" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ReportCategoryCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportCategoryCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imgView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ReportCategoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportCategoryViewController.h"/>
-        </class>
-        <class className="ReportInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ReportListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportListViewController.h"/>
-        </class>
-        <class className="RewardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RewardViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="rewardText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="SuggestionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SuggestionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="feedbackNeeded:"/>
-                <relationship kind="action" name="uploadSuggestion:"/>
-                <relationship kind="action" name="useCamera:"/>
-                <relationship kind="action" name="usePhoto:"/>
-                <relationship kind="outlet" name="feedbackButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageToUpload" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="phoneContact" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="placeInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="problemDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="recordingButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="TextOfGongShangViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfGongShangViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="gongShangText" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="gongShangTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TextOfProcedureViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfProcedureViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="procedureText" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="procedureTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TextOfYuXiangViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextOfYuXiangViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="yxWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="YuXiangCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YuXiangCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="yXAddressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yXContentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yXTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yuXiangImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="YuXiangViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YuXiangViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
