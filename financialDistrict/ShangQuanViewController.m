@@ -7,6 +7,7 @@
 //
 
 #import "ShangQuanViewController.h"
+#import "CheckConnection.h"
 
 @interface ShangQuanViewController ()
 
@@ -29,7 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [sqWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://jrjsq.chinaec.net"]]];
+    if([CheckConnection connected]){
+
+        [sqWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://jrjsq.chinaec.net"]]];
+    }
 }
 
 - (void)didReceiveMemoryWarning

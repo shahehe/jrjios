@@ -21,7 +21,7 @@
 @property NSString * confirmedPW;
 @property BOOL hasConfirmedPW;
 
-+(void) showAlert:(NSString *)messageToDisplay;
++ (void) showAlert:(NSString *)messageToDisplay;
 + (int) successOrNot:(NSString *)returnString;
 
 @end

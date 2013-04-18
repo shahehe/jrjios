@@ -148,6 +148,7 @@
 		9A55FFD916F2D34100E14CE0 /* tab4_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A55FFD516F2D34100E14CE0 /* tab4_black.png */; };
 		9A56C43E16FC202D00369F9C /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A56C43D16FC202D00369F9C /* mapapi.bundle */; };
 		9A56C44016FC207100369F9C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A56C43F16FC207100369F9C /* CoreLocation.framework */; };
+		9A59873B171FEECF00DF7C08 /* CheckConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A59873A171FEECF00DF7C08 /* CheckConnection.m */; };
 		9A66FF8517169ED4008B9EAE /* login_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A66FF8317169ED4008B9EAE /* login_down.png */; };
 		9A66FF8617169ED4008B9EAE /* login_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A66FF8417169ED4008B9EAE /* login_up.png */; };
 		9A66FF8A1716A002008B9EAE /* person_center_password.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A66FF881716A002008B9EAE /* person_center_password.png */; };
@@ -413,6 +414,8 @@
 		9A56C43516FC1F1800369F9C /* BMKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKVersion.h; sourceTree = "<group>"; };
 		9A56C43D16FC202D00369F9C /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
 		9A56C43F16FC207100369F9C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9A598739171FEECF00DF7C08 /* CheckConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConnection.h; sourceTree = "<group>"; };
+		9A59873A171FEECF00DF7C08 /* CheckConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnection.m; sourceTree = "<group>"; };
 		9A66FF8317169ED4008B9EAE /* login_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_down.png; sourceTree = "<group>"; };
 		9A66FF8417169ED4008B9EAE /* login_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_up.png; sourceTree = "<group>"; };
 		9A66FF881716A002008B9EAE /* person_center_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_center_password.png; sourceTree = "<group>"; };
@@ -1041,6 +1044,8 @@
 				9AFAA7D816ED803000865251 /* NewsViewController.m */,
 				9AFAA7DD16ED805300865251 /* LoginViewController.h */,
 				9AFAA7DE16ED805300865251 /* LoginViewController.m */,
+				9A598739171FEECF00DF7C08 /* CheckConnection.h */,
+				9A59873A171FEECF00DF7C08 /* CheckConnection.m */,
 				9ADA623B16FAFB4100F86B95 /* classes */,
 				9AFAA7AD16ED77DD00865251 /* Supporting Files */,
 			);
@@ -1348,6 +1353,7 @@
 				9AA44164171BBF6F00874A12 /* MBProgressHUD.m in Sources */,
 				9A14B120171D48E1005B412E /* ShangQuanViewController.m in Sources */,
 				9A14B12C171D4CC3005B412E /* ServiceViewController.m in Sources */,
+				9A59873B171FEECF00DF7C08 /* CheckConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -94,36 +94,35 @@
 
 - (void) registerUserTask{
     
-    if(![username isEqualToString:@""]){
-        NSMutableURLRequest *registerRequest = [[NSMutableURLRequest alloc] init];
-        NSString *registerUrl =[NSString stringWithFormat:@"http://%@/jrj/register.php",[ApiService sharedInstance].host];
+    NSMutableURLRequest *registerRequest = [[NSMutableURLRequest alloc] init];
+    NSString *registerUrl =[NSString stringWithFormat:@"http://%@/jrj/register.php",[ApiService sharedInstance].host];
+    
+    [registerRequest setURL:[NSURL URLWithString:registerUrl]];
+    [registerRequest setHTTPMethod:@"POST"];
+    
+    NSString *post = [NSString stringWithFormat:@"name=%@&password=%@&deviceid=%@",username,pw, @"IOS"];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    [registerRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [registerRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [registerRequest setHTTPBody:postData];
+    
+    NSData *registerReturnData = [NSURLConnection sendSynchronousRequest:registerRequest returningResponse:nil error:nil];
+    NSString *registerReturnString = [[NSString alloc] initWithData:registerReturnData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@",registerReturnString);
+    if([LoginViewController successOrNot:registerReturnString]== 0){
+        [LoginViewController showAlert:@"注册失败，用户名已经存在"];
         
-        [registerRequest setURL:[NSURL URLWithString:registerUrl]];
-        [registerRequest setHTTPMethod:@"POST"];
-        
-        NSString *post = [NSString stringWithFormat:@"name=%@&password=%@&deviceid=%@",username,pw, @"IOS"];
-        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding];
-        NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-        
-        [registerRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [registerRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [registerRequest setHTTPBody:postData];
-        
-        NSData *registerReturnData = [NSURLConnection sendSynchronousRequest:registerRequest returningResponse:nil error:nil];
-        NSString *registerReturnString = [[NSString alloc] initWithData:registerReturnData encoding:NSUTF8StringEncoding];
-        
-        NSLog(@"%@",registerReturnString);
-        if([LoginViewController successOrNot:registerReturnString]== 0){
-            [LoginViewController showAlert:@"注册失败，用户名已经存在"];
-            
-        }
-        else{
-            [LoginViewController showAlert:@"注册成功"];
-        }
+    }
+    else if ([LoginViewController successOrNot:registerReturnString]== (-1)){
+        [LoginViewController showAlert:@"注册失败"];
     }
     else{
-        [LoginViewController showAlert:@"注册失败，用户名不能为空"];
+        [LoginViewController showAlert:@"注册成功"];
     }
+    
 }
 
 #pragma mark -

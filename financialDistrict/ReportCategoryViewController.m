@@ -12,6 +12,7 @@
 #import "ReportCategoryCell.h"
 #import "ReportListViewController.h"
 #import "Session.h"
+#import "CheckConnection.h"
 
 @interface ReportCategoryViewController ()
 
@@ -31,16 +32,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = [[Session sharedInstance] getReportData];
-    if(self.data.count == 0){
-        [self getData];
-    }else{
-        [self checkUpdate];
+    if([CheckConnection connected]){
+
+        self.data = [[Session sharedInstance] getReportData];
+        if(self.data.count == 0){
+            [self getData];
+        }else{
+            [self checkUpdate];
+        }
+        
+        self.refreshControl = [[UIRefreshControl alloc]init];
+        [self.refreshControl addTarget:self action:@selector(getData) forControlEvents:UIControlEventValueChanged];
+        [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
     }
-    
-    self.refreshControl = [[UIRefreshControl alloc]init];
-    [self.refreshControl addTarget:self action:@selector(getData) forControlEvents:UIControlEventValueChanged];
-    [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

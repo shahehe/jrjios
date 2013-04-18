@@ -7,6 +7,7 @@
 //
 
 #import "ServiceViewController.h"
+#import "CheckConnection.h"
 
 @interface ServiceViewController ()
 
@@ -28,7 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [serviceWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www3.bjxch.gov.cn/jsp/theme/index.jsp"]]];
+    if([CheckConnection connected]){
+
+        [serviceWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www3.bjxch.gov.cn/jsp/theme/index.jsp"]]];
+    }
 }
 
 - (void)didReceiveMemoryWarning

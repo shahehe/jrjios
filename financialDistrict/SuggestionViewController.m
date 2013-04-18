@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "StringsJsonParser.h"
 #import "ApiService.h"
+#import "CheckConnection.h"
 
 
 @interface SuggestionViewController (){
@@ -78,6 +79,7 @@
     [recordingButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [recordingButton setTitle:@"松开结束" forState:UIControlStateSelected];
     [recordingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    recordingData = [[NSData alloc] init];
     
 }
 
@@ -311,16 +313,18 @@
     
     NSData *imageData = UIImageJPEGRepresentation(imageToUpload.image, 0.000000001);
     NSData *phoneData = [[NSString stringWithFormat:@"%@",phoneContact.text] dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *problemData = [[NSString stringWithFormat:@"%@",problemDescription.text] dataUsingEncoding:NSUTF8StringEncoding];   
+    NSData *problemData = [[NSString stringWithFormat:@"%@",problemDescription.text] dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *dataArray = [[NSMutableArray alloc]initWithObjects:imageData,phoneData,problemData,recordingData,nil];
     
     
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"正在上传";
-    [HUD showWhileExecuting:@selector(uploadTask:) onTarget:self withObject:dataArray animated:YES];
-    
+    if([CheckConnection connected]){
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        HUD.delegate = self;
+        HUD.labelText = @"正在上传";
+        [HUD showWhileExecuting:@selector(uploadTask:) onTarget:self withObject:dataArray animated:YES];
+    }
+   
 }
 
 
@@ -427,31 +431,36 @@
      Now parse the return dictionary using JSON parser
      send to feedback.php if success
      */
-    NSDictionary *outputDic = [[NSDictionary alloc] init];
-    
-    NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                    options:NSJSONReadingAllowFragments
-                                                      error:&error];
-    if(jsonObject != nil && error == nil){
-        if([jsonObject isKindOfClass:[NSDictionary class]]){
-            outputDic = (NSDictionary *)jsonObject;
+    if(returnString != nil){
+        NSDictionary *outputDic = [[NSDictionary alloc] init];
+        
+        NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:&error];
+        if(jsonObject != nil && error == nil){
+            if([jsonObject isKindOfClass:[NSDictionary class]]){
+                outputDic = (NSDictionary *)jsonObject;
+            }
+        }
+        
+        if([[outputDic objectForKey:@"code"] integerValue] == 1){
+            [self showAlert:@"上传成功"];
+            
+            //connect to feedback.php
+            
+            [self performSelectorOnMainThread:@selector(connectFeedback) withObject:nil waitUntilDone:YES];
+
+            
+        }
+        else {
+            NSLog(@"The return value from receiveMessage is failure");
+            [self showAlert:@"上传不成功"];
         }
     }
-    
-    if([[outputDic objectForKey:@"code"] integerValue] == 1){
-        [self showAlert:@"上传成功"];
-        
-        //connect to feedback.php
-        
-        [self performSelectorOnMainThread:@selector(connectFeedback) withObject:nil waitUntilDone:YES];
-
-        
-    }
-    else {
-        NSLog(@"The return value from receiveMessage is failure");
-        [self showAlert:@"上传不成功"];
+    else{
+        [self showAlert:@"上传失败"];
     }
 
 }

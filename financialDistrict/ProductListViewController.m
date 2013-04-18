@@ -11,6 +11,7 @@
 #import "MBProgressHUD.h"
 #import "ProductListHeader.h"
 #import "ProductInfoViewController.h"
+#import "CheckConnection.h"
 
 @interface ProductListViewController ()
 
@@ -30,12 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = [NSMutableArray arrayWithCapacity:0];
-    [self getData];
-    
-    self.refreshControl = [[UIRefreshControl alloc]init];
-    [self.refreshControl addTarget:self action:@selector(getData) forControlEvents:UIControlEventValueChanged];
-    [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    if([CheckConnection connected]){
+
+        self.data = [NSMutableArray arrayWithCapacity:0];
+        [self getData];
+        
+        self.refreshControl = [[UIRefreshControl alloc]init];
+        [self.refreshControl addTarget:self action:@selector(getData) forControlEvents:UIControlEventValueChanged];
+        [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

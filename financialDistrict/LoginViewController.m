@@ -10,6 +10,7 @@
 #import "UIColor+NavigationColor.h"
 #import "ApiService.h"
 #import "ReEnterPWViewController.h"
+#import "CheckConnection.h"
 
 @interface LoginViewController ()
 
@@ -96,52 +97,72 @@
     [self.passWord endEditing:YES];
 }
 
-- (IBAction)registerUser:(id)sender {  
-    
-    ReEnterPWViewController *reVC = [self.storyboard instantiateViewControllerWithIdentifier:@"rePWVC"];
-    reVC.username = userName.text;
-    reVC.pw = passWord.text;
-    [self.navigationController pushViewController:reVC animated:YES];
+- (IBAction)registerUser:(id)sender {
+    if([CheckConnection connected])
+    {
+        if([userName.text isEqualToString:@""]){
+            [LoginViewController showAlert:@"注册失败，用户名不能为空"];
+        }
+        else if([passWord.text isEqualToString:@""]){
+            [LoginViewController showAlert:@"注册失败，密码不能为空"];
+        }
+        else{    
+            ReEnterPWViewController *reVC = [self.storyboard instantiateViewControllerWithIdentifier:@"rePWVC"];
+            reVC.username = userName.text;
+            reVC.pw = passWord.text;
+            [self.navigationController pushViewController:reVC animated:YES];
+        }
+    }
 
 }
 
 
 - (IBAction)login:(id)sender {
-    
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"正在登陆";
-    [HUD showWhileExecuting:@selector(loginTask) onTarget:self withObject:nil animated:YES];
+    if([CheckConnection connected]){
+
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        HUD.delegate = self;
+        HUD.labelText = @"正在登陆";
+        [HUD showWhileExecuting:@selector(loginTask) onTarget:self withObject:nil animated:YES];
+    }
 
 }
 
 - (void) loginTask{
     
-    NSMutableURLRequest *loginRequest = [[NSMutableURLRequest alloc] init];
-    NSString *loginUrl =[NSString stringWithFormat:@"http://%@/jrj/login.php",[ApiService sharedInstance].host];
-    
-    [loginRequest setURL:[NSURL URLWithString:loginUrl]];
-    [loginRequest setHTTPMethod:@"POST"];
-    
-    NSString *post2 = [NSString stringWithFormat:@"name=%@&password=%@",userName.text,passWord.text];
-    
-    NSData *postData2 = [post2 dataUsingEncoding:NSASCIIStringEncoding];
-    NSString *postLength2 = [NSString stringWithFormat:@"%d", [postData2 length]];
-    
-    [loginRequest setValue:postLength2 forHTTPHeaderField:@"Content-Length"];
-    [loginRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [loginRequest setHTTPBody:postData2];
-    
-    NSData *loginReturnData = [NSURLConnection sendSynchronousRequest:loginRequest returningResponse:nil error:nil];
-	NSString *loginReturnString = [[NSString alloc] initWithData:loginReturnData encoding:NSUTF8StringEncoding];
-    
-	NSLog(@"%@",loginReturnString);
-    if([LoginViewController successOrNot:loginReturnString] == 0){
-        [LoginViewController showAlert:@"登录失败"];
+    if([userName.text isEqualToString:@""]){
+        [LoginViewController showAlert:@"登录失败，用户名不能为空"];
+    }
+    else if([passWord.text isEqualToString:@""]){
+        [LoginViewController showAlert:@"登录失败，密码不能为空"];
     }
     else{
-        [LoginViewController showAlert:@"登录成功"];
+        NSMutableURLRequest *loginRequest = [[NSMutableURLRequest alloc] init];
+        NSString *loginUrl =[NSString stringWithFormat:@"http://%@/jrj/login.php",[ApiService sharedInstance].host];
+
+        [loginRequest setURL:[NSURL URLWithString:loginUrl]];
+        [loginRequest setHTTPMethod:@"POST"];
+
+        NSString *post2 = [NSString stringWithFormat:@"name=%@&password=%@",userName.text,passWord.text];
+
+        NSData *postData2 = [post2 dataUsingEncoding:NSASCIIStringEncoding];
+        NSString *postLength2 = [NSString stringWithFormat:@"%d", [postData2 length]];
+
+        [loginRequest setValue:postLength2 forHTTPHeaderField:@"Content-Length"];
+        [loginRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [loginRequest setHTTPBody:postData2];
+
+        NSData *loginReturnData = [NSURLConnection sendSynchronousRequest:loginRequest returningResponse:nil error:nil];
+        NSString *loginReturnString = [[NSString alloc] initWithData:loginReturnData encoding:NSUTF8StringEncoding];
+
+        NSLog(@"%@",loginReturnString);
+        if([LoginViewController successOrNot:loginReturnString] == 0 || [LoginViewController successOrNot:loginReturnString] == -1){
+            [LoginViewController showAlert:@"登录失败"];
+        }
+        else{
+            [LoginViewController showAlert:@"登录成功"];
+        }
     }
 }
 
@@ -152,21 +173,23 @@
  */
 + (int) successOrNot:(NSString *)returnString{
     //parsing
-    
-    NSDictionary *outputDic = [[NSDictionary alloc] init];
-    
-    NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                    options:NSJSONReadingAllowFragments
-                                                      error:&error];
-    if(jsonObject != nil && error == nil){
-        if([jsonObject isKindOfClass:[NSDictionary class]]){
-            outputDic = (NSDictionary *)jsonObject;
+    if(returnString != nil){
+        NSDictionary *outputDic = [[NSDictionary alloc] init];
+        
+        NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:&error];
+        if(jsonObject != nil && error == nil){
+            if([jsonObject isKindOfClass:[NSDictionary class]]){
+                outputDic = (NSDictionary *)jsonObject;
+            }
         }
-    }
 
     return [[outputDic objectForKey:@"code"] integerValue];
+    }
+    else return (-1);
 }
 
 + (void) showAlert:(NSString *)messageToDisplay{
