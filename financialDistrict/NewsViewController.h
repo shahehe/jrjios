@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MosquittoClient.h"
 
-@interface NewsViewController : UIViewController
+@interface NewsViewController : UIViewController<MosquittoClientDelegate>
+
+@property (readonly) MosquittoClient *mosquittoClient;
 
 @end

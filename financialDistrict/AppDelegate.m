@@ -8,9 +8,13 @@
 
 #import "AppDelegate.h"
 #import "UIColor+NavigationColor.h"
+#import "UIDevice+IdentifierAddition.h"
+#import "GovViewController.h"
 
 @implementation AppDelegate
 @synthesize mapManager;
+@synthesize mosquittoClient;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
