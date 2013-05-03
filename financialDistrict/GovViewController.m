@@ -8,8 +8,6 @@
 
 #import "GovViewController.h"
 
-
-#import "InfoViewController.h"
 #import "IntroViewController.h"
 #import "ProcedureViewController.h"
 #import "GongShangViewController.h"

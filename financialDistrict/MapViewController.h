@@ -14,7 +14,6 @@
 
 @interface MapViewController : UIViewController<BMKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet BMKMapView *ownMapView;
-@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 @property double pointLatitude;
 @property double pointLongitude;
 

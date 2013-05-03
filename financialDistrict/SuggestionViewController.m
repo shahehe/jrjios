@@ -180,7 +180,6 @@
 }
 
 
-
 - (void) textViewDidBeginEditing:(UITextView *)textView
 {
     [[problemDescription layer] setBorderColor:[UIColor orangeColor].CGColor];
@@ -301,7 +300,6 @@
         NSLog(@"finish!!!");
     }
 }
-
 
 
 - (IBAction)uploadSuggestion:(id)sender {

@@ -11,6 +11,7 @@
 #import "ApiService.h"
 #import "ReEnterPWViewController.h"
 #import "CheckConnection.h"
+#import "MessageViewController.h"
 
 @interface LoginViewController ()
 
@@ -162,10 +163,55 @@
         }
         else{
             [LoginViewController showAlert:@"登录成功"];
+
+            int uid = [LoginViewController extractUID:loginReturnString];
+
+            NSMutableURLRequest *msgRequest = [[NSMutableURLRequest alloc] init];
+            NSString *msgUrl =[NSString stringWithFormat:@"http://%@/jrj/message.php?uid=%d",[ApiService sharedInstance].host,uid];
+          //  NSString *msgUrl =[NSString stringWithFormat:@"http://%@/jrj/message.php?uid=13",[ApiService sharedInstance].host];
+            
+            [msgRequest setURL:[NSURL URLWithString:msgUrl]];
+            [msgRequest setHTTPMethod:@"POST"];
+            
+            NSData *msgReturnData = [NSURLConnection sendSynchronousRequest:msgRequest returningResponse:nil error:nil];
+            NSString *msgReturnString = [[NSString alloc] initWithData:msgReturnData encoding:NSUTF8StringEncoding];
+            
+            
+            NSLog(@"%@",msgReturnString);
+            
+            MessageViewController *msgVC = [self.storyboard instantiateViewControllerWithIdentifier:@"messageVC"];
+            msgVC.msgString = msgReturnString;
+            [self.navigationController pushViewController:msgVC animated:YES];
+            
+            
         }
     }
 }
+/*
+ Extract UID
+ */
 
++ (int) extractUID:(NSString *)returnString{
+    //parsing
+    if(returnString != nil){
+        NSDictionary *outputDic = [[NSDictionary alloc] init];
+        
+        NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:&error];
+        if(jsonObject != nil && error == nil){
+            if([jsonObject isKindOfClass:[NSDictionary class]]){
+                outputDic = (NSDictionary *)jsonObject;
+            }
+        }
+        
+        return [[outputDic objectForKey:@"uid"] integerValue];
+    }
+    else return (-1);
+
+}
 
 /*
  Showing Alert view when register or login is unsuccessful

@@ -14,7 +14,6 @@
 
 @implementation MapViewController
 @synthesize ownMapView;
-@synthesize placeLabel;
 @synthesize pointLatitude;
 @synthesize pointLongitude;
 
@@ -33,7 +32,6 @@
 	// Do any additional setup after loading the view.
     //ownMapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 367)];
     
-    self.view = ownMapView;
     ownMapView.delegate = self;
     [ownMapView setShowsUserLocation:YES];
     
@@ -57,7 +55,6 @@
 	if (userLocation != nil) {
 		//NSLog(@"%f %f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
 	}
-    placeLabel.text = [NSString stringWithFormat:@"位置：%f, %f",userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude];
     pointLatitude = userLocation.location.coordinate.latitude;
     pointLongitude = userLocation.location.coordinate.longitude;
     [mapView setShowsUserLocation:NO];
@@ -91,10 +88,9 @@
         
         CLLocationCoordinate2D coo = [ownMapView convertPoint:point toCoordinateFromView:ownMapView];
     
-        NSLog(@"此点经纬度:%lf, %lf", coo.longitude,  coo.latitude);
+        //NSLog(@"此点经纬度:%lf, %lf", coo.longitude,  coo.latitude);
         
         //Add annotation for this point
-        
         NSMutableArray *annotationToRemove = [[NSMutableArray alloc] initWithArray: ownMapView.annotations];
         [annotationToRemove removeObject:ownMapView.userLocation];
         if(annotationToRemove != nil){
@@ -104,7 +100,6 @@
         currentAnnotation.coordinate = coo;
         currentAnnotation.title = @"采用此位置";
         NSString * info= [NSString stringWithFormat:@"此点位置：%f, %f",coo.latitude, coo.longitude];
-        placeLabel.text = info;
         [ownMapView addAnnotation:currentAnnotation];
         
         UIAlertView *placeNotification = [[UIAlertView alloc] initWithTitle:@"确认地点" message:info delegate:nil cancelButtonTitle:@"好" otherButtonTitles:@"取消", nil];
@@ -137,10 +132,14 @@
 - (void) viewWillDisappear:(BOOL)animated{
     int currentVCIndex = [self.navigationController.viewControllers indexOfObject:self.navigationController.topViewController];
     
-    SuggestionViewController *parent = (SuggestionViewController *)[self.navigationController.viewControllers objectAtIndex:currentVCIndex];
-    parent.returnedLatitude = pointLatitude;
-    parent.returnedLongitude = pointLongitude;
-    parent.hasPlaceInfo = TRUE;
+    UIViewController *pa = [self.navigationController.viewControllers objectAtIndex:currentVCIndex];
+
+    if([pa isKindOfClass:[SuggestionViewController class]]){
+        SuggestionViewController *parent = (SuggestionViewController *)pa;
+        parent.returnedLatitude = pointLatitude;
+        parent.returnedLongitude = pointLongitude;
+        parent.hasPlaceInfo = TRUE;
+    }
     
 }
 

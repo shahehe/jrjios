@@ -54,7 +54,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+/*
 - (IBAction)connectButtonPressed:(id)sender {
     [mosquittoClient publishString:@"kakakaka" toTopic:@"di" withQos:0 retain:YES];
     [mosquittoClient setHost: @"test.mosquitto.org"];
@@ -63,7 +63,7 @@
     [mosquittoClient subscribe:@"di"];
     [mosquittoClient subscribe:@"#"];
 }
-
+*/
 
 - (void) didConnect:(NSUInteger)code {
 	NSLog(@"did connect");

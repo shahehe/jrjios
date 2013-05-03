@@ -21,7 +21,6 @@
 		9A08E47316EF0025000710F5 /* gongshang5 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46B16EF0025000710F5 /* gongshang5 */; };
 		9A08E47416EF0025000710F5 /* gongshang6 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46C16EF0025000710F5 /* gongshang6 */; };
 		9A08E47516EF0025000710F5 /* gongshang7 in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E46D16EF0025000710F5 /* gongshang7 */; };
-		9A08E6201700780E000CB7CA /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E61F1700780E000CB7CA /* InfoCell.m */; };
 		9A08E6231700810B000CB7CA /* backgroundrep.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E6221700810B000CB7CA /* backgroundrep.png */; };
 		9A1127EE1718244C0004B1CD /* ReEnterPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1127ED1718244C0004B1CD /* ReEnterPWViewController.m */; };
 		9A14B120171D48E1005B412E /* ShangQuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A14B11F171D48E1005B412E /* ShangQuanViewController.m */; };
@@ -147,6 +146,7 @@
 		9A436AFD1701D2D000360496 /* GovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436AFC1701D2CF00360496 /* GovViewController.m */; };
 		9A436B301701E1F300360496 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436B2F1701E1F300360496 /* RewardViewController.m */; };
 		9A436B321701E88700360496 /* reward.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A436B311701E88600360496 /* reward.txt */; };
+		9A43E65D17329A9400623927 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A43E65C17329A9400623927 /* MessageViewController.m */; };
 		9A501EB21716B5A8005AEC51 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A501EB01716B5A8005AEC51 /* camera.png */; };
 		9A501EB31716B5A8005AEC51 /* doc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A501EB11716B5A8005AEC51 /* doc.png */; };
 		9A501EB61716EF1E005AEC51 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A501EB51716EF1E005AEC51 /* Default.png */; };
@@ -174,7 +174,6 @@
 		9AA44164171BBF6F00874A12 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA44163171BBF6F00874A12 /* MBProgressHUD.m */; };
 		9AA44177171C25F100874A12 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44176171C25F100874A12 /* AVFoundation.framework */; };
 		9AAD482616FC2964005B1EB4 /* MapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AAD482516FC2964005B1EB4 /* MapViewController.mm */; };
-		9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */; };
 		9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */; };
 		9AD6067C16EDECE700F2CCD8 /* procedure0 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6066F16EDECE700F2CCD8 /* procedure0 */; };
 		9AD6067D16EDECE700F2CCD8 /* procedure1 in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6067016EDECE700F2CCD8 /* procedure1 */; };
@@ -255,8 +254,6 @@
 		9A08E46B16EF0025000710F5 /* gongshang5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang5; sourceTree = "<group>"; };
 		9A08E46C16EF0025000710F5 /* gongshang6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang6; sourceTree = "<group>"; };
 		9A08E46D16EF0025000710F5 /* gongshang7 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gongshang7; sourceTree = "<group>"; };
-		9A08E61E1700780E000CB7CA /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
-		9A08E61F1700780E000CB7CA /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
 		9A08E6221700810B000CB7CA /* backgroundrep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundrep.png; sourceTree = "<group>"; };
 		9A1127EC1718244C0004B1CD /* ReEnterPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReEnterPWViewController.h; sourceTree = "<group>"; };
 		9A1127ED1718244C0004B1CD /* ReEnterPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReEnterPWViewController.m; sourceTree = "<group>"; };
@@ -414,6 +411,8 @@
 		9A436B2E1701E1F300360496 /* RewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
 		9A436B2F1701E1F300360496 /* RewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
 		9A436B311701E88600360496 /* reward.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reward.txt; sourceTree = "<group>"; };
+		9A43E65B17329A9400623927 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		9A43E65C17329A9400623927 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		9A501EB01716B5A8005AEC51 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9A501EB11716B5A8005AEC51 /* doc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc.png; sourceTree = "<group>"; };
 		9A501EB51716EF1E005AEC51 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -474,8 +473,6 @@
 		9AA44176171C25F100874A12 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9AAD482416FC2964005B1EB4 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		9AAD482516FC2964005B1EB4 /* MapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapViewController.mm; sourceTree = "<group>"; };
-		9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		9AD6065C16EDBF8900F2CCD8 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		9AD6065D16EDBF8900F2CCD8 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		9AD6066F16EDECE700F2CCD8 /* procedure0 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = procedure0; sourceTree = "<group>"; };
@@ -597,15 +594,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A1127E61717F72E0004B1CD /* trash */ = {
-			isa = PBXGroup;
-			children = (
-				9AD6064C16EDA9FD00F2CCD8 /* InfoViewController.h */,
-				9AD6064D16EDA9FD00F2CCD8 /* InfoViewController.m */,
-			);
-			name = trash;
-			sourceTree = "<group>";
-		};
 		9A1127E71717F7510004B1CD /* JsonParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +606,8 @@
 		9A1127EF171824540004B1CD /* LoginTab */ = {
 			isa = PBXGroup;
 			children = (
+				9A43E65B17329A9400623927 /* MessageViewController.h */,
+				9A43E65C17329A9400623927 /* MessageViewController.m */,
 				9A1127EC1718244C0004B1CD /* ReEnterPWViewController.h */,
 				9A1127ED1718244C0004B1CD /* ReEnterPWViewController.m */,
 			);
@@ -1129,8 +1119,6 @@
 				9A73A16A16F347A300D1B397 /* SuggestionViewController.m */,
 				9A436AFB1701D2CE00360496 /* GovViewController.h */,
 				9A436AFC1701D2CF00360496 /* GovViewController.m */,
-				9A08E61E1700780E000CB7CA /* InfoCell.h */,
-				9A08E61F1700780E000CB7CA /* InfoCell.m */,
 				9AFAA7D716ED803000865251 /* NewsViewController.h */,
 				9AFAA7D816ED803000865251 /* NewsViewController.m */,
 				9AFAA7DD16ED805300865251 /* LoginViewController.h */,
@@ -1148,7 +1136,6 @@
 		9AFAA7AD16ED77DD00865251 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A1127E61717F72E0004B1CD /* trash */,
 				9AE70D2817046DF4000B5AF9 /* json */,
 				9AE70CFA17042C0F000B5AF9 /* TabBarAppearance */,
 				9A436AEE1701B43800360496 /* menuButtons */,
@@ -1393,7 +1380,6 @@
 				9AFAA7B716ED77DD00865251 /* AppDelegate.m in Sources */,
 				9AFAA7D916ED803000865251 /* NewsViewController.m in Sources */,
 				9AFAA7DF16ED805300865251 /* LoginViewController.m in Sources */,
-				9AD6064E16EDA9FD00F2CCD8 /* InfoViewController.m in Sources */,
 				9AD6065E16EDBF8900F2CCD8 /* IntroViewController.m in Sources */,
 				9AD6068C16EDEE3200F2CCD8 /* ProcedureViewController.m in Sources */,
 				9AD6069216EDF5D100F2CCD8 /* TextOfProcedureViewController.m in Sources */,
@@ -1426,7 +1412,6 @@
 				9ADA629316FB029600F86B95 /* ReportListViewController.m in Sources */,
 				9ADA629416FB029B00F86B95 /* ReportInfoViewController.m in Sources */,
 				9AAD482616FC2964005B1EB4 /* MapViewController.mm in Sources */,
-				9A08E6201700780E000CB7CA /* InfoCell.m in Sources */,
 				9A436ACA17017E0700360496 /* ProductListViewController.m in Sources */,
 				9A436ACD17017E3500360496 /* ProductInfoViewController.m in Sources */,
 				9A436AD017017F1700360496 /* ProductListHeader.m in Sources */,
@@ -1460,6 +1445,7 @@
 				9A1EC6281725586A00BB7007 /* will_mosq.c in Sources */,
 				9A1EC62D172558A400BB7007 /* MosquittoClient.m in Sources */,
 				9A1EC62E172558A400BB7007 /* MosquittoMessage.m in Sources */,
+				9A43E65D17329A9400623927 /* MessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
