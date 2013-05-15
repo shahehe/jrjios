@@ -29,8 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     //ownMapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 367)];
+    
+    ownMapView.frame = self.view.bounds;
+    ownMapView.autoresizingMask = self.view.autoresizingMask;
     
     ownMapView.delegate = self;
     [ownMapView setShowsUserLocation:YES];
