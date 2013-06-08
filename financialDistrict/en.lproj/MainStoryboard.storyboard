@@ -1890,9 +1890,6 @@
         </class>
         <class className="HealthCategoryViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthCategoryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="callHealth:"/>
-            </relationships>
         </class>
         <class className="HealthIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HealthIntroViewController.h"/>
