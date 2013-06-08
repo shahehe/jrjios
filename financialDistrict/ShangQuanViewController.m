@@ -34,6 +34,7 @@
 
         [sqWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://jrjsq.chinaec.net"]]];
     }
+    sqWebView.ScalesPageToFit = true;
 }
 
 - (void)didReceiveMemoryWarning

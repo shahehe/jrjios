@@ -29,11 +29,11 @@
 
 - (void)viewDidLoad
 {
-    
+  /*
     NSString *clientId = [NSString stringWithFormat:@"marquette_%@", [[UIDevice currentDevice] uniqueDeviceIdentifier]];
 	NSLog(@"Client ID: %@", clientId);
     mosquittoClient = [[MosquittoClient alloc] initWithClientId:clientId];
-	[mosquittoClient setDelegate: self];
+	[mosquittoClient setDelegate: self];*/
     [super viewDidLoad];
     
     [super viewDidLoad];

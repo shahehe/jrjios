@@ -33,6 +33,7 @@
 
         [serviceWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www3.bjxch.gov.cn/jsp/theme/index.jsp"]]];
     }
+    serviceWebView.ScalesPageToFit = true;
 }
 
 - (void)didReceiveMemoryWarning
