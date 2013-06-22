@@ -94,6 +94,8 @@
 		9A1A8E4516F1CBDB00C75666 /* 66.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A1A8E3216F1CBDA00C75666 /* 66.jpg */; };
 		9A1A8E4616F1CBDB00C75666 /* 68.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A1A8E3316F1CBDA00C75666 /* 68.jpg */; };
 		9A1A8E4716F1CBDB00C75666 /* 81.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A1A8E3416F1CBDA00C75666 /* 81.jpg */; };
+		9A1BF6001769C24700247E30 /* CommerceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BF5FF1769C24700247E30 /* CommerceListViewController.m */; };
+		9A1BF6041769C25E00247E30 /* CommerceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BF6031769C25E00247E30 /* CommerceInfoViewController.m */; };
 		9A1EC61C1725586A00BB7007 /* logging_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A1EC6041725586A00BB7007 /* logging_mosq.c */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		9A1EC61D1725586A00BB7007 /* memory_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A1EC6061725586A00BB7007 /* memory_mosq.c */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		9A1EC61E1725586A00BB7007 /* messages_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A1EC6081725586A00BB7007 /* messages_mosq.c */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
@@ -130,6 +132,7 @@
 		9A38881C171562630082E6F4 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A38881A171562630082E6F4 /* UIDevice+IdentifierAddition.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		9A3F28D2170C57EE002ABF2C /* checkbox_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */; };
 		9A3F28D5170C5A55002ABF2C /* checkbox_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F28D4170C5A55002ABF2C /* checkbox_white.png */; };
+		9A426B0F1764A771001EDE47 /* GongShangNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A426B0E1764A771001EDE47 /* GongShangNewsViewController.m */; };
 		9A436ACA17017E0700360496 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436AC917017E0700360496 /* ProductListViewController.m */; };
 		9A436ACD17017E3500360496 /* ProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436ACC17017E3500360496 /* ProductInfoViewController.m */; };
 		9A436AD017017F1700360496 /* ProductListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A436ACF17017F1700360496 /* ProductListHeader.m */; };
@@ -387,6 +390,10 @@
 		9A1A8E3216F1CBDA00C75666 /* 66.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 66.jpg; sourceTree = "<group>"; };
 		9A1A8E3316F1CBDA00C75666 /* 68.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 68.jpg; sourceTree = "<group>"; };
 		9A1A8E3416F1CBDA00C75666 /* 81.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 81.jpg; sourceTree = "<group>"; };
+		9A1BF5FE1769C24700247E30 /* CommerceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommerceListViewController.h; sourceTree = "<group>"; };
+		9A1BF5FF1769C24700247E30 /* CommerceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommerceListViewController.m; sourceTree = "<group>"; };
+		9A1BF6021769C25E00247E30 /* CommerceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommerceInfoViewController.h; sourceTree = "<group>"; };
+		9A1BF6031769C25E00247E30 /* CommerceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommerceInfoViewController.m; sourceTree = "<group>"; };
 		9A1EC6021725586A00BB7007 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		9A1EC6031725586A00BB7007 /* dummypthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dummypthread.h; sourceTree = "<group>"; };
 		9A1EC6041725586A00BB7007 /* logging_mosq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logging_mosq.c; sourceTree = "<group>"; };
@@ -440,6 +447,8 @@
 		9A38881A171562630082E6F4 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
 		9A3F28D1170C57EE002ABF2C /* checkbox_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_orange.png; sourceTree = "<group>"; };
 		9A3F28D4170C5A55002ABF2C /* checkbox_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_white.png; sourceTree = "<group>"; };
+		9A426B0D1764A771001EDE47 /* GongShangNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GongShangNewsViewController.h; sourceTree = "<group>"; };
+		9A426B0E1764A771001EDE47 /* GongShangNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GongShangNewsViewController.m; sourceTree = "<group>"; };
 		9A436AC817017E0700360496 /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
 		9A436AC917017E0700360496 /* ProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
 		9A436ACB17017E3500360496 /* ProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfoViewController.h; sourceTree = "<group>"; };
@@ -1049,33 +1058,39 @@
 		9ADA623116FAFAF500F86B95 /* NewsTab */ = {
 			isa = PBXGroup;
 			children = (
-				9A436AE5170181C500360496 /* ProductUI */,
-				9A436ACB17017E3500360496 /* ProductInfoViewController.h */,
-				9A436ACC17017E3500360496 /* ProductInfoViewController.m */,
-				9A436AC817017E0700360496 /* ProductListViewController.h */,
-				9A436AC917017E0700360496 /* ProductListViewController.m */,
-				9ADA623216FAFB2E00F86B95 /* ReportCategoryViewController.h */,
-				9ADA623316FAFB2E00F86B95 /* ReportCategoryViewController.m */,
-				9ADA623416FAFB2E00F86B95 /* ReportCategoryCell.h */,
-				9ADA623516FAFB2E00F86B95 /* ReportCategoryCell.m */,
-				9ADA623716FAFB2E00F86B95 /* ReportListViewController.h */,
-				9ADA623816FAFB2E00F86B95 /* ReportListViewController.m */,
-				9ADA623916FAFB2E00F86B95 /* ReportInfoViewController.h */,
-				9ADA623A16FAFB2E00F86B95 /* ReportInfoViewController.m */,
-				9A14B11E171D48E1005B412E /* ShangQuanViewController.h */,
-				9A14B11F171D48E1005B412E /* ShangQuanViewController.m */,
-				9A14B12A171D4CC3005B412E /* ServiceViewController.h */,
-				9A14B12B171D4CC3005B412E /* ServiceViewController.m */,
+				9A1BF6021769C25E00247E30 /* CommerceInfoViewController.h */,
+				9A1BF6031769C25E00247E30 /* CommerceInfoViewController.m */,
+				9A1BF5FE1769C24700247E30 /* CommerceListViewController.h */,
+				9A1BF5FF1769C24700247E30 /* CommerceListViewController.m */,
+				9A426B0D1764A771001EDE47 /* GongShangNewsViewController.h */,
+				9A426B0E1764A771001EDE47 /* GongShangNewsViewController.m */,
 				9AAFE97F174CF507003382FC /* HealthCategoryViewController.h */,
 				9AAFE980174CF507003382FC /* HealthCategoryViewController.m */,
 				9AAFE979174CF489003382FC /* HealthIntroViewController.h */,
 				9AAFE97A174CF489003382FC /* HealthIntroViewController.m */,
 				9AAFE985174CF594003382FC /* HealthRehabViewController.h */,
 				9AAFE986174CF594003382FC /* HealthRehabViewController.m */,
+				9A436ACB17017E3500360496 /* ProductInfoViewController.h */,
+				9A436ACC17017E3500360496 /* ProductInfoViewController.m */,
+				9A436AC817017E0700360496 /* ProductListViewController.h */,
+				9A436AC917017E0700360496 /* ProductListViewController.m */,
+				9A436AE5170181C500360496 /* ProductUI */,
 				9AA9339B1761FF2F001D0AD1 /* RehabCategoryViewController.h */,
 				9AA9339C1761FF2F001D0AD1 /* RehabCategoryViewController.m */,
 				9AAFE982174CF51A003382FC /* RehabContextViewController.h */,
 				9AAFE983174CF51A003382FC /* RehabContextViewController.m */,
+				9ADA623416FAFB2E00F86B95 /* ReportCategoryCell.h */,
+				9ADA623516FAFB2E00F86B95 /* ReportCategoryCell.m */,
+				9ADA623216FAFB2E00F86B95 /* ReportCategoryViewController.h */,
+				9ADA623316FAFB2E00F86B95 /* ReportCategoryViewController.m */,
+				9ADA623916FAFB2E00F86B95 /* ReportInfoViewController.h */,
+				9ADA623A16FAFB2E00F86B95 /* ReportInfoViewController.m */,
+				9ADA623716FAFB2E00F86B95 /* ReportListViewController.h */,
+				9ADA623816FAFB2E00F86B95 /* ReportListViewController.m */,
+				9A14B12A171D4CC3005B412E /* ServiceViewController.h */,
+				9A14B12B171D4CC3005B412E /* ServiceViewController.m */,
+				9A14B11E171D48E1005B412E /* ShangQuanViewController.h */,
+				9A14B11F171D48E1005B412E /* ShangQuanViewController.m */,
 			);
 			name = NewsTab;
 			sourceTree = "<group>";
@@ -1680,6 +1695,9 @@
 				9AAFE984174CF51A003382FC /* RehabContextViewController.m in Sources */,
 				9AAFE987174CF594003382FC /* HealthRehabViewController.m in Sources */,
 				9AA9339D1761FF2F001D0AD1 /* RehabCategoryViewController.m in Sources */,
+				9A426B0F1764A771001EDE47 /* GongShangNewsViewController.m in Sources */,
+				9A1BF6001769C24700247E30 /* CommerceListViewController.m in Sources */,
+				9A1BF6041769C25E00247E30 /* CommerceInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

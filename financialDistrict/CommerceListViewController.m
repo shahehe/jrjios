@@ -1,23 +1,24 @@
 //
-//  ProductListViewController.m
-//  jrj
+//  CommerceListViewController.m
+//  financialDistrict
 //
-//  Created by jrj on 13-3-25.
-//  Copyright (c) 2013年 jrj. All rights reserved.
+//  Created by USTB on 13-6-13.
+//  Copyright (c) 2013年 USTB. All rights reserved.
 //
 
-#import "ProductListViewController.h"
+#import "CommerceListViewController.h"
 #import "ApiService.h"
 #import "MBProgressHUD.h"
 #import "ProductListHeader.h"
-#import "ProductInfoViewController.h"
+#import "CommerceInfoViewController.h"
 #import "CheckConnection.h"
 
-@interface ProductListViewController ()
+@interface CommerceListViewController ()
 
 @end
 
-@implementation ProductListViewController
+@implementation CommerceListViewController
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,8 +32,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if([CheckConnection connected]){
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    //[self.view setBackgroundColor:[UIColor clearColor]];
 
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if([CheckConnection connected]){
+        
         self.data = [NSMutableArray arrayWithCapacity:0];
         [self getData];
         
@@ -40,12 +51,6 @@
         [self.refreshControl addTarget:self action:@selector(getData) forControlEvents:UIControlEventValueChanged];
         [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
     }
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,16 +65,15 @@
         if([self.refreshControl isRefreshing]){
             [self.data removeAllObjects];
         }
-        [self.data addObjectsFromArray:[result.data valueForKey:@"products"]];
+        [self.data addObjectsFromArray:[result.data valueForKey:@"commerce"]];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
         [self checkUpdate];
     } andFailure:^(int code, NSString *message) {
         
     }
-      withUrl:@"Product.getList"];
+    withUrl:@"Commerce.getList"];
 }
-
 -(void)checkUpdate
 {
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -83,7 +87,7 @@
         hud.labelText = @"已经更新！";
         [hud hide:YES afterDelay:1];
         [self.data removeAllObjects];
-        [self.data addObjectsFromArray:[result.data valueForKey:@"products"]];
+        [self.data addObjectsFromArray:[result.data valueForKey:@"commerce"]];
         [self.tableView reloadData];
     } andFailure:^(int code, NSString *message) {
         if(code == 1){
@@ -93,19 +97,20 @@
             [av show];
         }
     }
-     withUrl:@"Product.getList"];
+    withUrl:@"Commerce.getList"];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    // Return the number of sections.
     return self.data.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%i",[[[self.data objectAtIndex:section] objectForKey:@"items"] count]);
+    // Return the number of rows in the section.
     return [[[self.data objectAtIndex:section] objectForKey:@"items"] count];
 }
 
@@ -133,75 +138,71 @@
         cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+
+    
     // Configure the cell...
     id sec = [self.data objectAtIndex:indexPath.section];
     NSLog(@"%@",[sec valueForKey:@"items"]);
     id item = [[[self.data objectAtIndex:indexPath.section] objectForKey:@"items"] objectAtIndex:indexPath.row];;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",[item objectForKey:@"number"],[item objectForKey:@"name"]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"商标：%@；标注生产单位名称：%@；规格型号：%@",[item valueForKey:@"brand"],[item valueForKey:@"company"],[item valueForKey:@"model"]];
-    ;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",[item objectForKey:@"number"],[item objectForKey:@"title"]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",[item valueForKey:@"content"]];
+    
     return cell;
 }
 
 /*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
 
 /*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
 
 /*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
 
 /*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-#pragma mark - Table view delegate
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableViewcanMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id item = [[[self.data objectAtIndex:indexPath.section] valueForKey:@"items"] objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"info" sender:item];
+    id itemID = [[[self.data objectAtIndex:indexPath.section] valueForKey:@"items"] objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"commerceInfo" sender:itemID];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"info"]){
-        ProductInfoViewController *v = segue.destinationViewController;
-        v.item = sender;
-        //v.title = [sender valueForKey:@"name"];
+    if([segue.identifier isEqualToString:@"commerceInfo"]){
+        CommerceInfoViewController *v = segue.destinationViewController;
+        v.itemObj = sender;
+        //NSLog(@"%@",sender);
     }
 }
-
-
-
-
 @end

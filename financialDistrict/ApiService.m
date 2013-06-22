@@ -23,7 +23,7 @@ static ApiService *shareInstance = nil;
 {
 	if (!shareInstance) {
 		shareInstance = [[self alloc]init];
-        shareInstance.host = @"64.150.161.193";
+        shareInstance.host = @"218.249.192.55";
 	}
 	return shareInstance;
 }
@@ -132,9 +132,9 @@ static ApiService *shareInstance = nil;
 }
 
 
-+(void)getProductList:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure
++(void)getProductList:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure withUrl:(NSString*) url
 {
-    NSString *url = @"Product.getList";
+    //NSString *url = @"Product.getList";
     NSString *key = [ApiService md5:url];
     //先从缓存取数据:
     id data = [ApiService getCache:key];
@@ -162,9 +162,10 @@ static ApiService *shareInstance = nil;
         [engine enqueueOperation:op];
     }
 }
-+(void)checkUpdateForProduct:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure
++(void)checkUpdateForProduct:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure withUrl:(NSString*) url
+
 {
-    NSString *url = @"Product.getList";
+    //NSString *url = @"Product.getList";
     NSString *key = [ApiService md5:url];
     //获取数据 进行对比
     MKNetworkEngine* engine = [[ApiService sharedInstance] getMKNetworkEngine];

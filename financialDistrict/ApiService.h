@@ -39,9 +39,11 @@ typedef void (^ApiFailureBlock)(int code,NSString *message);
 
 +(id)getCache:(NSString *)key;
 
-+(void)getProductList:(void (^)(ApiResult *result))success andFailure:(void (^)(int code,NSString *message))failure;
++(void)getProductList:(void (^)(ApiResult *result))success andFailure:(void (^)(int code,NSString *message))failure withUrl:(NSString*) url
+;
 
-+(void)checkUpdateForProduct:(void (^)(ApiResult *result))success andFailure:(void (^)(int code,NSString *message))failure;
++(void)checkUpdateForProduct:(void (^)(ApiResult *result))success andFailure:(void (^)(int code,NSString *message))failure withUrl:(NSString*) url
+;
 
 +(NSString*) md5:(NSString*) str;
 @end

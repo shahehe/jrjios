@@ -76,7 +76,7 @@
     
     // Configure the cell...
     cell.textLabel.text = rcArray[indexPath.row];
-     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBar.png"]];
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBar.png"]];
     
     return cell;
 }
