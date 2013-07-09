@@ -9,6 +9,8 @@
 #import "HealthRehabViewController.h"
 #import "stringsJsonParser.h"
 #import "RehabCategoryViewController.h"
+#import "ProcedureGongShangCell.h"
+#import "HealthIntroViewController.h"
 
 @interface HealthRehabViewController ()
 
@@ -36,7 +38,7 @@
 {
     [super viewDidLoad];
     
-    [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    //[self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
     [self.view setBackgroundColor:[UIColor clearColor]];
     self.tableView.backgroundView = [[UIView alloc]init];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
@@ -99,27 +101,46 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 3;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [healthCategoryArray count];
+    if (section == 1){
+        return [healthCategoryArray count];
+    }
+    else return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"RehabCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  
+        static NSString *CellIdentifier = @"RehabCell";
+        ProcedureGongShangCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.textLabel.text = healthCategoryArray[indexPath.row];
+      if(indexPath.section == 1){
+        // Configure the cell...
+        cell.procedureTitle.text = healthCategoryArray[indexPath.row];
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"health"
+                                                          ofType:@"png"];
 
-     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBar.png"]];
+        cell.procedureIcon.image = [UIImage imageWithContentsOfFile:imagePath];
+      }
+      else if(indexPath.section == 0){
+          cell.procedureTitle.text = @"中心简介";
+      }
+      else if(indexPath.section == 2){
+          cell.procedureTitle.text = @"联系电话";
+      }
     
-    return cell;
+     //cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBar.png"]];
+
+        return cell;
+    
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -164,41 +185,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    RehabCategoryViewController *rcVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RehabCVC"];
-    rcVC.pageName = healthCategoryArray[indexPath.row];
+    if(indexPath.section == 1){
+        RehabCategoryViewController *rcVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RehabCVC"];
+        rcVC.pageName = healthCategoryArray[indexPath.row];
 
-    
-    switch (indexPath.row) {
-        case 0:
-            rcVC.rcArray = array1;
-            rcVC.whichCategory = @"a";
-            break;
-        case 1:
-            rcVC.rcArray = array2;
-            rcVC.whichCategory = @"b";
-            break;
-        case 2:
-            rcVC.rcArray = array3;
-            rcVC.whichCategory = @"c";
-            break;
-        case 3:
-            rcVC.rcArray = array4;
-            rcVC.whichCategory = @"d";
-            break;
-            
-        default:
-            break;
+        
+        switch (indexPath.row) {
+            case 0:
+                rcVC.rcArray = array1;
+                rcVC.whichCategory = @"a";
+                break;
+            case 1:
+                rcVC.rcArray = array2;
+                rcVC.whichCategory = @"b";
+                break;
+            case 2:
+                rcVC.rcArray = array3;
+                rcVC.whichCategory = @"c";
+                break;
+            case 3:
+                rcVC.rcArray = array4;
+                rcVC.whichCategory = @"d";
+                break;
+                
+            default:
+                break;
+        }
+        
+        [self.navigationController pushViewController:rcVC animated:YES];
     }
-    
-    [self.navigationController pushViewController:rcVC animated:YES];
+    else if (indexPath.section == 0){
+        HealthIntroViewController
+            *hIntroVC = [self.storyboard instantiateViewControllerWithIdentifier:@"hIntroVC"];
+        [self.navigationController pushViewController:hIntroVC animated:YES];
+    }
+    else if (indexPath.section == 2){
+        NSString* phoneNum= @"010-66216988"; //亚健康呼叫中心电话
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phoneNum]];
+        [[UIApplication  sharedApplication] openURL:url];
+    }
 }
 
 @end

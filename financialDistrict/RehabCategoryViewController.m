@@ -8,6 +8,7 @@
 
 #import "RehabCategoryViewController.h"
 #import "RehabContextViewController.h"
+#import "ProcedureGongShangCell.h"
 
 @interface RehabCategoryViewController ()
 
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    //[self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
     [self.view setBackgroundColor:[UIColor clearColor]];
     self.tableView.backgroundView = [[UIView alloc]init];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
@@ -71,12 +72,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"RehabCCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"RehabCell";
+    ProcedureGongShangCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = rcArray[indexPath.row];
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBar.png"]];
+    cell.procedureTitle.text = rcArray[indexPath.row];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"health"
+                                                          ofType:@"png"];
+    
+    cell.procedureIcon.image = [UIImage imageWithContentsOfFile:imagePath];
+    //cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBar.png"]];
     
     return cell;
 }
