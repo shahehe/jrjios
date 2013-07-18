@@ -24,6 +24,8 @@ static ApiService *shareInstance = nil;
 	if (!shareInstance) {
 		shareInstance = [[self alloc]init];
         shareInstance.host = @"218.249.192.55";
+        shareInstance.isLogin = false;
+        shareInstance.userID = -1;
 	}
 	return shareInstance;
 }
@@ -38,7 +40,15 @@ static ApiService *shareInstance = nil;
 
 +(void)getReportList:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure
 {
-    NSString *url = @"jrj/index.php?file=list.xml";
+    NSString *url = [[NSString alloc] init];
+    if([ApiService sharedInstance].isLogin == false){
+        url = @"jrj/index.php?file=list.xml";
+    }   
+    else{
+        url = [NSString stringWithFormat:@"jrj/index.php?file=list.xml&uid=%d",[ApiService sharedInstance].userID];               
+    }
+    
+    //NSLog(@"%d",[ApiService sharedInstance].userID);
     NSString *key = [ApiService md5:url];
     //先从缓存取数据:
     id data = [ApiService getCache:key];
@@ -70,7 +80,14 @@ static ApiService *shareInstance = nil;
 
 +(void)checkUpdate:(void (^)(ApiResult *))success andFailure:(void (^)(int, NSString *))failure
 {
-    NSString *url = @"jrj/index.php?file=list.xml";
+    NSString *url = [[NSString alloc] init];
+    if([ApiService sharedInstance].isLogin == false){
+        url = @"jrj/index.php?file=list.xml";
+    }
+    else{
+        url = [NSString stringWithFormat:@"jrj/index.php?file=list.xml&uid=%d",[ApiService sharedInstance].userID];
+    }
+    //NSLog(@"%d",[ApiService sharedInstance].userID);
     NSString *key = [ApiService md5:url];
     //获取数据 进行对比
     MKNetworkEngine *engine = [[ApiService sharedInstance] getEngine];

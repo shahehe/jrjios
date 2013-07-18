@@ -22,6 +22,8 @@ typedef void (^ApiFailureBlock)(int code,NSString *message);
 @interface ApiService : NSObject
 
 @property NSString* host;
+@property Boolean isLogin;
+@property int userID;
 
 +(ApiService *) sharedInstance;
 

@@ -7,9 +7,11 @@
 //
 
 #import "MessageViewController.h"
+#import "ApiService.h"
 
 @interface MessageViewController (){
     NSArray *msgArray;
+    int credit;
 }
 
 @end
@@ -52,13 +54,52 @@
         
     }
 
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    //get the credit
+    NSMutableURLRequest *creditRequest = [[NSMutableURLRequest alloc] init];
+    NSString *creditUrl =[NSString stringWithFormat:@"http://%@/jrj/credit.php?uid=%d",[ApiService sharedInstance].host,[ApiService sharedInstance].userID];
+    
+    [creditRequest setURL:[NSURL URLWithString:creditUrl]];
+    [creditRequest setHTTPMethod:@"GET"];
+    
+    NSData *creditReturnData = [NSURLConnection sendSynchronousRequest:creditRequest returningResponse:nil error:nil];
+    NSString *creditReturnString = [[NSString alloc] initWithData:creditReturnData encoding:NSUTF8StringEncoding];
+    credit = [MessageViewController extractCredit:creditReturnString];
+    
+}
+
+
++ (int) extractCredit:(NSString *)returnString{
+    //parsing
+    if(returnString != nil){
+        NSDictionary *outputDic = [[NSDictionary alloc] init];
+        
+        NSData *jsonData = [returnString dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:&error];
+        if(jsonObject != nil && error == nil){
+            if([jsonObject isKindOfClass:[NSDictionary class]]){
+                outputDic = (NSDictionary *)jsonObject;
+            }
+        }
+        
+        return [[outputDic objectForKey:@"credit"] integerValue];
+    }
+    else return (-1);
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,18 +118,23 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [msgArray count];
+    return [msgArray count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"msgCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    if([indexPath row] == 0){
+        cell.textLabel.text = [NSString stringWithFormat:@"您目前的积分为: %d",credit];
+        cell.detailTextLabel.text = @"";
+        
+    }
+    else{
     // Configure the cell...
-    cell.textLabel.text = [msgArray[[indexPath row]] objectForKey:@"message"];
-    cell.detailTextLabel.text = [msgArray[[indexPath row]] objectForKey:@"create_time"];
-    
+        cell.textLabel.text = [msgArray[[indexPath row]-1] objectForKey:@"message"];
+        cell.detailTextLabel.text = [msgArray[[indexPath row]-1] objectForKey:@"create_time"];
+    }
     return cell;
 }
 

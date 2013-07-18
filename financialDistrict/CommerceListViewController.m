@@ -69,8 +69,8 @@
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
         [self checkUpdate];
-    } andFailure:^(int code, NSString *message) {
-        
+    }
+    andFailure:^(int code, NSString *message) {        
     }
     withUrl:@"Commerce.getList"];
 }

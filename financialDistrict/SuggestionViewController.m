@@ -81,6 +81,8 @@
     [recordingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     recordingData = [[NSData alloc] init];
     
+    
+    
 }
 
 - (void) initializeAudio{
@@ -147,7 +149,6 @@
          ];
         hasPlaceInfo = FALSE;
     }
-    
     
 }
 
@@ -466,7 +467,14 @@
 -(void) connectFeedback{
     
     NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] init];
-    NSString *url2 =[NSString stringWithFormat:@"http://%@/jrj/feedback.php",[ApiService sharedInstance].host];
+    NSString *url2 = [[NSString alloc] init];
+    if([ApiService sharedInstance].isLogin == false){
+        url2 =[NSString stringWithFormat:@"http://%@/jrj/feedback.php",[ApiService sharedInstance].host];
+    }
+    else{
+        url2 =[NSString stringWithFormat:@"http://%@/jrj/feedback.php?uid=%d",[ApiService sharedInstance].host,[ApiService sharedInstance].userID];
+    }
+    
     
     [request2 setURL:[NSURL URLWithString:url2]];
     [request2 setHTTPMethod:@"GET"];

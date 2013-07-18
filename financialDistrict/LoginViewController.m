@@ -165,10 +165,14 @@
             [LoginViewController showAlert:@"登录成功"];
 
             int uid = [LoginViewController extractUID:loginReturnString];
+            //"登陆成功",credit is accumulating
+            [ApiService sharedInstance].isLogin = true;
+            [ApiService sharedInstance].userID = uid;
+            
+            //NSLog(@"%d",[ApiService sharedInstance].userID);
 
             NSMutableURLRequest *msgRequest = [[NSMutableURLRequest alloc] init];
             NSString *msgUrl =[NSString stringWithFormat:@"http://%@/jrj/message.php?uid=%d",[ApiService sharedInstance].host,uid];
-          //  NSString *msgUrl =[NSString stringWithFormat:@"http://%@/jrj/message.php?uid=13",[ApiService sharedInstance].host];
             
             [msgRequest setURL:[NSURL URLWithString:msgUrl]];
             [msgRequest setHTTPMethod:@"POST"];
