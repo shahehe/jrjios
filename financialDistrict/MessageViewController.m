@@ -32,7 +32,10 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"个人消息列表";
-    [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    //[self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    [self.view setBackgroundColor:[UIColor clearColor]];
+    self.tableView.backgroundView = [[UIView alloc]init];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
 
     //parsing msg String
     if(msgString != nil){
@@ -112,28 +115,42 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [msgArray count]+1;
+    if (section == 1){
+        return [msgArray count];
+    }
+    else return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 1){
+        return 90;
+    }
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"msgCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if([indexPath row] == 0){
+    if(indexPath.section == 0){
         cell.textLabel.text = [NSString stringWithFormat:@"您目前的积分为: %d",credit];
         cell.detailTextLabel.text = @"";
+        cell.textLabel.textColor = [UIColor orangeColor];
         
     }
     else{
+        
     // Configure the cell...
-        cell.textLabel.text = [msgArray[[indexPath row]-1] objectForKey:@"message"];
-        cell.detailTextLabel.text = [msgArray[[indexPath row]-1] objectForKey:@"create_time"];
+        cell.textLabel.text = [msgArray[[indexPath row]] objectForKey:@"message"];
+        cell.detailTextLabel.text = [msgArray[[indexPath row]] objectForKey:@"create_time"];
+        [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:15.0]];
     }
     return cell;
 }
