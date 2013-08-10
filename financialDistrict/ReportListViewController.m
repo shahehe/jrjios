@@ -35,11 +35,23 @@
     [self.refreshControl addTarget:self action:@selector(getData) forControlEvents:UIControlEventValueChanged];
     
     [self.tableView setSeparatorColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"product_line.png"]]];
+    
+    
+    //get some credit for reading, but not for refreshing
+    NSMutableURLRequest *newsRequest = [[NSMutableURLRequest alloc] init];
+    NSString *nUrl =[NSString stringWithFormat:@"http://%@/jrj/newspaper.php?uid=%d&file=%@",[ApiService sharedInstance].host,[ApiService sharedInstance].userID,[self.item valueForKey:@"file"]];
+    
+    [newsRequest setURL:[NSURL URLWithString:nUrl]];
+    [newsRequest setHTTPMethod:@"GET"];
+    [NSURLConnection sendSynchronousRequest:newsRequest returningResponse:nil error:nil];
+
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning
