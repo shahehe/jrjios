@@ -466,6 +466,12 @@
 
 -(void) connectFeedback{
     
+    //Everything back to normal
+    problemDescription.text = @"";
+    phoneContact.text = @"";
+    imageToUpload.image = [UIImage imageNamed:@"no-image.png"];
+    
+    //connect to feedback.php
     NSMutableURLRequest *request2 = [[NSMutableURLRequest alloc] init];
     NSString *url2 = [[NSString alloc] init];
     if([ApiService sharedInstance].isLogin == false){
