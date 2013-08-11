@@ -25,6 +25,8 @@
     }
     
     [self customApperance];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    [tabBarController setDelegate:self];
     // Override point for customization after application launch.
     return YES;
 }
@@ -85,6 +87,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark UITabBarControllerDelegate methods
+- (BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    if(viewController == [tabBarController.viewControllers objectAtIndex:3]){
+        return (tabBarController.selectedViewController != viewController);
+    }
+    return YES;
 }
 
 @end
