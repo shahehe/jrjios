@@ -28,6 +28,14 @@
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     [tabBarController setDelegate:self];
     // Override point for customization after application launch.
+    
+     [self.window makeKeyAndVisible];
+    NSLog(@"Registeringfor push notifications...");   
+    // Let the device know we want to receive push notifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    
     return YES;
 }
 
@@ -96,5 +104,39 @@
     }
     return YES;
 }
+
+#pragma mark Push Notifications Delegate
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    /* Get device token */
+    NSString *strDevToken = [NSString stringWithFormat:@"%@", deviceToken];
+    
+    /* Replace '<', '>' and ' ' */
+    NSCharacterSet *charDummy = [NSCharacterSet characterSetWithCharactersInString:@"<> "];
+    strDevToken = [[strDevToken componentsSeparatedByCharactersInSet: charDummy] componentsJoinedByString: @""];
+    NSLog(@"Device token=[%@]", strDevToken);
+    
+    /* 可以把token傳到server，之後server就可以靠它送推播給使用者了 */
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err
+{
+    NSLog(@"Error=[%@]", err);
+    // TODO: when user do not allow push notification service, pop the warning message.
+}
+
+// This function called when receive notification and app is in the foreground.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    /* 把收到的推播列舉出來 */
+    for (id key in userInfo) {
+        NSLog(@"Key=[%@], Value=[%@]", key, [userInfo objectForKey:key]);
+    }
+    
+    /* 印出 Badge number */
+    NSLog(@"Badge: %@", [[userInfo objectForKey:@"aps"] objectForKey:@"badge"]);
+}
+          
+          
 
 @end
